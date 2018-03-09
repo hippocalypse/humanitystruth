@@ -16,9 +16,9 @@ class Admin
     public function handle($request, Closure $next)
     {
         if(Auth::User() == null) return redirect()->route('login');
-        if(Auth::User()->role != 'admin' && Auth::User()->role != 'super_admin') {
-            return redirect()->route('login');
-        }
+        
+        if(Auth::User()->role != 'admin' && Auth::User()->role != 'super_admin') return redirect()->route('home');
+        
         return $next($request);
     }
 }

@@ -14,6 +14,7 @@
 
 
 Auth::routes();
+Route::get('verifyemail/{token}', 'Auth\RegisterController@verify');
 
 Route::get('/', function () { return view('index'); })->name('home');
 
@@ -28,7 +29,7 @@ Route::get('files/{file}', 'FileController@show');
 Route::get('files/new', 'FileController@create');
 
 /* Client-side*/
-Route::get('dashboard', 'DashboardController@index');
+Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
 /* Backend */
 Route::group(['prefix' => 'admins'], function () {
@@ -44,8 +45,6 @@ Route::get('dev-team', 'DevelopmentController@index');
 
 /* Affiliates */
 Route::get('affiliates', 'AffiliateController@index');
-Route::get('affiliates/join', 'AffiliateController@create');
-Route::post('affiliates/submit', 'AffiliateController@store');
 
 
 /* Shopping cart */
@@ -80,6 +79,3 @@ Route::get('ethics-policy', function () {
 Route::get('join', function () {
     return view('join');
 });
-
-
-Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');

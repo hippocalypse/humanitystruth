@@ -1,11 +1,9 @@
 @extends('emails.master')
 
 @section('subject')Welcome to HumanitysTruth!
-@endsection
+@stop
 
 @section('body')
-    Here's a verification link that will get you authenticated:
-    TODO
-    
-    humanitystruth.com
-@endsection
+    Please confirm your email by clicking the link below:
+    {{url('/verifyemail/'.$email_token)}}
+@stop

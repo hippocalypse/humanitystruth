@@ -93,8 +93,10 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
         event(new Registered($user = $this->create($request->all())));
         dispatch(new SendVerificationEmail($user));
-        return view('emails.verification_sent');
+        Session::flash('warning', 'You have successfully registered. Please verify your email.'); 
+        return view('home');
     }
+    
     /**
     * Handle a registration request for the application.
     *
@@ -106,7 +108,8 @@ class RegisterController extends Controller
         $user = User::where('email_token',$token)->first();
         $user->role = 'email_verified';
         if($user->save()){
-            return view('emails.verification_confirm',['user'=>$user]);
+            Session::flash('notify', 'Thanks for verifying your email!'); 
+            return view('home');
         }
     }
 }
