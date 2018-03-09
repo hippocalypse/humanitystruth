@@ -3,6 +3,7 @@
     <link type="text/css" rel="stylesheet" href="/css/w3.css">
     <link type="text/css" rel="stylesheet" href="/css/app.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="/js/functions.js" type="text/javascript"></script>
     <script type="application/ld+json">
         {
