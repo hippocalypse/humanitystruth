@@ -1,3 +1,11 @@
-<h1>Here's a verification link that will get you authenticated:</h1>
-Click the following link to verify your email {{url('/verifyemail/'.$email_token)}}
-<p>humanitystruth.com</p>
+@extends('emails.master')
+
+@section('subject')Welcome to HumanitysTruth!
+@endsection
+
+@section('body')
+    Here's a verification link that will get you authenticated:
+    TODO
+    
+    humanitystruth.com
+@endsection
