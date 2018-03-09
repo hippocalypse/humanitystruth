@@ -12,4 +12,4 @@
     </ul>
 </div>
 
-@endsection
+@stop

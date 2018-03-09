@@ -14,7 +14,8 @@ class InvestigationsController extends Controller
      */
     public function index()
     {
-        return view('investigations::index');
+        $investigations = Investigation::all();
+        return view('investigations::index', compact("investigations"));
     }
 
     /**
@@ -39,9 +40,9 @@ class InvestigationsController extends Controller
      * Show the specified resource.
      * @return Response
      */
-    public function show()
+    public function show(Investigation $investigation)
     {
-        return view('investigations::show');
+        return view('investigations.show', compact("investigation"));
     }
 
     /**

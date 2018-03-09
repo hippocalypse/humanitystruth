@@ -31,6 +31,7 @@ Route::get('files/new', 'FileController@create');
 /* Client-side*/
 Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
+
 /* Backend */
 Route::group(['prefix' => 'admins'], function () {
     Route::get('/', 'AdminController@index')->name('admins');
@@ -40,21 +41,16 @@ Route::group(['prefix' => 'admins'], function () {
 });
 
 
-/* Dev-Team */
-Route::get('dev-team', 'DevelopmentController@index');
+/* Dev-Team 
+Route::get('dev-team', 'Modules/Developers/Http/Controllers/DevelopersController@index');*/
+
+
 
 /* Affiliates */
-Route::get('affiliates', 'AffiliateController@index');
-
-
-/* Shopping cart */
-Route::get('shop', 'ProductController@index');
-Route::get('cart', 'CartController@index');
-Route::post('cart', 'CartController@update');
-
-
-
-
+Route::get('affiliates', function() {
+    $affiliates = Affiliate::all();
+    return view('affiliates', compact("affiliates"));   
+});
 
 Route::get('site-map', function () {
     return view('sitemap');

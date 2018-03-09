@@ -12,7 +12,6 @@ class AffiliatesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
         DB::table('affiliates')->delete();
         DB::table('affiliates')->insert([
             ['name' => 'a1', 'logo' => '1520476793.jpg', 'website' => 'https://humanitystruth.com'],
