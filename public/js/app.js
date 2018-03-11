@@ -1737,14 +1737,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 var prices = [0, 1000, 500, 250, 100, 50, 25, 10];
 var pay_types = ["once", "Monthly"];
@@ -1752,7 +1744,7 @@ var _data = {
     price: 0,
     monthlyMethod: 0,
     moneyUnit: 0,
-    pay_type: 'oncetime'
+    pay_type: 'once'
 
 };
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1777,7 +1769,7 @@ var _data = {
         },
         onPaymentModal: function onPaymentModal() {
             if (this.price > 0) {
-                document.getElementById('cardorcoinId').style.display = 'block';
+                document.getElementById('donateMethod').style.display = 'block';
             }
         },
         onPaypal: function onPaypal() {
@@ -36213,46 +36205,41 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "w3-container" }, [
-    _c("div", { staticClass: "w3-row" }, [
-      _c("h3", [_vm._v("Donation Frequency")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "w3-row" }, [
-        _c("div", { staticClass: "w3-col s6 m3 l2 w3-padding" }, [
-          _c(
-            "button",
-            {
-              staticClass: "w3-button w3-block w3-border w3-round-large",
-              class: [_vm.monthlyMethod ? "w3-white" : "w3-blue", ""],
-              on: { click: _vm.onceClick }
-            },
-            [_vm._v("Once")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "w3-col s6 m3 l2 w3-padding" }, [
-          _c(
-            "button",
-            {
-              staticClass: "w3-button w3-block w3-border w3-round-large",
-              class: [_vm.monthlyMethod ? "w3-blue" : "w3-white", ""],
-              on: { click: _vm.monthlyClick }
-            },
-            [_vm._v("Monthly")]
-          )
-        ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "w3-row" }, [
+  return _c("div", { staticClass: "w3-container w3-center" }, [
+    _c("div", { staticClass: "w3-container w3-center" }, [
       _c("h3", [_vm._v("How much would you like to donate?")]),
       _vm._v(" "),
-      _c("div", { staticClass: "w3-half w3-padding" }, [
+      _c("div", { staticClass: "w3-container w3-center" }, [
+        _c(
+          "button",
+          {
+            staticClass:
+              "w3-button w3-half w3-margin-bottom w3-padding w3-border w3-round-large",
+            class: [_vm.monthlyMethod ? "w3-white" : "w3-blue", ""],
+            on: { click: _vm.onceClick }
+          },
+          [_vm._v("Once")]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass:
+              "w3-button w3-half w3-margin-bottom w3-padding w3-border w3-round-large",
+            class: [_vm.monthlyMethod ? "w3-blue" : "w3-white", ""],
+            on: { click: _vm.monthlyClick }
+          },
+          [_vm._v("Monthly")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "w3-container" }, [
         _c("div", { staticClass: "w3-bar" }, [
           _c(
             "button",
             {
-              staticClass: "w3-button  w3-border w3-round-large w3-margin-top",
+              staticClass:
+                "w3-button w3-border w3-round-large w3-margin-bottom",
               class: [_vm.moneyUnit == 1 ? "w3-blue" : "w3-white", ""],
               on: {
                 click: function($event) {
@@ -36266,7 +36253,8 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "w3-button  w3-border w3-round-large w3-margin-top",
+              staticClass:
+                "w3-button w3-border w3-round-large w3-margin-bottom",
               class: [_vm.moneyUnit == 2 ? "w3-blue" : "w3-white", ""],
               on: {
                 click: function($event) {
@@ -36280,7 +36268,8 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "w3-button  w3-border w3-round-large w3-margin-top",
+              staticClass:
+                "w3-button w3-border w3-round-large w3-margin-bottom",
               class: [_vm.moneyUnit == 3 ? "w3-blue" : "w3-white", ""],
               on: {
                 click: function($event) {
@@ -36294,7 +36283,8 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "w3-button  w3-border w3-round-large w3-margin-top",
+              staticClass:
+                "w3-button w3-border w3-round-large w3-margin-bottom",
               class: [_vm.moneyUnit == 4 ? "w3-blue" : "w3-white", ""],
               on: {
                 click: function($event) {
@@ -36308,7 +36298,8 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "w3-button  w3-border w3-round-large w3-margin-top",
+              staticClass:
+                "w3-button w3-border w3-round-large w3-margin-bottom",
               class: [_vm.moneyUnit == 5 ? "w3-blue" : "w3-white", ""],
               on: {
                 click: function($event) {
@@ -36322,7 +36313,8 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "w3-button  w3-border w3-round-large w3-margin-top",
+              staticClass:
+                "w3-button w3-border w3-round-large w3-margin-bottom",
               class: [_vm.moneyUnit == 6 ? "w3-blue" : "w3-white", ""],
               on: {
                 click: function($event) {
@@ -36336,7 +36328,8 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "w3-button  w3-border w3-round-large w3-margin-top",
+              staticClass:
+                "w3-button w3-border w3-round-large w3-margin-bottom",
               class: [_vm.moneyUnit == 7 ? "w3-blue" : "w3-white", ""],
               on: {
                 click: function($event) {
@@ -36346,153 +36339,285 @@ var render = function() {
             },
             [_vm._v("$10")]
           )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "w3-half w3-padding" }, [
+        ]),
+        _vm._v(" "),
         _c(
           "div",
-          { staticClass: "w3-padding w3-light-gray w3-left w3-panel" },
-          [_vm._v("Custom Amount: ")]
-        ),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.price,
-              expression: "price"
-            }
-          ],
-          staticClass: "w3-margin w3-input w3-light-gray w3-border",
-          staticStyle: { width: "200px" },
-          attrs: { type: "number" },
-          domProps: { value: _vm.price },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.price = $event.target.value
-            }
-          }
-        })
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "w3-row w3-padding w3-margin" }, [
-      _c(
-        "button",
-        {
-          staticClass: "w3-button w3-red w3-border w3-round-large",
-          on: { click: _vm.onPaymentModal }
-        },
-        [_vm._v("Donate Now")]
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "w3-modal", attrs: { id: "cardorcoinId" } }, [
-      _c(
-        "div",
-        {
-          staticClass:
-            "w3-container w3-card-4 w3-round-large w3-margin w3-white"
-        },
-        [
-          _vm._m(1),
-          _vm._v(" "),
-          _c("div", { staticClass: "w3-container" }, [
-            _c("div", { staticClass: "w3-hide" }, [
-              _c(
-                "form",
-                {
-                  attrs: {
-                    method: "POST",
-                    action: "https://www.paypal.com/cgi-bin/webscr",
-                    role: "form",
-                    id: "paypal_form"
-                  }
-                },
-                [
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("input", {
-                      attrs: {
-                        type: "hidden",
-                        name: "cmd",
-                        value: "_donations"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        type: "hidden",
-                        name: "business",
-                        value: "admin@humanitystruth.com"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.price,
-                          expression: "price"
-                        }
-                      ],
-                      staticClass: "pure-number",
-                      attrs: { type: "hidden", name: "amount" },
-                      domProps: { value: _vm.price },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.price = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        type: "hidden",
-                        name: "return",
-                        value: "https://humanitystruth.com/donate"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        type: "hidden",
-                        name: "cancel_return",
-                        value: "https://humanitystruth.com/donate"
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(2)
-                ]
-              )
+          {
+            staticClass:
+              "w3-container w3-light-gray w3-border w3-round-large w3-margin-bottom"
+          },
+          [
+            _c("div", { staticClass: "w3-half w3-padding" }, [
+              _vm._v("Custom Amount:")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "w3-panel" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "w3-button w3-blue w3-border w3-round-large",
-                  on: { click: _vm.onPaypal }
-                },
-                [_vm._v("Donate with Paypal Now")]
-              )
+            _c("div", { staticClass: "w3-half" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.price,
+                    expression: "price"
+                  }
+                ],
+                staticClass: "w3-input w3-center w3-light-gray w3-mobile",
+                attrs: { id: "custom", type: "number" },
+                domProps: { value: _vm.price },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.price = $event.target.value
+                  }
+                }
+              })
             ])
-          ]),
-          _vm._v(" "),
-          _vm._m(3),
-          _vm._v(" "),
-          _vm._m(4)
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "w3-container w3-center w3-margin-bottom" }, [
+        _c(
+          "button",
+          {
+            staticClass:
+              "w3-button w3-red w3-border w3-round-large w3-right w3-mobile",
+            on: { click: _vm.onPaymentModal }
+          },
+          [_vm._v("Proceed to Donation Method")]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "w3-modal w3-round", attrs: { id: "donateMethod" } },
+        [
+          _c("div", { staticClass: "w3-modal-content w3-card-4" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "w3-container w3-padding" },
+              [
+                _c("div", { staticClass: "w3-hide" }, [
+                  _c(
+                    "form",
+                    {
+                      attrs: {
+                        method: "POST",
+                        action: "https://www.paypal.com/cgi-bin/webscr",
+                        role: "form",
+                        id: "paypal_form"
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("input", {
+                          attrs: {
+                            type: "hidden",
+                            name: "cmd",
+                            value: "_donations"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: {
+                            type: "hidden",
+                            name: "business",
+                            value: "admin@humanitystruth.com"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.price,
+                              expression: "price"
+                            }
+                          ],
+                          staticClass: "pure-number",
+                          attrs: { type: "hidden", name: "amount" },
+                          domProps: { value: _vm.price },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.price = $event.target.value
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: {
+                            type: "hidden",
+                            name: "return",
+                            value: "https://humanitystruth.com/donate"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: {
+                            type: "hidden",
+                            name: "cancel_return",
+                            value: "https://humanitystruth.com/donate"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(2)
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "b-card",
+                  { attrs: { "no-body": "" } },
+                  [
+                    _c(
+                      "b-tabs",
+                      { attrs: { pills: "", card: "" } },
+                      [
+                        _c(
+                          "b-tab",
+                          { attrs: { title: "Paypal", active: "" } },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "w3-container w3-padding" },
+                              [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "w3-button w3-blue w3-border w3-round-large",
+                                    on: { click: _vm.onPaypal }
+                                  },
+                                  [_vm._v("Paypal")]
+                                )
+                              ]
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("b-tab", { attrs: { title: "Bitcoin" } }, [
+                          _c(
+                            "div",
+                            { staticClass: "w3-container w3-padding" },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  attrs: {
+                                    title:
+                                      "Bitcoins are a decentralized, anonymous digital currency that aren't subject to regulations."
+                                  }
+                                },
+                                [
+                                  _c("p", [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass:
+                                          "w3-button w3-blue w3-border w3-round-large",
+                                        on: {
+                                          click: function($event) {
+                                            _vm.copy(this)
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "Bitcoin:3ExxAbqo5FsCXWKZ1mPEwRVZNhWpm7Z9tp"
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", [
+                                    _c("img", {
+                                      attrs: {
+                                        id: "barcode_bitcoin",
+                                        src:
+                                          "https://api.qrserver.com/v1/create-qr-code/?data=bitcoin:3ExxAbqo5FsCXWKZ1mPEwRVZNhWpm7Z9tp&size=150x150",
+                                        width: "150",
+                                        height: "150"
+                                      }
+                                    })
+                                  ])
+                                ]
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("b-tab", { attrs: { title: "Monero" } }, [
+                          _c(
+                            "div",
+                            { staticClass: "w3-container w3-padding" },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  attrs: {
+                                    title:
+                                      "Monero is an open-source cryptocurrency that focuses on privacy, decentralisation and scalability."
+                                  }
+                                },
+                                [
+                                  _c("p", [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass:
+                                          "w3-button w3-blue w3-border w3-round-large",
+                                        on: {
+                                          click: function($event) {
+                                            _vm.copy(this)
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "Monero:3ExxAbqo5FsCXWKZ1mPEwRVZNhWpm7Z9tp"
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", [
+                                    _c("img", {
+                                      attrs: {
+                                        id: "barcode_monero",
+                                        src:
+                                          "https://api.qrserver.com/v1/create-qr-code/?data=monero:4847UcYgMvj3EN7CTWYdduHpMHuRhg2EWjKrq47MvrDNczkrDrjPxXUM5FSXhSBg2SV1HKefXdXf52M5xZY4LvLwLb9YA8B&size=150x150",
+                                        width: "150",
+                                        height: "150"
+                                      }
+                                    })
+                                  ])
+                                ]
+                              )
+                            ]
+                          )
+                        ])
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ])
         ]
       )
     ])
@@ -36503,39 +36628,38 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w3-row w3-padding" }, [
-      _c("div", [
-        _c("label", [
-          _c("input", {
-            staticClass: "w3-check w3-margin-right",
-            attrs: { type: "checkbox" }
-          }),
-          _vm._v(
-            "Keep me informed about breaking news in the fight for a free press!"
-          )
-        ])
-      ])
-    ])
+    return _c(
+      "div",
+      { staticClass: "w3-container w3-center w3-margin-bottom" },
+      [
+        _c("label", { attrs: { for: "subscribe" } }, [
+          _vm._v("Subscribe to significant intelligence leaks!")
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "w3-check w3-margin-right",
+          attrs: { id: "subscribe", type: "checkbox" }
+        })
+      ]
+    )
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w3-container" }, [
+    return _c("div", { staticClass: "w3-container w3-teal" }, [
+      _c(
+        "span",
+        {
+          staticClass:
+            "w3-button w3-black w3-display-topright w3-margin-top w3-margin-right",
+          attrs: { onclick: "getObj('donateMethod').style.display='none'" }
+        },
+        [_vm._v("×")]
+      ),
+      _vm._v(" "),
       _c("h2", { staticClass: "w3-center w3-black" }, [
         _c("div", { staticClass: "w3-panel w3-center" }, [
-          _c(
-            "span",
-            {
-              staticClass: "w3-button w3-display-topright",
-              attrs: {
-                onclick:
-                  "document.getElementById('cardorcoinId').style.display='none'"
-              }
-            },
-            [_vm._v("×")]
-          ),
-          _vm._v(" "),
           _c("strong", [_vm._v("Donation Method")])
         ])
       ])
@@ -36550,111 +36674,6 @@ var staticRenderFns = [
         staticClass: "btn btn-info",
         attrs: { type: "submit", value: "Proceed to PayPal" }
       })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w3-container" }, [
-      _c(
-        "div",
-        {
-          staticClass: "w3-col s12 m8 l9 w3-padding w3-panel",
-          staticStyle: { "min-height": "160px" }
-        },
-        [
-          _c(
-            "p",
-            {
-              attrs: {
-                title:
-                  "Bitcoin is a decentralized and anonymous digital currency. Bitcoins are not subject to central regulations and are still gaining value. To learn more about Bitcoin, visit https://bitcoin.org"
-              }
-            },
-            [_c("b", [_vm._v("Bitcoin")])]
-          ),
-          _vm._v(" "),
-          _c(
-            "p",
-            { staticClass: "color-red", staticStyle: { "overflow-y": "auto" } },
-            [_vm._v("1HB5XMLmzFVj8ALj6mfBsbifRoD4miY36v")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "w3-col s12 m4 l3 w3-padding w3-panel" }, [
-        _c("img", {
-          attrs: {
-            id: "barcode_bitcoin",
-            src:
-              "https://api.qrserver.com/v1/create-qr-code/?data=1HB5XMLmzFVj8ALj6mfBsbifRoD4miY36v&size=150x150",
-            alt: "",
-            title: "Bitcoin",
-            width: "150",
-            height: "150"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w3-container" }, [
-      _c("div", { staticClass: "w3-panel w3-section w3-pale-green" }, [
-        _c("p", { staticClass: "section-title" }, [_vm._v("Monero")])
-      ]),
-      _vm._v(" "),
-      _c("div", [
-        _c(
-          "div",
-          {
-            staticClass: "w3-col s12 m8 l9 w3-padding w3-panel",
-            staticStyle: { "min-height": "160px" }
-          },
-          [
-            _c("p", [
-              _c("b", [_vm._v("Moreno")]),
-              _vm._v(
-                " is an open-source cryptocurrency that focuses on privacy, decentralisation and scalability. Unlike many cryptocurrencies that are derivatives of Bitcoin, Monero is based on the CryptoNote protocol and possesses significant algorithmic differences relating to blockchain obfuscation."
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _c("b", [_vm._v("Monero users may choose to donate to us at:")])
-            ]),
-            _vm._v(" "),
-            _c(
-              "p",
-              {
-                staticClass: "color-red",
-                staticStyle: { "overflow-y": "auto" }
-              },
-              [
-                _vm._v(
-                  "47BnvD18P456f4KJUBKPS3Rqa97LrTaeqJ5NFYmjQM6nVoz6TBv4rJ24GZk883BNo22fAKbr8BSuTjhQC6K7DsSJFa8SHDs"
-                )
-              ]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "w3-col s12 m4 l3 w3-padding w3-panel" }, [
-          _c("img", {
-            attrs: {
-              id: "barcode_monero",
-              src:
-                "https://api.qrserver.com/v1/create-qr-code/?data=47BnvD18P456f4KJUBKPS3Rqa97LrTaeqJ5NFYmjQM6nVoz6TBv4rJ24GZk883BNo22fAKbr8BSuTjhQC6K7DsSJFa8SHDs&size=150x150",
-              alt: "",
-              title: "Bitcoin",
-              width: "150",
-              height: "150"
-            }
-          })
-        ])
-      ])
     ])
   }
 ]

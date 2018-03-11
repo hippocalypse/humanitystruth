@@ -1,9 +1,12 @@
 <div class="w3-black w3-center">
     <div class="w3-container">
         <div class="w3-container w3-quarter">
-            <a href="#top" title="Back to Top">
-                <img id="footer-logo" class="w3-container" src="/data/imgs/logos/humanitystruth.png">
-            </a>
+            <div class="w3-col w3-center">
+                <a href="#top" title="Back to Top">
+                    <img id="footer-logo" class="w3-container" src="/data/imgs/logos/humanitystruth.png">
+                </a>
+                <p>{{$vision}}</p>
+            </div>
         </div>
 
         <div class="w3-container w3-quarter">

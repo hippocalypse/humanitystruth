@@ -16,7 +16,7 @@
             <li>mining</li>
         </ul>
         
-        <p>Some examples of the intelligence we gather:
+        <p>Some examples of the suppressed intelligence we gather:
         <ul>
             <li>Zero-Point Energy</li>
             <li>Electro/Magneto Gravitics</li>
@@ -25,6 +25,7 @@
             <li>Crystal/Quasi-Crystalline Technologies</li>
             <li>Exo-politics/news</li>
             <li>Resonance/Harmonic Frequencies</li>
+            <li>Advanced Pharmaceuticals</li>
         </ul>
            
     </div>

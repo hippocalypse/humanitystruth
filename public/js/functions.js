@@ -45,3 +45,10 @@ function error(msg) {
     getObj("notification").style.background = "#ff5050";
     show();
 }
+
+
+function copy(element) {
+  element.select();
+  document.execCommand("Copy");
+  notify("Copied to clipboard");
+}
