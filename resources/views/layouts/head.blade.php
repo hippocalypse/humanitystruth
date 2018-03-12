@@ -1,5 +1,7 @@
 <head>
     <link rel="icon" href="/data/imgs/icons/humanitystruth-favicon.png">
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
     <link type="text/css" rel="stylesheet" href="/css/w3.css">
     <link type="text/css" rel="stylesheet" href="/css/app.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>

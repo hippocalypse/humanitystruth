@@ -5,6 +5,20 @@
  */
 
 require('./bootstrap');
+//import Tabs from 'bootstrap-vue/es/components/tabs/'
+/*Vue.component('my-component', {
+    components: {
+        'b-tab': bModal,
+        'b-tabs': bModal,
+        'b-card': bModal
+    },
+    directives: {
+        'b-tab': bModalDirective,
+         'b-tab': bModalDirective,
+          'b-tab': bModalDirective,
+    }
+    // ...
+})*/
 
 window.Vue = require('vue');
 
@@ -15,6 +29,40 @@ window.Vue = require('vue');
  */
 
 Vue.component('donate-component', require('./components/DonateComponent.vue'));
+
+//waiVue.component('b-tabs', require('./components/btabs.vue'));
+
+// Import the individual components
+import bCard from 'bootstrap-vue/es/components/card/card';
+import bCardHeader from 'bootstrap-vue/es/components/card/card-header';
+import bCardBody from 'bootstrap-vue/es/components/card/card-body';
+import bCardFooter from 'bootstrap-vue/es/components/card/card-footer';
+import bTable from 'bootstrap-vue/es/components/table/table';
+import bTabs from 'bootstrap-vue/es/components/tabs/tabs';
+import bTab from 'bootstrap-vue/es/components/tabs/tab';
+
+// Add components globally:
+Vue.component('b-card', bCard);
+Vue.component('b-card-header', bCardHeader);
+Vue.component('b-card-body', bCardBody);
+Vue.component('b-card-footer', bCardFooter);
+Vue.component('b-table', bTable);
+Vue.component('b-tabs', bTabs);
+Vue.component('b-tab', bTab);
+
+// Or make available to your component or app:
+export default {
+  components: {
+    bCard,
+    bCardHeader,
+    bCardBody,
+    bCardFooter,
+    bTable,
+    bTabs,
+    bTab
+  } 
+  // ...
+}
 
 const app = new Vue({
     el: '#vue_app'

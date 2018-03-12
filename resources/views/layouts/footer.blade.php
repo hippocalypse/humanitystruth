@@ -37,22 +37,22 @@
                 <a target="_blank" href="https://tails.boum.org/">Tails</a> + <a target="_blank" href="https://www.kali.org/">Kali</a><br>
                 <a href="/affiliates">Affiliates</a><br><br>
                 <div class="w3-container w3-row">
-                    <div class="w3-quarter">
+                    <div class="w3-third">
                         <a class="social-icons" href="https://www.facebook.com/" target="_blank" title="HumanitysTruth on Facebook">
                             <img src="/data/imgs/icons/facebook-icon.png" alt="Facebook">
                         </a>
                     </div>
-                    <div class="w3-quarter">
+                    <div class="w3-third">
                         <a class="social-icons" href="https://twitter.com/humanitys_truth" target="_blank" title="HumanitysTruth on Twitter">
                             <img src="/data/imgs/icons/twitter-icon.png" alt="Twitter">
                         </a>
                     </div>
-                    <div class="w3-quarter">
+                    <!--<div class="w3-quarter">
                         <a class="social-icons" href="https://www.youtube.com/channel/UCzaJBtxNxgtv1Yo_rxliO1A" target="_blank" title="HumanitysTruth on YouTube">
                             <img src="/data/imgs/icons/youtube-icon.png" alt="YouTube">
                         </a>
-                    </div>
-                    <div class="w3-quarter">
+                    </div>-->
+                    <div class="w3-third">
                         <a class="social-icons" href="https://www.instagram.com/humanitystruth/" target="_blank" title="HumanitysTruth on Instagram">
                             <img src="/data/imgs/icons/instagram-icon.png" alt="Instagram">
                         </a>	                    
