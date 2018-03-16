@@ -1,14 +1,8 @@
 @extends('layouts.master')
-<?php
-    $vision = "An open-source intelligence community promoting a decentralized economy of abundance for all humanity on earth by exposing suppressed knowledge.";
-?>
 @section('content')
-        <div class="w3-container w3-padding w3-card-4 w3-round-large w3-margin w3-white">
-          <p><strong>UNDER CONSTRUCTION</strong> {{$vision}}</p>
-        </div>
-
+<script> error("Our site is UNDER CONSTRUCTION!");</script>
         <!-- 3 landing page links  -->
-        <div class="w3-container w3-margin-bottom">
+        <div class="w3-container w3-margin">
           	
             <div class="w3-third w3-margin-bottom">
               	<div class="w3-round-large w3-white margin-right-desktop">

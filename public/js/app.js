@@ -1719,20 +1719,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
-var prices = [0, 1000, 500, 250, 100, 50, 25, 10];
-var pay_types = ["once", "Monthly"];
+var prices = [1000, 500, 250, 100, 50, 25, 10];
+var pp_tx_cmd = ["_donations", "_xclick-subscriptions"];
 var _data = {
     price: 0,
-    monthlyMethod: 0,
-    moneyUnit: 0,
-    pay_type: 'once'
-
+    tx_key: 0,
+    tx: "_donations",
+    prices_key: 0,
+    subscribe: ""
 };
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -1740,23 +1735,28 @@ var _data = {
         return _data;
     },
     mounted: function mounted() {
-        this.priceClick(6);
+        this.priceClick(5);
     },
 
     methods: {
         onceClick: function onceClick(event) {
-            this.monthlyMethod = 0;
+            this.tx_key = 0;
+            this.tx = pp_tx_cmd[this.tx_key];
         },
         monthlyClick: function monthlyClick(event) {
-            this.monthlyMethod = 1;
+            this.tx_key = 1;
+            this.tx = pp_tx_cmd[this.tx_key];
+            //TODO WE NEED TO SATISFY PP WEBSCR W SUBSCRIPTION PARAMS
         },
         priceClick: function priceClick(val) {
-            this.moneyUnit = val;
-            this.price = prices[this.moneyUnit];
+            this.prices_key = val;
+            this.price = prices[this.prices_key];
         },
         onPaypal: function onPaypal() {
             if (this.price > 0) {
-                this.pay_type = pay_types[this.monthlyMethod];
+                if ($("#subscribe").checked) {
+                    this.subscribe = "subscribe";
+                }
                 $("#paypal_form").submit();
             }
         }
@@ -41735,9 +41735,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "w3-container w3-center" }, [
     _c("div", { staticClass: "w3-container w3-center" }, [
-      _c("h3", { staticClass: "w3-margin" }, [
-        _vm._v("How much would you like to donate?")
-      ]),
+      _vm._m(0),
       _vm._v(" "),
       _c("div", { staticClass: "w3-container w3-center" }, [
         _c(
@@ -41745,7 +41743,7 @@ var render = function() {
           {
             staticClass:
               "w3-button w3-half w3-margin-bottom w3-padding w3-border w3-round-large",
-            class: [_vm.monthlyMethod ? "w3-white" : "w3-blue", ""],
+            class: [_vm.tx_key ? "w3-white" : "w3-blue", ""],
             on: { click: _vm.onceClick }
           },
           [_vm._v("Once")]
@@ -41756,7 +41754,7 @@ var render = function() {
           {
             staticClass:
               "w3-button w3-half w3-margin-bottom w3-padding w3-border w3-round-large",
-            class: [_vm.monthlyMethod ? "w3-blue" : "w3-white", ""],
+            class: [_vm.tx_key ? "w3-blue" : "w3-white", ""],
             on: { click: _vm.monthlyClick }
           },
           [_vm._v("Monthly")]
@@ -41770,10 +41768,10 @@ var render = function() {
             {
               staticClass:
                 "w3-button w3-border w3-round-large w3-margin-bottom",
-              class: [_vm.moneyUnit == 1 ? "w3-blue" : "w3-white", ""],
+              class: [_vm.prices_key == 0 ? "w3-blue" : "w3-white", ""],
               on: {
                 click: function($event) {
-                  _vm.priceClick(1)
+                  _vm.priceClick(0)
                 }
               }
             },
@@ -41785,10 +41783,10 @@ var render = function() {
             {
               staticClass:
                 "w3-button w3-border w3-round-large w3-margin-bottom",
-              class: [_vm.moneyUnit == 2 ? "w3-blue" : "w3-white", ""],
+              class: [_vm.prices_key == 1 ? "w3-blue" : "w3-white", ""],
               on: {
                 click: function($event) {
-                  _vm.priceClick(2)
+                  _vm.priceClick(1)
                 }
               }
             },
@@ -41800,10 +41798,10 @@ var render = function() {
             {
               staticClass:
                 "w3-button w3-border w3-round-large w3-margin-bottom",
-              class: [_vm.moneyUnit == 3 ? "w3-blue" : "w3-white", ""],
+              class: [_vm.prices_key == 2 ? "w3-blue" : "w3-white", ""],
               on: {
                 click: function($event) {
-                  _vm.priceClick(3)
+                  _vm.priceClick(2)
                 }
               }
             },
@@ -41815,10 +41813,10 @@ var render = function() {
             {
               staticClass:
                 "w3-button w3-border w3-round-large w3-margin-bottom",
-              class: [_vm.moneyUnit == 4 ? "w3-blue" : "w3-white", ""],
+              class: [_vm.prices_key == 3 ? "w3-blue" : "w3-white", ""],
               on: {
                 click: function($event) {
-                  _vm.priceClick(4)
+                  _vm.priceClick(3)
                 }
               }
             },
@@ -41830,10 +41828,10 @@ var render = function() {
             {
               staticClass:
                 "w3-button w3-border w3-round-large w3-margin-bottom",
-              class: [_vm.moneyUnit == 5 ? "w3-blue" : "w3-white", ""],
+              class: [_vm.prices_key == 4 ? "w3-blue" : "w3-white", ""],
               on: {
                 click: function($event) {
-                  _vm.priceClick(5)
+                  _vm.priceClick(4)
                 }
               }
             },
@@ -41845,10 +41843,10 @@ var render = function() {
             {
               staticClass:
                 "w3-button w3-border w3-round-large w3-margin-bottom",
-              class: [_vm.moneyUnit == 6 ? "w3-blue" : "w3-white", ""],
+              class: [_vm.prices_key == 5 ? "w3-blue" : "w3-white", ""],
               on: {
                 click: function($event) {
-                  _vm.priceClick(6)
+                  _vm.priceClick(5)
                 }
               }
             },
@@ -41860,10 +41858,10 @@ var render = function() {
             {
               staticClass:
                 "w3-button w3-border w3-round-large w3-margin-bottom",
-              class: [_vm.moneyUnit == 7 ? "w3-blue" : "w3-white", ""],
+              class: [_vm.prices_key == 6 ? "w3-blue" : "w3-white", ""],
               on: {
                 click: function($event) {
-                  _vm.priceClick(7)
+                  _vm.priceClick(6)
                 }
               }
             },
@@ -41909,10 +41907,10 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(0),
+      _vm._m(1),
       _vm._v(" "),
       _c("div", { staticClass: "w3-container w3-center w3-margin-bottom" }, [
-        _c("strong", [_vm._v("Donation Method")]),
+        _vm._m(2),
         _vm._v(" "),
         _c(
           "div",
@@ -41931,7 +41929,24 @@ var render = function() {
                 },
                 [
                   _c("input", {
-                    attrs: { type: "hidden", name: "cmd", value: "_donations" }
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.tx,
+                        expression: "tx"
+                      }
+                    ],
+                    attrs: { type: "hidden", name: "cmd" },
+                    domProps: { value: _vm.tx },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.tx = $event.target.value
+                      }
+                    }
                   }),
                   _vm._v(" "),
                   _c("input", {
@@ -41951,7 +41966,6 @@ var render = function() {
                         expression: "price"
                       }
                     ],
-                    staticClass: "pure-number",
                     attrs: { type: "hidden", name: "amount" },
                     domProps: { value: _vm.price },
                     on: {
@@ -41960,6 +41974,27 @@ var render = function() {
                           return
                         }
                         _vm.price = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.subscribe,
+                        expression: "subscribe"
+                      }
+                    ],
+                    attrs: { type: "hidden", name: "item_number" },
+                    domProps: { value: _vm.subscribe },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.subscribe = $event.target.value
                       }
                     }
                   }),
@@ -41980,10 +42015,7 @@ var render = function() {
                     }
                   }),
                   _vm._v(" "),
-                  _c("input", {
-                    staticClass: "btn btn-info",
-                    attrs: { type: "submit", value: "Proceed to PayPal" }
-                  })
+                  _c("input", { attrs: { type: "submit" } })
                 ]
               )
             ]),
@@ -42037,7 +42069,12 @@ var render = function() {
                                   "button",
                                   {
                                     staticClass:
-                                      "w3-button w3-red w3-border w3-round-large"
+                                      "w3-button w3-red w3-border w3-round-large",
+                                    staticStyle: {
+                                      "max-width": "100%",
+                                      "overflow-wrap": "break-word",
+                                      "white-space": "normal"
+                                    }
                                   },
                                   [
                                     _vm._v(
@@ -42086,7 +42123,7 @@ var render = function() {
                               {
                                 attrs: {
                                   href:
-                                    "monero:3ExxAbqo5FsCXWKZ1mPEwRVZNhWpm7Z9tp"
+                                    "monero:4847UcYgMvj3EN7CTWYdduHpMHuRhg2EWjKrq47MvrDNczkrDrjPxXUM5FSXhSBg2SV1HKefXdXf52M5xZY4LvLwLb9YA8B"
                                 }
                               },
                               [
@@ -42094,11 +42131,16 @@ var render = function() {
                                   "button",
                                   {
                                     staticClass:
-                                      "w3-button w3-red w3-border w3-round-large"
+                                      "w3-button w3-red w3-border w3-round-large",
+                                    staticStyle: {
+                                      "max-width": "100%",
+                                      "overflow-wrap": "break-word",
+                                      "white-space": "normal"
+                                    }
                                   },
                                   [
                                     _vm._v(
-                                      "Monero:3ExxAbqo5FsCXWKZ1mPEwRVZNhWpm7Z9tp"
+                                      "Monero:4847UcYgMvj3EN7CTWYdduHpMHuRhg2EWjKrq47MvrDNczkrDrjPxXUM5FSXhSBg2SV1HKefXdXf52M5xZY4LvLwLb9YA8B"
                                     )
                                   ]
                                 )
@@ -42137,6 +42179,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("h3", { staticClass: "w3-margin" }, [
+      _c("strong", [_vm._v("How much would you like to donate?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c(
       "div",
       { staticClass: "w3-container w3-center w3-margin-bottom" },
@@ -42151,6 +42201,12 @@ var staticRenderFns = [
         })
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h3", [_c("strong", [_vm._v("Donation Method")])])
   }
 ]
 render._withStripped = true
@@ -53058,20 +53114,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 
 __webpack_require__("./resources/assets/js/bootstrap.js");
-//import Tabs from 'bootstrap-vue/es/components/tabs/'
-/*Vue.component('my-component', {
-    components: {
-        'b-tab': bModal,
-        'b-tabs': bModal,
-        'b-card': bModal
-    },
-    directives: {
-        'b-tab': bModalDirective,
-         'b-tab': bModalDirective,
-          'b-tab': bModalDirective,
-    }
-    // ...
-})*/
 
 window.Vue = __webpack_require__("./node_modules/vue/dist/vue.common.js");
 
@@ -53082,8 +53124,6 @@ window.Vue = __webpack_require__("./node_modules/vue/dist/vue.common.js");
  */
 
 Vue.component('donate-component', __webpack_require__("./resources/assets/js/components/DonateComponent.vue"));
-
-//waiVue.component('b-tabs', require('./components/btabs.vue'));
 
 // Import the individual components
 
@@ -53105,19 +53145,19 @@ Vue.component('b-tab', __WEBPACK_IMPORTED_MODULE_6_bootstrap_vue_es_components_t
 
 // Or make available to your component or app:
 /* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        bCard: __WEBPACK_IMPORTED_MODULE_0_bootstrap_vue_es_components_card_card__["a" /* default */],
-        bCardHeader: __WEBPACK_IMPORTED_MODULE_1_bootstrap_vue_es_components_card_card_header__["a" /* default */],
-        bCardBody: __WEBPACK_IMPORTED_MODULE_2_bootstrap_vue_es_components_card_card_body__["a" /* default */],
-        bCardFooter: __WEBPACK_IMPORTED_MODULE_3_bootstrap_vue_es_components_card_card_footer__["a" /* default */],
-        bTable: __WEBPACK_IMPORTED_MODULE_4_bootstrap_vue_es_components_table_table__["a" /* default */],
-        bTabs: __WEBPACK_IMPORTED_MODULE_5_bootstrap_vue_es_components_tabs_tabs__["a" /* default */],
-        bTab: __WEBPACK_IMPORTED_MODULE_6_bootstrap_vue_es_components_tabs_tab__["a" /* default */]
-        // ...
-    } });
+  components: {
+    bCard: __WEBPACK_IMPORTED_MODULE_0_bootstrap_vue_es_components_card_card__["a" /* default */],
+    bCardHeader: __WEBPACK_IMPORTED_MODULE_1_bootstrap_vue_es_components_card_card_header__["a" /* default */],
+    bCardBody: __WEBPACK_IMPORTED_MODULE_2_bootstrap_vue_es_components_card_card_body__["a" /* default */],
+    bCardFooter: __WEBPACK_IMPORTED_MODULE_3_bootstrap_vue_es_components_card_card_footer__["a" /* default */],
+    bTable: __WEBPACK_IMPORTED_MODULE_4_bootstrap_vue_es_components_table_table__["a" /* default */],
+    bTabs: __WEBPACK_IMPORTED_MODULE_5_bootstrap_vue_es_components_tabs_tabs__["a" /* default */],
+    bTab: __WEBPACK_IMPORTED_MODULE_6_bootstrap_vue_es_components_tabs_tab__["a" /* default */]
+    // ...
+  } });
 
 var app = new Vue({
-    el: '#vue_app'
+  el: '#vue_app'
 });
 
 /***/ }),

@@ -21,6 +21,10 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin-top: 5px;
+}
+
 a:hover {
   text-decoration: underline;
 }
@@ -94,10 +98,6 @@ a:hover {
 #notification {
   z-index: 9;
   position: fixed;
-}
-
-#notification-content > p {
-  height: 8px;
 }
 
 .shake {
@@ -314,18 +314,19 @@ a:hover {
   border: 1px solid #ff5050;
 }
 
-.form-control,
-.form-control-large {
+.ht-form-control,
+.ht-form-control-large {
   max-width: 600px;
   margin: 0 auto;
   display: block;
+  color: inherit;
 }
 
-.form-control-large {
+.ht-form-control-large {
   max-width: 900px;
 }
 
-.form-control input {
+.ht-form-control input {
   width: 100%;
 }
 
@@ -369,7 +370,8 @@ a:hover {
   opacity: 1;
   margin-top: 0px;
   margin-bottom: 0px;
-  padding-bottom: 10px;
+  padding-bottom: 9px;
+  padding-top: 5px;
   color: #fff;
 }
 

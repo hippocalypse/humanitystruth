@@ -1,39 +1,51 @@
 @extends('layouts.master')
 @section('content')
-<div class="w3-container form-control-large">
+<div class="w3-container ht-form-control-large">
     <div class="w3-container w3-padding w3-card-4 w3-round-large w3-margin w3-white">
-            <h2>Donate to HumanitysTruth</h2>
-            <p>HumanitysTruth is entirely supported by the general public.</p>
-            <div class="w3-container w3-padding w3-row">
-                <div class="w3-half w3-mobile">
-                    <p>Your donations pay for:</p>
-                    <ul>
-                        <li>Investigative research and development</li>
-                        <li>Servers and bandwidth</li>
-                        <li>Protective infrastructure</li>
-                        <li>Promoting the exposure of suppressed knowledge</li>
-                        <li>...</li>
-                    </ul>
-                </div>
+        <div class="w3-container w3-padding w3-margin">
+            <h3 class="w3-center"><strong>HumanitysTruth</strong> is entirely supported by the <strong>general public</strong>. Here's how we spend our funding:</h3>
+        </div>
+        <div id="donations_pay_for" class="w3-half" style="max-height: 250px;margin-bottom:32px!important"></div>
+        <script>
+            Morris.Donut({
+                element: 'donations_pay_for',
+                data: [
+                  {value: 15, label: 'Servers/Bandwidth'},
+                  {value: 20, label: 'Infrastructure'},
+                  {value: 10, label: 'Security'},
+                  {value: 10, label: 'Advancing R&D'},
+                  {value: 40, label: 'Promoting Leaks'},
+                  {value: 5, label: 'Community Donations'}
+                ],
+                labels: ['test'],
+                formatter: function (x) { return x + "%"}
+            }).on('click', function(i, row){
+                console.log(i, row);
+            });
+        </script>
 
-                <div class="w3-half w3-mobile">
-                    <p>Here's some affiliates we support monthly:</p>
-                    <ul>
-                        <li>securedrop.org</li>
-                        <li>wikileaks.org</li>
-                        <li>siriusdisclosure.com</li>
-                        <li>youtube.com/secureteam10</li>
-                        <li>...</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Donation payment -->
-            <div id="vue_app">
-                @csrf
-                <donate-component></donate-component>
-            </div>
-            <script src="/js/app.js" type="text/javascript"></script>
+        <div id="supported_affiliates" class="w3-half" style="max-height: 250px;margin-bottom:32px!important"></div>
+        <script>
+            Morris.Donut({
+                element: 'supported_affiliates',
+                data: [
+                  {value: 25, label: 'freedom.press'},
+                  {value: 7, label: 'securedrop.org'},
+                  {value: 5, label: 'wikileaks.org'},
+                  {value: 6, label: 'siriusdisclosure.com'},
+                  {value: 5, label: 'youtube.com/secureteam10'}
+                ],
+                formatter: function (x) { return "$" + x + "/mo"}
+            }).on('click', function(i, row){
+                console.log(i, row);
+            });
+        </script>
+        
+        <!-- Donation payment -->
+        <div id="vue_app">
+            <donate-component></donate-component>
+        </div>
+        <script src="/js/app.js" type="text/javascript"></script>
     </div>
 </div>
 @stop

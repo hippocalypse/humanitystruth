@@ -13,7 +13,5 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
     .js('resources/assets/js/bootstrap.js', 'public/js')
-    //.sass('bootstrap/dist/css/bootstrap.css', 'public/css')
-    //.sass('bootstrap-vue/dist/bootstrap-vue.css', 'public/css')
     .sass('resources/assets/sass/app.scss', 'public/css')
     .version();

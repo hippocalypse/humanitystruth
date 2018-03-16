@@ -5,20 +5,6 @@
  */
 
 require('./bootstrap');
-//import Tabs from 'bootstrap-vue/es/components/tabs/'
-/*Vue.component('my-component', {
-    components: {
-        'b-tab': bModal,
-        'b-tabs': bModal,
-        'b-card': bModal
-    },
-    directives: {
-        'b-tab': bModalDirective,
-         'b-tab': bModalDirective,
-          'b-tab': bModalDirective,
-    }
-    // ...
-})*/
 
 window.Vue = require('vue');
 
@@ -29,8 +15,6 @@ window.Vue = require('vue');
  */
 
 Vue.component('donate-component', require('./components/DonateComponent.vue'));
-
-//waiVue.component('b-tabs', require('./components/btabs.vue'));
 
 // Import the individual components
 import bCard from 'bootstrap-vue/es/components/card/card';

@@ -40,20 +40,16 @@ Route::group(['prefix' => 'admins'], function () {
     Route::get('affiliates/remove/{id}', 'AdminController@affiliatesRemove');
 });
 
-
-/* Dev-Team 
-Route::get('dev-team', 'Modules/Developers/Http/Controllers/DevelopersController@index');*/
-
-
-
 /* Affiliates */
 Route::get('affiliates', function() {
-    $affiliates = Affiliate::all();
+    $affiliates = \App\Affiliate::all();
     return view('affiliates', compact("affiliates"));   
 });
 
+/* Sitemap */
 Route::get('site-map', function () {
-    return view('sitemap');
+    $routes = Route::getRoutes();
+    return view('sitemap', compact("routes"));
 });
 
 Route::get('contact', function () {
