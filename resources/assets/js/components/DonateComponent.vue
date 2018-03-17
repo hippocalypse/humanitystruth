@@ -34,14 +34,29 @@
 
                 <div class="w3-container w3-padding">
                     <div class="w3-hide">
-                        <form method="POST" action="https://www.paypal.com/cgi-bin/webscr" role="form" id="paypal_form">
-                                <input type="hidden" name="cmd" v-model="tx">
+                        <form method="POST" action="https://www.paypal.com/cgi-bin/webscr" id="donate_form">
+                                <input type="hidden" name="cmd" value="_donations">
                                 <input type="hidden" name="business" value="admin@humanitystruth.com">
                                 <input type="hidden" name="amount" v-model="price">
                                 <input type="hidden" name="item_number" v-model="subscribe">
                                 <input type="hidden" name="return" value="https://humanitystruth.com/donate">
                                 <input type="hidden" name="cancel_return" value="https://humanitystruth.com/donate">
                                 <input type="submit">
+                        </form>
+                        <form method="POST" action="https://www.paypal.com/cgi-bin/webscr" id="monthly_donate_form">
+                            <input type="hidden" name="cmd" value="_xclick-subscriptions">
+                            <input type="hidden" name="business" value="admin@humanitystruth.com">
+                            <!-- Set the terms of the regular subscription. -->
+                            <input type="hidden" name="currency_code" value="USD">
+                            <input type="hidden" name="a3" v-model="price">
+                            <input type="hidden" name="p3" value="1">
+                            <input type="hidden" name="t3" value="M">
+                            <input type="hidden" name="item_name" value="Monthly Donation to HumanitysTruth">
+                            <input type="hidden" name="item_number" v-model="subscribe">
+                            <!-- Set recurring payments until canceled. -->
+                            <input type="hidden" name="src" value="1">
+                            <input type="hidden" name="return" value="https://humanitystruth.com/donate">
+                            <input type="hidden" name="cancel_return" value="https://humanitystruth.com/donate">
                         </form>
                     </div>
 
@@ -81,11 +96,9 @@
 
 <script>
     let prices = [1000,500,250,100,50,25,10];
-    let pp_tx_cmd = [ "_donations" , "_xclick-subscriptions" ];
     let data = {
         price: 0,
         tx_key: 0,
-        tx: "_donations",
         prices_key: 0,
         subscribe: ""
     };
@@ -101,12 +114,9 @@
         methods: {
             onceClick: function (event) {
                 this.tx_key = 0;
-                this.tx = pp_tx_cmd[this.tx_key];
             },
             monthlyClick: function (event) {
                 this.tx_key = 1;
-                this.tx = pp_tx_cmd[this.tx_key];
-                //TODO WE NEED TO SATISFY PP WEBSCR W SUBSCRIPTION PARAMS
             },
             priceClick: function (val) {
                 this.prices_key = val;
@@ -117,7 +127,11 @@
                     if($("#subscribe").checked) {
                         this.subscribe = "subscribe";
                     }
-                    $("#paypal_form").submit();
+
+                    
+                    if(this.tx_key == 0) $("#donate_form").submit();
+                    if(this.tx_key == 1) $("#monthly_donate_form").submit();
+                    //
                 }
             }
         }

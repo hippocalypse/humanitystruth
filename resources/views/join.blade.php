@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<div class="w3-container w3-padding w3-card-4 w3-round-large w3-margin w3-white">
+<div class="w3-container w3-padding w3-card-4 w3-round w3-margin w3-white">
     <strong>UNDER CONSTRUCTION</strong>
     <div>
         <p>Mainstream education has lied to all of us. You feel it in your core, but why? If we as a species are to overcome this systemic tyranny, we must understand it. In fact, it's this very ignorance that plagues humanity.</p>

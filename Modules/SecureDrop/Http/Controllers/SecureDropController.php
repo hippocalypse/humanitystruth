@@ -17,13 +17,9 @@ class SecureDropController extends Controller
         return view('securedrop::index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     * @return Response
-     */
-    public function create()
+    public function help()
     {
-        return view('securedrop::create');
+        return view('securedrop::help');
     }
 
     /**
@@ -33,24 +29,12 @@ class SecureDropController extends Controller
      */
     public function store(Request $request)
     {
+        //todo securedrop implementation
     }
 
-    /**
-     * Show the specified resource.
-     * @return Response
-     */
-    public function show()
+    public function success()
     {
-        return view('securedrop::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @return Response
-     */
-    public function edit()
-    {
-        return view('securedrop::edit');
+        return view('securedrop::success');
     }
 
     /**

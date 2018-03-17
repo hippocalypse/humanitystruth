@@ -22,11 +22,11 @@
         <div class="w3-container w3-quarter">
             <div class="w3-col w3-center">
                 <strong class="w3-container">Site Links</strong><br>
-                <a href="/dev-team">Developers</a><br>
-                <a href="/secure-drop">Secure-Drop</a><br>
+                <a href="/developers">Developers</a><br>
+                <a href="/securedrop">Secure-Drop</a><br>
                 <a href="/ethics-policy">Ethics-Policy</a><br>
                 <a href="/contact">Contact Us</a><br>
-                <a href="/site-map">Site-Map</a>
+                <a href="/sitemap">Site-Map</a>
             </div>
         </div>
 
@@ -37,22 +37,22 @@
                 <a target="_blank" href="https://tails.boum.org/">Tails</a> + <a target="_blank" href="https://www.kali.org/">Kali</a><br>
                 <a href="/affiliates">Affiliates</a><br><br>
                 <div class="w3-container w3-row">
-                    <div class="w3-third">
+                    <div class="w3-quarter">
                         <a class="social-icons" href="https://www.facebook.com/" target="_blank" title="HumanitysTruth on Facebook">
                             <img src="/data/imgs/icons/facebook-icon.png" alt="Facebook">
                         </a>
                     </div>
-                    <div class="w3-third">
+                    <div class="w3-quarter">
                         <a class="social-icons" href="https://twitter.com/humanitys_truth" target="_blank" title="HumanitysTruth on Twitter">
                             <img src="/data/imgs/icons/twitter-icon.png" alt="Twitter">
                         </a>
                     </div>
-                    <!--<div class="w3-quarter">
+                    <div class="w3-quarter">
                         <a class="social-icons" href="https://www.youtube.com/channel/UCzaJBtxNxgtv1Yo_rxliO1A" target="_blank" title="HumanitysTruth on YouTube">
                             <img src="/data/imgs/icons/youtube-icon.png" alt="YouTube">
                         </a>
-                    </div>-->
-                    <div class="w3-third">
+                    </div>
+                    <div class="w3-quarter">
                         <a class="social-icons" href="https://www.instagram.com/humanitystruth/" target="_blank" title="HumanitysTruth on Instagram">
                             <img src="/data/imgs/icons/instagram-icon.png" alt="Instagram">
                         </a>	                    

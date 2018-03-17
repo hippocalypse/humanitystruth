@@ -5,6 +5,7 @@ namespace Modules\Investigations\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use \App\Investigation;
 
 class InvestigationsController extends Controller
 {
@@ -42,7 +43,7 @@ class InvestigationsController extends Controller
      */
     public function show(Investigation $investigation)
     {
-        return view('investigations.show', compact("investigation"));
+        return view('investigations::show', compact("investigation"));
     }
 
     /**

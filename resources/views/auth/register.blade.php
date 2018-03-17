@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="ht-form-control">
-    <div class="w3-container w3-padding w3-card-4 w3-round-large w3-margin w3-white">
+    <div class="w3-container w3-padding w3-card-4 w3-round w3-margin w3-white">
         <form method="POST" action="{{ route('register') }}">
             @csrf
             <div class="w3-container"><h2 class="w3-center w3-black"><strong>Registration Form</strong></h2></div>

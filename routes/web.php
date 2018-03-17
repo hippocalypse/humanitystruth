@@ -18,27 +18,10 @@ Route::get('verifyemail/{token}', 'Auth\RegisterController@verify');
 
 Route::get('/', function () { return view('index'); })->name('home');
 
-/* Investigations */
-Route::get('investigations', 'InvestigationController@index');
-Route::get('investigations/{investigation}', 'InvestigationController@show');
-Route::get('investigations/new', 'InvestigationController@create');
-
-/* Files */
-Route::get('files', 'FileController@index');
-Route::get('files/{file}', 'FileController@show');
-Route::get('files/new', 'FileController@create');
 
 /* Client-side*/
 Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
-
-/* Backend */
-Route::group(['prefix' => 'admins'], function () {
-    Route::get('/', 'AdminController@index')->name('admins');
-    Route::get('affiliates', 'AdminController@affiliatesView')->name('admin.affiliatesView');
-    Route::post('affiliates', 'AdminController@affiliatesSave')->name('admin.affiliatesSave');
-    Route::get('affiliates/remove/{id}', 'AdminController@affiliatesRemove');
-});
 
 /* Affiliates */
 Route::get('affiliates', function() {
@@ -47,7 +30,7 @@ Route::get('affiliates', function() {
 });
 
 /* Sitemap */
-Route::get('site-map', function () {
+Route::get('sitemap', function () {
     $routes = Route::getRoutes();
     return view('sitemap', compact("routes"));
 });

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <div class="w3-container ht-form-control-large">
-    <div class="w3-container w3-padding w3-card-4 w3-round-large w3-margin w3-white">
+    <div class="w3-container w3-padding w3-card-4 w3-round w3-margin w3-white">
         <div class="w3-container w3-padding w3-margin">
             <h3 class="w3-center"><strong>HumanitysTruth</strong> is entirely supported by the <strong>general public</strong>. Here's how we spend our funding:</h3>
         </div>
@@ -32,7 +32,8 @@
                   {value: 25, label: 'freedom.press'},
                   {value: 7, label: 'securedrop.org'},
                   {value: 5, label: 'wikileaks.org'},
-                  {value: 6, label: 'siriusdisclosure.com'},
+                  {value: 5, label: 'torproject.org'},
+                  {value: 20, label: 'siriusdisclosure.com'},
                   {value: 5, label: 'youtube.com/secureteam10'}
                 ],
                 formatter: function (x) { return "$" + x + "/mo"}

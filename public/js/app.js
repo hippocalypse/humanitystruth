@@ -1719,13 +1719,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 var prices = [1000, 500, 250, 100, 50, 25, 10];
-var pp_tx_cmd = ["_donations", "_xclick-subscriptions"];
 var _data = {
     price: 0,
     tx_key: 0,
-    tx: "_donations",
     prices_key: 0,
     subscribe: ""
 };
@@ -1741,12 +1754,9 @@ var _data = {
     methods: {
         onceClick: function onceClick(event) {
             this.tx_key = 0;
-            this.tx = pp_tx_cmd[this.tx_key];
         },
         monthlyClick: function monthlyClick(event) {
             this.tx_key = 1;
-            this.tx = pp_tx_cmd[this.tx_key];
-            //TODO WE NEED TO SATISFY PP WEBSCR W SUBSCRIPTION PARAMS
         },
         priceClick: function priceClick(val) {
             this.prices_key = val;
@@ -1757,7 +1767,10 @@ var _data = {
                 if ($("#subscribe").checked) {
                     this.subscribe = "subscribe";
                 }
-                $("#paypal_form").submit();
+
+                if (this.tx_key == 0) $("#donate_form").submit();
+                if (this.tx_key == 1) $("#monthly_donate_form").submit();
+                //
             }
         }
     }
@@ -41923,30 +41936,12 @@ var render = function() {
                   attrs: {
                     method: "POST",
                     action: "https://www.paypal.com/cgi-bin/webscr",
-                    role: "form",
-                    id: "paypal_form"
+                    id: "donate_form"
                   }
                 },
                 [
                   _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.tx,
-                        expression: "tx"
-                      }
-                    ],
-                    attrs: { type: "hidden", name: "cmd" },
-                    domProps: { value: _vm.tx },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.tx = $event.target.value
-                      }
-                    }
+                    attrs: { type: "hidden", name: "cmd", value: "_donations" }
                   }),
                   _vm._v(" "),
                   _c("input", {
@@ -42016,6 +42011,120 @@ var render = function() {
                   }),
                   _vm._v(" "),
                   _c("input", { attrs: { type: "submit" } })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "form",
+                {
+                  attrs: {
+                    method: "POST",
+                    action: "https://www.paypal.com/cgi-bin/webscr",
+                    id: "monthly_donate_form"
+                  }
+                },
+                [
+                  _c("input", {
+                    attrs: {
+                      type: "hidden",
+                      name: "cmd",
+                      value: "_xclick-subscriptions"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: {
+                      type: "hidden",
+                      name: "business",
+                      value: "admin@humanitystruth.com"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: {
+                      type: "hidden",
+                      name: "currency_code",
+                      value: "USD"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.price,
+                        expression: "price"
+                      }
+                    ],
+                    attrs: { type: "hidden", name: "a3" },
+                    domProps: { value: _vm.price },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.price = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "p3", value: "1" }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "t3", value: "M" }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: {
+                      type: "hidden",
+                      name: "item_name",
+                      value: "Monthly Donation to HumanitysTruth"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.subscribe,
+                        expression: "subscribe"
+                      }
+                    ],
+                    attrs: { type: "hidden", name: "item_number" },
+                    domProps: { value: _vm.subscribe },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.subscribe = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "src", value: "1" }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: {
+                      type: "hidden",
+                      name: "return",
+                      value: "https://humanitystruth.com/donate"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: {
+                      type: "hidden",
+                      name: "cancel_return",
+                      value: "https://humanitystruth.com/donate"
+                    }
+                  })
                 ]
               )
             ]),

@@ -26,7 +26,7 @@ class Recaptcha implements Rule
     public final function passes($attribute, $value)
     {
         $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".env('RECAPTCHA_SECRET')."&response=".$value."&remoteip=".request()->ip());
-        return json_decode($response,true)['success']; //json_decode($response,true)->success;
+        return json_decode($response,true)->success; //json_decode($response,true)['success'];
     }
 
     /**

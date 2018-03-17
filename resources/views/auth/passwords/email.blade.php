@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="ht-form-control">
-    <div class="w3-container w3-padding w3-card-4 w3-round-large w3-margin w3-white ht-form-control">
+    <div class="w3-container w3-padding w3-card-4 w3-round w3-margin w3-white ht-form-control">
         <form method="POST" action="{{ route('password.email') }}">
             @csrf
             <div class="w3-container w3-padding">
