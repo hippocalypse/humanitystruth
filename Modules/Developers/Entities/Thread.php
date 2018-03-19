@@ -2,8 +2,8 @@
 
 namespace Modules\Developers\Entities;
 
-use App\Events\ThreadReceivedNewReply;
-use App\Filters\ThreadFilters;
+use Modules\Developers\Events\ThreadReceivedNewReply;
+use Modules\Developers\Filters\ThreadFilters;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;

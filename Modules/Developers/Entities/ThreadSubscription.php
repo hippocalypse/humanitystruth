@@ -2,7 +2,7 @@
 
 namespace Modules\Developers\Entities;
 
-use App\Notifications\ThreadWasUpdated;
+use Modules\Developers\Notifications\ThreadWasUpdated;
 use Illuminate\Database\Eloquent\Model;
 
 class ThreadSubscription extends Model

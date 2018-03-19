@@ -19,11 +19,12 @@ class TorDetectMiddleware
     {
         try {
             $instance = TorDetect\TorDetect::getInstance();
-            if(!$instance->isTorActive()) return redirect()->route('securedrop.help');
-            
+            if(!$instance->isTorActive()) {
+                return redirect()->route('securedrop.help')->with('error', 'SecureDrop is only accessible via Tor');
+            }
+            //passthru
         } catch (\Exception $e) {
-            Session::flash('error', $e->getMessage());
-            return redirect()->route('securedrop.help');
+            return redirect()->route('securedrop.help')->with('error', 'SecureDrop is only accessible via Tor');
         }
         return $next($request);
     }

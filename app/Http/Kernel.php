@@ -54,7 +54,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'admins' => \App\Http\Middleware\Admin::class,
+        'admins' => \App\Http\Middleware\Administrator::class,
+        'tor.check' => \Modules\SecureDrop\Http\Middleware\TorDetectMiddleware::class,
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,

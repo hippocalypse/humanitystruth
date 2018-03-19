@@ -9,7 +9,7 @@
 #footer-logo {width: 250px}
 body {background-color: grey}
 a{text-decoration: none}
-p{margin-top: 5px}
+p{vertical-align: center}
 a:hover{text-decoration: underline}
 .social-icons {margin: 10px 10px 10px 0px;text-decoration: none}
 
@@ -53,10 +53,6 @@ a:hover{text-decoration: underline}
     #banner-logo {
         content:url(/data/imgs/logos/humanitystruth.png);
         height: 300px;
-    }
-    
-    #footer {
-        max-width: 1024px;
     }
 }
 

@@ -19,7 +19,7 @@ class SecureDropController extends Controller
 
     public function help()
     {
-        return view('securedrop::help');
+        return view('contact');
     }
 
     /**

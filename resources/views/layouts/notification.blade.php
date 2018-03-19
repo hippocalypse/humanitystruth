@@ -9,7 +9,7 @@
     @if($errors->all()) //load and show previous pages notification
         error('@foreach($errors->all() as $error)<p>{{$error}}</p>@endforeach');
     @elseif(session('error')) //errors
-        error('<p>{{session("notify")}}</p>');
+        error('<p>{{session("error")}}</p>');
     @elseif(session('notify')) //successes
         notify('<p>{{session("notify")}}</p>');
     @elseif(session('status')) //successes from laravel

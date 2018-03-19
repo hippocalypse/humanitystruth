@@ -16,7 +16,8 @@ class CreateExcerptsTable extends Migration
         Schema::create('excerpts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('author');
-            $table->string('content');
+            $table->string('content')->unique();
+            $table->timestamps();
         });
     }
 

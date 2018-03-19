@@ -22,7 +22,7 @@ a {
 }
 
 p {
-  margin-top: 5px;
+  vertical-align: center;
 }
 
 a:hover {
@@ -86,10 +86,6 @@ a:hover {
   #banner-logo {
     content: url(/data/imgs/logos/humanitystruth.png);
     height: 300px;
-  }
-
-  #footer {
-    max-width: 1024px;
   }
 }
 

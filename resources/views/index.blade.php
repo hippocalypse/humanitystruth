@@ -2,10 +2,10 @@
 @section('content')
 <script> error("SITE UNDER CONSTRUCTION!");</script>
         <!-- 3 landing page links  -->
-        <div class="w3-container w3-margin">
+        <div class="w3-margin">
           	
-            <div class="w3-third w3-margin-bottom">
-              	<div class="w3-round w3-white margin-right-desktop">
+            <div class="w3-container w3-half w3-margin-bottom">
+              	<div class="w3-round w3-white">
                     <a href="/join">
                         <img src="/data/imgs/join_link.jpg" class="w3-image w3-round">
                     </a>
@@ -14,8 +14,8 @@
                     </div>
             	</div>
             </div>
-          
-            <div class="w3-third w3-margin-bottom">
+            
+            <div class="w3-container w3-half w3-margin-bottom">
               	<div class="w3-round w3-white">
                     <a href="/securedrop">
                         <img src="/data/imgs/secure-drop_link.jpg" class="w3-image w3-round">
@@ -25,8 +25,9 @@
                     </div>
               	</div>
             </div>
-			<div class="w3-third w3-margin-bottom">
-            	<div class="w3-round w3-white margin-left-desktop">
+            
+            <div class="w3-container w3-margin-bottom">
+            	<div class="w3-round w3-white">
                     <a href="/investigations">
                         <img src="/data/imgs/search_link.jpg" class="w3-image w3-round">
                     </a>
@@ -37,4 +38,4 @@
             </div>
         </div>
         
-@endsection
+@stop

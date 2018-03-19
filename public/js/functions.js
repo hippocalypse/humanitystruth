@@ -48,7 +48,7 @@ function error(msg) {
 
 
 function copy(element) {
-  element.select();
-  document.execCommand("Copy");
-  notify("Copied to clipboard");
+    element.select();
+    document.execCommand("Copy");
+    notify("Copied to clipboard");
 }

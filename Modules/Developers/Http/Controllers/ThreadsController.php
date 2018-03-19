@@ -35,7 +35,7 @@ class ThreadsController extends Controller
             return $threads;
         }
 
-        return view('threads.index', [
+        return view('developers::threads.index', [
             'threads' => $threads,
             'trending' => $trending->get()
         ]);
@@ -48,7 +48,7 @@ class ThreadsController extends Controller
      */
     public function create()
     {
-        return view('threads.create');
+        return view('developers::threads.create');
     }
 
     /**
@@ -78,7 +78,7 @@ class ThreadsController extends Controller
         }
 
         return redirect($thread->path())
-            ->with('flash', 'Your thread has been published!');
+            ->with('notify', 'Your thread has been published!');
     }
 
     /**
@@ -99,7 +99,7 @@ class ThreadsController extends Controller
 
         $thread->increment('visits');
 
-        return view('threads.show', compact('thread'));
+        return view('developers::threads.show', compact('thread'));
     }
 
     /**

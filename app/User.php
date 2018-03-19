@@ -29,15 +29,6 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'confirmed' => 'boolean'
-    ];
-
-    /**
      * Get the route key name for Laravel.
      *
      * @return string
@@ -78,13 +69,15 @@ class User extends Authenticatable
     }
 
     /**
-     * Mark the user's account as confirmed.
+     * Mark the user's account as email confirmed.
      */
-    public function confirm()
+    public function confirmEmail()
     {
-        $this->confirmed = true;
-        $this->confirmation_token = null;
-
+        if($this->role == "phone_verified") {
+            $this->role = "both_verified";
+        } else {
+            $this->role = "email_verified";
+        }
         $this->save();
     }
 
@@ -95,7 +88,27 @@ class User extends Authenticatable
      */
     public function isAdmin()
     {
-        return in_array($this->name, ['JohnDoe', 'JaneDoe']);
+        return $this->role == "admin" || $this->role == "super_admin";
+    }
+    
+    /**
+     * Determine if the user is an moderator.
+     *
+     * @return bool
+     */
+    public function isModerator()
+    {
+        return $this->role == "moderator";
+    }
+    
+    /**
+     * Determine if the user has a verified account.
+     *
+     * @return bool
+     */
+    public function hasVerified()
+    {
+        return $this->role != "closed" && $this->role != "inactive";
     }
 
     /**
@@ -119,7 +132,7 @@ class User extends Authenticatable
      */
     public function getAvatarPathAttribute($avatar)
     {
-        return asset($avatar ?: 'images/avatars/default.png');
+        return asset($avatar ?: 'data/imgs/avatars/default.png');
     }
 
     /**

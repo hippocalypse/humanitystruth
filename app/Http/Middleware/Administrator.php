@@ -3,8 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Auth;
-class Admin
+
+class Administrator
 {
     /**
      * Handle an incoming request.
@@ -15,10 +15,10 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::User() == null) return redirect()->route('login');
-        
-        if(Auth::User()->role != 'admin' && Auth::User()->role != 'super_admin') return redirect()->route('home');
-        
-        return $next($request);
+        if (auth()->check() && auth()->user()->isAdmin()) {
+            return $next($request);
+        }
+
+        abort(403, 'You do not have permission to perform this action.');
     }
 }

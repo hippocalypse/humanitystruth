@@ -11,12 +11,10 @@
 |
 */
 
-
-
 Auth::routes();
 Route::get('verifyemail/{token}', 'Auth\RegisterController@verify');
 
-Route::get('/', function () { return view('index'); })->name('home');
+Route::get('/', function () {return view('index');})->name('home');
 
 
 /* Client-side*/
