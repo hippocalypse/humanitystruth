@@ -1,4 +1,4 @@
-/* standard styles */
+/* standard styles.. FIRST, style for mobile phones: */
 
 @font-face {
   font-family: logoFont;
@@ -34,7 +34,10 @@ a:hover {
   text-decoration: none;
 }
 
-/* FIRST, style for mobile phones: */
+.ht-affiliates {
+  max-width: 150px;
+  max-height: 130px;
+}
 
 #banner {
   content: url(/data/imgs/humanitystruth_business_card+bleed.png);

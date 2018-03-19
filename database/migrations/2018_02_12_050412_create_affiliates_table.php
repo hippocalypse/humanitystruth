@@ -15,10 +15,9 @@ class CreateAffiliatesTable extends Migration
     {
         Schema::create('affiliates', function (Blueprint $table) {
             $table->increments('id');
-        	$table->string('name')->unique();
-        	$table->string('logo')->unique();
-        	$table->string('website')->unique();
-        	$table->integer('account_id')->nullable();
+            $table->string('logo')->unique();
+            $table->string('website')->unique();
+            $table->integer('account_id')->nullable();
         });
     }
 

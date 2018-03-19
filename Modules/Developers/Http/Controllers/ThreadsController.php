@@ -137,7 +137,7 @@ class ThreadsController extends Controller
             return response([], 204);
         }
 
-        return redirect('/threads');
+        return redirect('developers::threads');
     }
 
     /**

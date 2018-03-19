@@ -1,10 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
-    <div class="container">
+<div class="w3-margin">
+    <div class="w3-container w3-round w3-white w3-margin-bottom w3-padding">
         <div class="row">
             <div class="col-md-8">
-                @include ('threads._list')
+                @include ('developers::threads._list')
 
                 {{ $threads->render() }}
             </div>
@@ -50,4 +51,5 @@
             </div>
         </div>
     </div>
-@endsection
+</div>
+@stop

@@ -3,7 +3,7 @@
 
 // Bootstrap @import '~bootstrap/scss/bootstrap';
 
-/* standard styles */
+/* standard styles.. FIRST, style for mobile phones: */
 @font-face {font-family: logoFont;src: url(/data/fonts/prcb.ttf)}
 #login-button:hover {text-decoration: underline}
 #footer-logo {width: 250px}
@@ -12,9 +12,7 @@ a{text-decoration: none}
 p{vertical-align: center}
 a:hover{text-decoration: underline}
 .social-icons {margin: 10px 10px 10px 0px;text-decoration: none}
-
-
-/* FIRST, style for mobile phones: */
+.ht-affiliates {max-width: 150px; max-height: 130px}
 #banner {content:url(/data/imgs/humanitystruth_business_card+bleed.png);width: 100%;height: auto}
 .w3-bar-item{padding:2px 16px; max-height: 28px}
 
