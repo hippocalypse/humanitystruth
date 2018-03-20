@@ -73,11 +73,18 @@ class User extends Authenticatable
      */
     public function confirmEmail()
     {
-        if($this->role == "phone_verified") {
-            $this->role = "both_verified";
-        } else {
-            $this->role = "email_verified";
-        }
+        if($this->role == "phone_verified") $this->role = "both_verified";
+        else $this->role = "email_verified";
+        $this->save();
+    }
+    
+    /**
+     * Mark the user's account as email confirmed.
+     */
+    public function confirmPhone()
+    {
+        if($this->role == "email_verified") $this->role = "both_verified";
+        else $this->role = "phone_verified";
         $this->save();
     }
 
@@ -122,6 +129,17 @@ class User extends Authenticatable
             $this->visitedThreadCacheKey($thread),
             Carbon::now()
         );
+    }
+    
+    /**
+     * Get the path to the user's profile.
+     *
+     * @param  string $avatar
+     * @return string
+     */
+    public function getProfileLink()
+    {
+        return "<a href='/profiles/" . $this->alias . "'>".$this->alias."</a>";
     }
 
     /**

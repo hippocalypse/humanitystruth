@@ -18,9 +18,9 @@
                 <p>The following is the address of our secure site where you can anonymously upload your documents to our editors.</p>
 
                 <div class="alert alert-info">
-                    <div><a href="https://wlupld3ptjvsgwqw.onion"><b>https://wlupld3ptjvsgwqw.onion</b></a></div><br>
+                    <div><a href="https://wlupld3ptjvsgwqw.onion" target="_blank"><b>https://wlupld3ptjvsgwqw.onion</b></a></div><br>
                     <div>
-                        Copy this address into your <a href="https://torproject.org/"><b>Tor Browser</b></a>. We highly recommend further increasing your encryption layer by using our <a href="#"><b>Public PGP Key</b></a>.
+                        Copy this address into your <a href="https://torproject.org/" target="_blank"><b>Tor Browser</b></a>. We highly recommend further increasing your encryption layer by using our <a href="#"><b>Public PGP Key</b></a>.
                     </div>
                 </div>
             </b-tab>
@@ -33,13 +33,13 @@
                             Make sure you're always connecting using (https://) a secure socket layer.
                         </li>
                         <li>
-                            Download the <a href="https://torproject.org/"><b>Tor Browser</b></a> and tunnel your connection.
+                            Download the <a href="https://torproject.org/" target="_blank"><b>Tor Browser</b></a> and tunnel your connection.
                         </li>
                         <li>
                             Further encrypt all sensitive data using our <a href="#"><b>Public PGP Key</b><a>.
                         </li>
                         <li>
-                            Download the <a href="https://tails.boum.org/"><b>Tails OS</b></a> to remain anonymous at the hardware level.
+                            Download the <a href="https://tails.boum.org/" target="_blank"><b>Tails OS</b></a> to remain anonymous at the hardware level.
                         </li>
                         <li class="alert alert-info w3-margin-top">
                             Make sure the information you've got is suppressed and worth publishing. Some examples of the types suppressed intelligence we will push:

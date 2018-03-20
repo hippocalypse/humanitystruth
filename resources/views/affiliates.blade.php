@@ -5,17 +5,11 @@
     <div class="w3-container w3-padding w3-row w3-mobile">
 
         @foreach($affiliates as $affiliate)
-                    <a class="w3-centered w3-padding-large" href="{{$affiliate->website}}" target="_blank" >
-                        @if($affiliate->website == 'https://siriusdisclosure.com/')
-                            <span class="w3-blue-gray w3-padding w3-round-large">
-                        @endif
+                    <a class="w3-center w3-padding-large w3-mobile" href="{{$affiliate->website}}" target="_blank" >
                         <img class="ht-affiliates" src="{{asset('data/imgs/logos/'.$affiliate->logo)}}">
-                        @if($affiliate->website == 'https://siriusdisclosure.com/')
-                            </span>
-                        @endif
                     </a>
-
-                    @if($affiliate->account_id) 
+                    @if($affiliate->account_id)
+                    <br>
                     <a class="w3-centered" href="#"><!-- link to users dashboard -->
                         {{\App\User::find($affiliate->account_id)->alias}}
                     </a>

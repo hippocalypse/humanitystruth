@@ -17,10 +17,6 @@ Route::get('verifyemail/{token}', 'Auth\RegisterController@verify');
 Route::get('/', function () {return view('index');})->name('home');
 
 
-/* Client-side*/
-Route::get('dashboard', 'DashboardController@index')->name('dashboard');
-
-
 /* Affiliates */
 Route::get('affiliates', function() {
     $affiliates = \App\Affiliate::all();
