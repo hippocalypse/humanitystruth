@@ -1,4 +1,4 @@
-@extends('emails.master')
+@extends('emails.layouts.master')
 
 @section('subject')
     {{$subject}}

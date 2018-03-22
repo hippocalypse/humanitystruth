@@ -87,6 +87,22 @@
                                 </div>
                             </div>
                         </b-tab>
+
+                        <b-tab title="ZCash">
+                            <div class="w3-container w3-padding w3-margin-top">
+                                <p class="w3-center">Transparent Transaction</p>
+                                <div title="ZCash is a decentralized and open-source cryptocurrency that provides strong privacy protections. Shielded transactions hide the sender, recipient, and value on the blockchain.">
+                                    <p><a href="zcash:t1eDZGFfLztGPdkAfnMQWiu6GLAmjTeaTTn"><button class="w3-button w3-red w3-border w3-round-large" style="max-width: 100%;overflow-wrap: break-word;white-space: normal;">ZCash:t1eDZGFfLztGPdkAfnMQWiu6GLAmjTeaTTn</button></a></p>
+                                    <p><img id='barcode_monero' src="https://api.qrserver.com/v1/create-qr-code/?data=zcash:t1eDZGFfLztGPdkAfnMQWiu6GLAmjTeaTTn&amp;size=150x150" width="150" height="150" /></p>
+                                </div>
+                                <br>
+                                <p class="w3-center">Shielded Transaction</p>
+                                <div title="ZCash is a decentralized and open-source cryptocurrency that provides strong privacy protections. Shielded transactions hide the sender, recipient, and value on the blockchain.">
+                                    <p><a href="zcash:4847UcYgMvj3EN7CTWYdduHpMHuRhg2EWjKrq47MvrDNczkrDrjPxXUM5FSXhSBg2SV1HKefXdXf52M5xZY4LvLwLb9YA8B"><button class="w3-button w3-red w3-border w3-round-large" style="max-width: 100%;overflow-wrap: break-word;white-space: normal;">ZCash:zcBSfxDfQY1wN5DzMGi911HRKFSHAVLVqHn27KeE6U1KptVZqoDutG6mkaaUoWKvqzPBmsek2tvoxGKTkx3mzporH3HVBCb</button></a></p>
+                                    <p><img id='barcode_monero' src="https://api.qrserver.com/v1/create-qr-code/?data=zcBSfxDfQY1wN5DzMGi911HRKFSHAVLVqHn27KeE6U1KptVZqoDutG6mkaaUoWKvqzPBmsek2tvoxGKTkx3mzporH3HVBCb&amp;size=150x150" width="150" height="150" /></p>
+                                </div>
+                            </div>
+                        </b-tab>
                     </b-tabs>
                 </div>
             </div>

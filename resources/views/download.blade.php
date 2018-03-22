@@ -58,14 +58,8 @@
             <a href="/bin/bitcoin-core-0.16.0/SHA256SUMS.asc" class="dl">Verify release signatures</a><br>
             <a href="/bin/bitcoin-core-0.16.0/bitcoin-0.16.0.torrent" class="dl">Download torrent</a>
             <a href="magnet:?xt=urn:btih:6493ae7a15b4d32bb4eca1dfaf6dcc0c143492cb&amp;dn=bitcoin-core-0.16.0&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&amp;tr=udp%3A%2F%2Fzer0day.ch%3A1337&amp;tr=udp%3A%2F%2Fexplodie.org%3A6969" class="magnetlink" data-proofer-ignore=""></a><br>
-            <a href="https://github.com/bitcoin/bitcoin" class="dl">Source code</a><br>
+            <a target="_blank" href="https://bitbucket.org/humanitystruth/humanitystruth/src">Git Repository</a><br>
             <a href="/en/version-history">Show version history</a>
-        </p>
-        <p class="downloadkeys">
-            <span>Bitcoin Core Release Signing Keys</span>
-            <a href="/gavinandresen.asc">v0.8.6 - 0.9.2.1</a>
-            <a href="/laanwj.asc">v0.9.3 - 0.10.2</a>
-            <a href="/laanwj-releases.asc">v0.11.0+</a>
         </p>
     </div>
 </div>

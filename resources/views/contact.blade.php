@@ -14,7 +14,7 @@
                     <h3>Submitting documents anonymously</h3>
                 </div>
                 <p><b>Your IP is public: {{$_SERVER['REMOTE_ADDR']}}</b><br>You must connect via <a href="https://www.torproject.org/" target="_blank"><b>Tor</b></a></p>
-                <p>HumanitysTruth specializes in pushing censored/suppressed information to mass-consciousness.</p>
+                <p>HumanitysTruth specializes in pushing censored/suppressed technologies to mass-consciousness.</p>
                 <p>The following is the address of our secure site where you can anonymously upload your documents to our editors.</p>
 
                 <div class="alert alert-info">

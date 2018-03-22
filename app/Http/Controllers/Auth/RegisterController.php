@@ -3,29 +3,67 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Carrier;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Rules\Recaptcha;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use App\Jobs\SendVerificationEmail;
+use Illuminate\Foundation\Auth\RedirectsUsers;
 
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
+    use RedirectsUsers;
 
-    use RegistersUsers;
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        $carriers = \App\Carrier::all();
+        return view('auth.register', compact('carriers'));
+    }
+    
+    /**
+    * Handle a registration request for the application.
+    *
+    * @param \Illuminate\Http\Request $request
+    * @return \Illuminate\Http\Response
+    */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        event(new Registered($user = $this->create($request->all())));
+        dispatch(new SendVerificationEmail($user));
+        \Session::flash('warning', 'You have successfully registered. Please verify your email.'); 
+        return view('home');
+    }
+
+    /**
+     * Get the guard to be used during registration.
+     *
+     * @return \Illuminate\Contracts\Auth\StatefulGuard
+     */
+    protected function guard()
+    {
+        return Auth::guard();
+    }
+
+    /**
+     * The user has been registered.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+    protected function registered(Request $request, $user)
+    {
+        //Session::flash('warning', 'You have successfully registered. Please verify your email.'); 
+    }
 
     /**
      * Where to redirect users after registration.
@@ -55,9 +93,10 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'email' => 'required|string|email|max:255|unique:users',
             'phone' => 'nullable|integer|min:10|unique:users',
-            'alias' => 'nullable|string|max:32|unique:users',
+            'phone_carrier_id' => 'nullable|string',
+            'alias' => 'nullable|string|min:5|max:32|unique:users',
             'password' => 'required|string|min:6|confirmed'
-            // 'g-recaptcha-response' => ['required', new Recaptcha],
+            //'g-recaptcha-response' => ['required', new Recaptcha]
         ]);
     }
 
@@ -69,32 +108,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        session()->flash('warning', "You're almost done! Please check your email for a verification link..");
         return User::create([
             'email' => $data['email'],
             'phone' => $data['phone'],
+            'phone_carrier_id' => $data['phone_carrier_id'],
             'alias' => $data['alias'],
             'password' => bcrypt($data['password']),
-            'email_token' => base64_encode($data['email']),
-            'role' => 'inactive',
-
+            'email_token' => bin2hex(random_bytes(64))
         ]);
-        
-    }
-
-    /**
-    * Handle a registration request for the application.
-    *
-    * @param \Illuminate\Http\Request $request
-    * @return \Illuminate\Http\Response
-    */
-    public function register(Request $request)
-    {
-        $this->validator($request->all())->validate();
-        event(new Registered($user = $this->create($request->all())));
-        dispatch(new SendVerificationEmail($user));
-        Session::flash('warning', 'You have successfully registered. Please verify your email.'); 
-        return view('home');
     }
     
     /**
@@ -106,9 +127,8 @@ class RegisterController extends Controller
     public function verify($token)
     {
         $user = User::where('email_token',$token)->first();
-        $user->role = 'email_verified';
-        if($user->save()){
-            Session::flash('notify', 'Thanks for verifying your email!'); 
+        if($user->confirmEmail()){
+            \Session::flash('notify', 'Thanks for verifying your email!'); 
             return view('home');
         }
     }

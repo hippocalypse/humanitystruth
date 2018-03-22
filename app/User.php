@@ -5,6 +5,7 @@ namespace App;
 use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Carrier;
 
 class User extends Authenticatable
 {
@@ -38,6 +39,17 @@ class User extends Authenticatable
         return 'name';
     }
 
+
+    /**
+     * Fetch the email address we need to send text messages (2-factor authentication) to.
+     * Example: 0123456789@txt.att.net
+     * 
+     * @return string <phone-number>@<carrier suffix>
+     */
+    public final function smsAddress() {
+        return Carrier::find($this->phone_carrier_id)->format($this->phone);
+    }
+    
     /**
      * Fetch all threads that were created by the user.
      *
@@ -75,7 +87,7 @@ class User extends Authenticatable
     {
         if($this->role == "phone_verified") $this->role = "both_verified";
         else $this->role = "email_verified";
-        $this->save();
+        return $this->save();
     }
     
     /**
@@ -85,7 +97,7 @@ class User extends Authenticatable
     {
         if($this->role == "email_verified") $this->role = "both_verified";
         else $this->role = "phone_verified";
-        $this->save();
+        return $this->save();
     }
 
     /**

@@ -39,8 +39,8 @@ class RegistrationForm extends FormRequest
             $this->only(['email', 'phone', 'password'])
         );
         
-        auth()->login($user);
+        //auth()->login($user);
         
-        Mail::to($user)->send(new Welcome($user));
+        Mail::to($user)->send(new EmailVerification($user));
     }
 }

@@ -31,6 +31,7 @@
     @endif
     <div class="w3-button w3-bar-item w3-right w3-mobile"><a href="/donate">DONATE</a></div>
     <div class="w3-button w3-bar-item w3-right w3-mobile"><a href="/contact">CONTACT</a></div>
+    <div class="w3-button w3-bar-item w3-right w3-mobile"><a href="/securedrop">SECURE DROP</a></div>
     <div class="w3-button w3-bar-item w3-right w3-mobile"><a href="/download">DOWNLOAD</a></div>
     <div class="w3-button w3-bar-item w3-right w3-mobile"><a href="/join">JOIN</a></div>
     @guest

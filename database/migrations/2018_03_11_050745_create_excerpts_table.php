@@ -17,7 +17,6 @@ class CreateExcerptsTable extends Migration
             $table->increments('id');
             $table->string('author');
             $table->string('content')->unique();
-            $table->timestamps();
         });
     }
 

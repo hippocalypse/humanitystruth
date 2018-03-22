@@ -16,15 +16,18 @@ class CreateUsersTable extends Migration {
             $table->increments('id');
             $table->string('email')->unique();
             $table->string('phone')->unique()->nullable();
-            $table->string('alias')->unique()->nullable();
+            $table->integer('phone_carrier_id')->nullable();
             $table->string('password');
+            
+            $table->string('alias')->unique()->nullable();
+            
             //$table->string('hash')->unique(); //mutating access token
             $table->string('email_token')->nullable(); //email verification token
             $table->string('avatar')->nullable();
             $table->string('intel')->nullable(); //background info
             $table->boolean('default_text_notification')->default(0);
             $table->boolean('default_email_notification')->default(1);
-            $table->enum('role', [ 'closed', 'inactive','phone_verified','email_verified','both_verified','moderator','admin','super_admin' ] );
+            $table->enum('role', [ 'closed', 'inactive','phone_verified','email_verified','both_verified','moderator','admin','super_admin' ] )->default('inactive');
             $table->timestamps();
             $table->rememberToken(); //rememberMe
         });

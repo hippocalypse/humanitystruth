@@ -16,17 +16,20 @@
             <li>Thomas Drake</li>
             <li>John Kiriakou</li>
             <li>Kirk Wiebe</li>
+            <li>Michael Hastings</li>
             <li>Dr. Steven Greer</li>
             <li>...</li>
             
         </ul>
         
-        <p>Here's a list of orchestrated world events, where we lost a battle of truth versus suppression. 
+        <p>Here's a list of world events, which have significant untold truths. 
            These situations all deserve an extended open-source investigation, so we may not be influenced by misinformation.
         </p>
         <ul><!-- link these tags for investigations -->
             <li>9/11</li>
-            <li>...</li>
+            <li>Operation Paperclip</li>
+            <li>Operation Highjump</li>
+            <li>The Battle of L.A.</li>
             
         </ul>
         
@@ -50,7 +53,7 @@
             
         </ul>
         
-        <p>List of cases against the government that were sealed under state secrets priviledge:</p>
+        <p>List of FOIA and other cases against the government that were sealed under state secrets priviledge:</p>
         <ul>
             <li>We the people VS NSA</li>
             <li>...</li>

@@ -12,8 +12,8 @@
             <div class="w3-container w3-quarter">
                 <div class="w3-col w3-center">
                     <strong class="w3-container">Lightworkers Union</strong><br>
-                    <a href="/investigations">{{\App\Investigation::count()}} Investigations</a><br>
-                    <a href="/files">{{\App\File::count()}} Files</a><br>
+                    <a href="/investigations">{{\Modules\Investigations\Entities\Investigation::count()}} Investigations</a><br>
+                    <a href="/files">{{\Modules\Investigations\Entities\File::count()}} Files</a><br>
                     <a href="/dashboard">XX Online / {{\App\User::count()}} Users</a><br>
                     <a href="/download">XX Downloads</a><br>
                 </div>
@@ -22,7 +22,7 @@
             <div class="w3-container w3-quarter">
                 <div class="w3-col w3-center">
                     <strong class="w3-container">Site Links</strong><br>
-                    <a href="/developers">Developers</a><br>
+                    <a href="/developers">Developers Forum</a><br>
                     <a href="/securedrop">Secure-Drop</a><br>
                     <a href="/ethics-policy">Ethics-Policy</a><br>
                     <a href="/contact">Contact Us</a><br>
@@ -33,9 +33,12 @@
             <div class="w3-container w3-quarter">
                 <div class="w3-col w3-center">
                     <strong class="w3-container">External Links</strong><br>
+                    <a href="/affiliates">Affiliates</a><br>
+                    <a target="_blank" href="https://bitbucket.org/humanitystruth/humanitystruth/src">Git Repository</a><br>
                     <a target="_blank" href="https://www.torproject.org/">Tor</a><br>
-                    <a target="_blank" href="https://tails.boum.org/">Tails</a> + <a target="_blank" href="https://www.kali.org/">Kali</a><br>
-                    <a href="/affiliates">Affiliates</a><br><br>
+                    <a target="_blank" href="https://tails.boum.org/">Tails</a><br>
+                    <a target="_blank" href="https://www.kali.org/">Kali</a><br><br>
+                    
                     <div class="w3-container w3-row">
                         <div class="w3-quarter">
                             <a class="social-icons" href="https://www.facebook.com/" target="_blank" title="HumanitysTruth on Facebook">

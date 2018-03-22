@@ -6,7 +6,7 @@
         <p>Mainstream education has lied to all of us. You feel it in your core, but why? If we as a species are to overcome this systemic tyranny, we must understand it. In fact, it's this very ignorance that plagues humanity.</p>
         
         <p>The Lightworkers Union is a collective of free-thinking minds. 
-           We've developed an open-source investigative research and development community. Securely distributing suppressed information that the global elite
+           We're developing an open-source investigative research and development community. Securely distributing suppressed technology that the global elite
            work hard to silence is our profession.
            
            Here's some of our features:

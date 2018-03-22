@@ -1,6 +1,7 @@
-@extends('emails.master')
+@extends('emails.layouts.master')
 
-@section('subject')Welcome to HumanitysTruth!
+@section('subject')
+    Welcome to HumanitysTruth!
 @stop
 
 @section('body')

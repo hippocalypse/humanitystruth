@@ -3,7 +3,7 @@
 namespace Modules\Investigations\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Model;
+use Modules\Investigations\Entities\Investigation;
 
 class InvestigationsDatabaseSeeder extends Seeder
 {
@@ -14,8 +14,6 @@ class InvestigationsDatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-
-        // $this->call("OthersTableSeeder");
+        factory(Investigation::class, 20)->create();
     }
 }

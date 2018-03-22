@@ -16,7 +16,7 @@ class CreateSubscribersTable extends Migration {
             $table->increments('id');
             $table->string('email')->unique();
             $table->boolean('authenticated')->default(0);
-            $table->string('token');
+            $table->string('unsubscribe_token');
         });
     }
 

@@ -11,9 +11,15 @@
 |
 */
 
+/* Standard login/registration routes */
 Auth::routes();
-Route::get('verifyemail/{token}', 'Auth\RegisterController@verify');
 
+/* Email and phone verification routes */
+Route::get('verifyemail/{token}', 'Auth\RegisterController@verify');
+Route::get('two-step', 'Auth\LoginController@show2FAForm');
+Route::post('two-step', 'Auth\LoginController@verify');
+
+/* Homepage */
 Route::get('/', function () {return view('index');})->name('home');
 
 

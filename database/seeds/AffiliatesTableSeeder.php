@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Affiliate;
 
 class AffiliatesTableSeeder extends Seeder
 {
@@ -12,16 +12,16 @@ class AffiliatesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('affiliates')->delete();
-        DB::table('affiliates')->insert([
-            ['logo' => 'securedrop.png',        'website' => 'https://securedrop.org/'],
-            ['logo' => 'tails.png',             'website' => 'https://tails.boum.org/'],
-            ['logo' => 'tor.png',               'website' => 'https://www.torproject.org/'],
-            ['logo' => 'bitcoin.png',           'website' => 'https://www.bitcoin.com/'],
-            ['logo' => 'couragefoundation.png', 'website' => 'https://www.couragefound.org/'],
-            ['logo' => 'wikileaks.png',         'website' => 'https://wikileaks.org/'],
-            ['logo' => 'siriusdisclosure.png',  'website' => 'https://siriusdisclosure.com/'],
-            ['logo' => 'secureteam10.png',      'website' => 'https://www.youtube.com/user/secureteam10']
-        ]);
+        return [
+            Affiliate::create(['logo' => 'securedrop.png',        'website' => 'https://securedrop.org/']),
+            Affiliate::create(['logo' => 'tails.png',             'website' => 'https://tails.boum.org/']),
+            Affiliate::create(['logo' => 'tor.png',               'website' => 'https://www.torproject.org/']),
+            Affiliate::create(['logo' => 'bitcoin.png',           'website' => 'https://www.bitcoin.com/']),
+            Affiliate::create(['logo' => 'couragefoundation.png', 'website' => 'https://www.couragefound.org/']),
+            Affiliate::create(['logo' => 'wikileaks.png',         'website' => 'https://wikileaks.org/']),
+            Affiliate::create(['logo' => 'siriusdisclosure.png',  'website' => 'https://siriusdisclosure.com/']),
+            Affiliate::create(['logo' => 'etcher.png',            'website' => 'https://etcher.io/']),
+            Affiliate::create(['logo' => 'secureteam10.png',      'website' => 'https://www.youtube.com/user/secureteam10'])
+        ];
     }
 }

@@ -1,0 +1,16 @@
+{
+    "name": "LightworkersUnion",
+    "alias": "lightworkersunion",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\LightworkersUnion\\Providers\\LightworkersUnionServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

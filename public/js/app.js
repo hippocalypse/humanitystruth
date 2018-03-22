@@ -1734,6 +1734,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 var prices = [1000, 500, 250, 100, 50, 25, 10];
 var _data = {
@@ -42263,6 +42279,132 @@ var render = function() {
                                 id: "barcode_monero",
                                 src:
                                   "https://api.qrserver.com/v1/create-qr-code/?data=monero:4847UcYgMvj3EN7CTWYdduHpMHuRhg2EWjKrq47MvrDNczkrDrjPxXUM5FSXhSBg2SV1HKefXdXf52M5xZY4LvLwLb9YA8B&size=150x150",
+                                width: "150",
+                                height: "150"
+                              }
+                            })
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("b-tab", { attrs: { title: "ZCash" } }, [
+                  _c(
+                    "div",
+                    { staticClass: "w3-container w3-padding w3-margin-top" },
+                    [
+                      _c("p", { staticClass: "w3-center" }, [
+                        _vm._v("Transparent Transaction")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          attrs: {
+                            title:
+                              "ZCash is a decentralized and open-source cryptocurrency that provides strong privacy protections. Shielded transactions hide the sender, recipient, and value on the blockchain."
+                          }
+                        },
+                        [
+                          _c("p", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  href:
+                                    "zcash:t1eDZGFfLztGPdkAfnMQWiu6GLAmjTeaTTn"
+                                }
+                              },
+                              [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "w3-button w3-red w3-border w3-round-large",
+                                    staticStyle: {
+                                      "max-width": "100%",
+                                      "overflow-wrap": "break-word",
+                                      "white-space": "normal"
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "ZCash:t1eDZGFfLztGPdkAfnMQWiu6GLAmjTeaTTn"
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _c("img", {
+                              attrs: {
+                                id: "barcode_monero",
+                                src:
+                                  "https://api.qrserver.com/v1/create-qr-code/?data=zcash:t1eDZGFfLztGPdkAfnMQWiu6GLAmjTeaTTn&size=150x150",
+                                width: "150",
+                                height: "150"
+                              }
+                            })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "w3-center" }, [
+                        _vm._v("Shielded Transaction")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          attrs: {
+                            title:
+                              "ZCash is a decentralized and open-source cryptocurrency that provides strong privacy protections. Shielded transactions hide the sender, recipient, and value on the blockchain."
+                          }
+                        },
+                        [
+                          _c("p", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  href:
+                                    "zcash:4847UcYgMvj3EN7CTWYdduHpMHuRhg2EWjKrq47MvrDNczkrDrjPxXUM5FSXhSBg2SV1HKefXdXf52M5xZY4LvLwLb9YA8B"
+                                }
+                              },
+                              [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "w3-button w3-red w3-border w3-round-large",
+                                    staticStyle: {
+                                      "max-width": "100%",
+                                      "overflow-wrap": "break-word",
+                                      "white-space": "normal"
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "ZCash:zcBSfxDfQY1wN5DzMGi911HRKFSHAVLVqHn27KeE6U1KptVZqoDutG6mkaaUoWKvqzPBmsek2tvoxGKTkx3mzporH3HVBCb"
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _c("img", {
+                              attrs: {
+                                id: "barcode_monero",
+                                src:
+                                  "https://api.qrserver.com/v1/create-qr-code/?data=zcBSfxDfQY1wN5DzMGi911HRKFSHAVLVqHn27KeE6U1KptVZqoDutG6mkaaUoWKvqzPBmsek2tvoxGKTkx3mzporH3HVBCb&size=150x150",
                                 width: "150",
                                 height: "150"
                               }
