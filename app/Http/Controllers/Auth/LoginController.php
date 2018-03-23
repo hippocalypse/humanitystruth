@@ -25,7 +25,7 @@ class LoginController extends Controller
     }
     
     /**
-     * Show the application's login form.
+     * Show the application's 2-step login form.
      *
      * @return \Illuminate\Http\Response
      */
@@ -33,46 +33,7 @@ class LoginController extends Controller
     {
         return view('auth.two-factor-auth', compact("user"));
     }
-
-    /**
-     * Handle a login request to the application.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Http\JsonResponse
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function login(Request $request)
-    {
-        $this->validateLogin($request);
-
-        // If the class is using the ThrottlesLogins trait, we can automatically throttle
-        // the login attempts for this application. We'll key this by the username and
-        // the IP address of the client making these requests into this application.
-        if ($this->hasTooManyLoginAttempts($request)) {
-            $this->fireLockoutEvent($request);
-
-            return $this->sendLockoutResponse($request);
-        }
-
-            //attempt login with email and password
-        if ($this->attemptLogin($request)) {
-            return $this->sendLoginResponse($request);
-            
-            //otherwise try as phone credentials
-        } elseif ($this->attemptPhoneLogin($request)) {
-            //dispatch a new code to this users
-            return $this->sendLogin2FAResponse($request);
-        } 
-
-        // If the login attempt was unsuccessful we will increment the number of attempts
-        // to login and redirect the user back to the login form. Of course, when this
-        // user surpasses their maximum number of attempts they will get locked out.
-        $this->incrementLoginAttempts($request);
-
-        return $this->sendFailedLoginResponse($request);
-    }
-
+    
     /**
      * Validate the user login request.
      *
@@ -86,8 +47,22 @@ class LoginController extends Controller
             'password' => 'required|string',
         ]);
     }
-
+    
     /**
+     * Validate the users 2-factor authentication request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return void
+     */
+    protected function validate2FA(Request $request)
+    {
+        $this->validate($request, [
+            'sms_code' => 'required|string',
+            'phone' => 'required|number',
+        ]);
+    }
+    
+        /**
      * Attempt to log the user into the application.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -112,6 +87,7 @@ class LoginController extends Controller
             ['phone'=> $request->email, 'password' => $request->password], $request->filled('remember')
         );
     }
+
 
     /**
      * Get the needed authorization credentials from the request.
@@ -151,9 +127,9 @@ class LoginController extends Controller
     {
         //needs to NOT be logged in, but pass user to two-step page
         $request->session()->regenerate();
-
         $this->clearLoginAttempts($request);
         $user = $this->guard()->user();
+        
         dispatch(new SendSMSCode($user));
         
         $request->session()->flash('warning', 'Please standby for 2-factor authentication via text message..');
@@ -161,43 +137,85 @@ class LoginController extends Controller
         return show2FAForm($user);
     }
     
+    
     /**
-     * The user is verifying their 2-factor authentication code
+     * Handle a login request to the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Http\JsonResponse
+     *
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function login(Request $request)
+    {
+        $this->validateLogin($request);
+
+        // If the class is using the ThrottlesLogins trait, we can automatically throttle
+        // the login attempts for this application. We'll key this by the username and
+        // the IP address of the client making these requests into this application.
+        if ($this->hasTooManyLoginAttempts($request)) {
+            $this->fireLockoutEvent($request);
+
+            return $this->sendLockoutResponse($request);
+        }
+
+            //attempt login with email and password
+        if ($this->attemptLogin($request)) {
+            return $this->sendLoginResponse($request);
+            
+            //otherwise try as phone credentials
+        } elseif ($this->attemptPhoneLogin($request)) {
+            //dispatch a new code to this users
+            return $this->sendLogin2FAResponse($request);
+        } 
+
+        // If the login attempt was unsuccessful we will increment the number of attempts
+        // to login and redirect the user back to the login form. Of course, when this
+        // user surpasses their maximum number of attempts they will get locked out.
+        $this->incrementLoginAttempts($request);
+
+        return $this->sendFailedLoginResponse($request);
+    }
+
+    
+    /**
+     * The user is verifying their 2-factor authentication code after the initial login step
      *
      * @param  \Illuminate\Http\Request  $request
      * @return mixed
      */
     protected function verify(Request $request)
     {
-        if($this->validate($request, [
-                'sms_code' => 'required|string',
-                'phone' => 'required|number',
-            ])) {
-                
-            if($verified = SmsCode::where(
+        $this->validate2FA($request);
+        
+        //todo implement throttle traffic over laravels existing decaying model
+        
+        if(SmsCode::where(
                     ['verification_code', $request->sms_code],
-                    ['phone', $request->phone]
-                    //['expiration', "<" , new DateTime()]
-            )->first()) {
-                $now = new DateTime();
-                $exp = new DateTime($verified->expiration);
+                    ['phone', $request->phone],
+                    ['expiration', "<" , new DateTime()])->delete()) {
+                    
+            /*
+            if(new DateTime() > new DateTime($verified->expiration)) {
+                return sendFailed2FAResponse($request, "The 2-factor authentication code expired!");
+            } */
+            
+            if($this->guard()->user()->confirmPhone()){
                 
-                if($now > $exp) {
-                    return sendFailed2FAResponse($request, "The 2-factor authentication code expired!");
-                } elseif($user->confirmPhone()){
+                $request->session()->regenerate();
+                $this->clearLoginAttempts($request);
 
-                    $request->session()->regenerate();
-
-                    $this->clearLoginAttempts($request);
-
-                    Session::flash('notify', 'Thanks for verifying your email!');
-
-                    return $this->authenticated($request, $this->guard()->user())
-                    ?: redirect()->intended($this->redirectPath());
-                }
+                return $this->authenticated($request, $this->guard()->user())
+                ?: redirect()->intended($this->redirectPath());
             }
         }
-        return sendFailed2FAResponse($request);
+
+        // If the login attempt was unsuccessful we will increment the number of attempts
+        // to login and redirect the user back to the login form. Of course, when this
+        // user surpasses their maximum number of attempts they will get locked out.
+        $this->incrementLoginAttempts($request);
+            
+        return $this->sendFailed2FAResponse($request);
     }
     
     /**

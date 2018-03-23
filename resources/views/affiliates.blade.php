@@ -2,7 +2,7 @@
 @section('content')
 <div class="w3-container w3-padding w3-card-4 w3-round w3-margin w3-white">
     <h3 class="w3-centered">Affilates</h3>
-    <p>These affiliates may or may not have approved their links here. But they're all open-source and for that level of full-disclosure, we love and support them!</p>
+    <p>These affiliates may or may not have approved their links here. Either way, we support them and they're all open-source.. Check these guys out, what they're doing is great:</p>
     <div class="w3-container w3-padding w3-row w3-mobile">
 
         @foreach($affiliates as $affiliate)
