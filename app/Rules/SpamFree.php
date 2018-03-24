@@ -3,7 +3,7 @@
 namespace App\Rules;
 
 use Exception;
-use App\Inspections\Spam;
+use Modules\Developers\Inspections\Spam;
 
 class SpamFree
 {

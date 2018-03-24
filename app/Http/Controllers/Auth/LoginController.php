@@ -7,6 +7,7 @@ use App\User;
 use App\SmsCode;
 use Illuminate\Foundation\Auth\RedirectsUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
 use App\Jobs\SendSMSCode;
 
@@ -280,7 +281,7 @@ class LoginController extends Controller
      */
     protected function guard()
     {
-        return Auth::guard();
+        return \Auth::guard();
     }
 
     /**

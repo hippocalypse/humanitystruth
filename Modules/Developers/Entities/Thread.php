@@ -65,7 +65,7 @@ class Thread extends Model
      */
     public function path()
     {
-        return "/threads/{$this->channel->slug}/{$this->slug}";
+        return "/developers/threads/{$this->channel->slug}/{$this->slug}";
     }
 
     /**

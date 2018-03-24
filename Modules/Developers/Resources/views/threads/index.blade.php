@@ -8,24 +8,26 @@
                 @include ('developers::threads._list')
 
                 {{ $threads->render() }}
+                
+                
             </div>
 
             <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Search
-                    </div>
+                <div class="w3-container w3-margin-top">
+                    <form method="GET" action="/threads/search">
+                        <div class="w3-container w3-margin-bottom w3-round">
+                            <input placeholder="Search the developer threads..." name="q" class="w3-block">
+                        </div>
 
-                    <div class="panel-body">
-                        <form method="GET" action="/threads/search">
-                            <div class="form-group">
-                                <input type="text" placeholder="Search for something..." name="q" class="form-control">
-                            </div>
-
-                            <div class="form-group">
-                                <button class="btn btn-default" type="submit">Search</button>
-                            </div>
-                        </form>
+                        <div class="w3-container">
+                            <button class="w3-button w3-blue w3-round w3-block" type="submit">Search</button>
+                        </div>
+                    </form>
+                </div>
+                <hr>
+                <div class="w3-container w3-margin w3-padding">
+                    <div class="w3-button w3-center w3-block w3-blue w3-round">
+                        <a href="{{ route('dev.create')}}">Publish a new Thread</a>
                     </div>
                 </div>
 

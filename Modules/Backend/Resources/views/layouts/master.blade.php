@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Module Backend</title>
-    </head>
-    <body>
-        @yield('content')
-    </body>
-</html>
+@extends('layouts.master')
+@section('content')
+    <div class="w3-container w3-card-4 w3-round w3-margin w3-padding w3-white">
+        <div id="wrapper" class="w3-padding w3-container">
+            @include('backend::layouts.menubar')
+            <div class="w3-margin-top"></div>
+            @yield('backend.content')
+        </div>
+    </div>
+@stop
+

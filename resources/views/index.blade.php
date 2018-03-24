@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<script> error("SITE UNDER CONSTRUCTION!");</script>
+<script> //error("SITE UNDER CONSTRUCTION!");</script>
         <!-- 3 landing page links  -->
         <div class="w3-margin">
           	
