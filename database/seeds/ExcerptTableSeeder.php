@@ -29,6 +29,7 @@ class ExcerptTableSeeder extends Seeder
             Excerpt::create(['content' => 'Conformity is the jailer of freedom and the enemy of growth.', 'author' => 'John F. Kennedy']),
             Excerpt::create(['content' => 'The goal of education is the advancement of knowledge and the dissemination of truth.', 'author' => 'John F. Kennedy']),
             Excerpt::create(['content' => 'A nation that is afraid to let its people judge the truth and falsehood in an open market is a nation that is afraid of its people.', 'author' => 'John F. Kennedy']),
+            Excerpt::create(['content' => 'Those who cannot remember the past are condemned to repeat it.', 'author' => 'George Santayana'])
 
             //Excerpt::create(['content' => '...', 'author' => '...'])
         ];
