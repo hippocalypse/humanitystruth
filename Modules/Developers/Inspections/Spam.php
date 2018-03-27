@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Inspections;
+namespace Modules\Developers\Inspections;
 
 class Spam
 {

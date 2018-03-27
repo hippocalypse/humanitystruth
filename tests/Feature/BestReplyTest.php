@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Feature;
+namespace tests\Feature;
 
-use Tests\TestCase;
+use tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class BestReplyTest extends TestCase
@@ -14,9 +14,9 @@ class BestReplyTest extends TestCase
     {
         $this->signIn();
 
-        $thread = create('App\Thread', ['user_id' => auth()->id()]);
+        $thread = create('Modules\Developers\Entities\Thread', ['user_id' => auth()->id()]);
 
-        $replies = create('App\Reply', ['thread_id' => $thread->id], 2);
+        $replies = create('Modules\Developers\Entities\Reply', ['thread_id' => $thread->id], 2);
 
         $this->assertFalse($replies[1]->isBest());
 
@@ -32,9 +32,9 @@ class BestReplyTest extends TestCase
 
         $this->signIn();
 
-        $thread = create('App\Thread', ['user_id' => auth()->id()]);
+        $thread = create('Modules\Developers\Entities\Thread', ['user_id' => auth()->id()]);
 
-        $replies = create('App\Reply', ['thread_id' => $thread->id], 2);
+        $replies = create('Modules\Developers\Entities\Reply', ['thread_id' => $thread->id], 2);
 
         $this->signIn(create('App\User'));
 
@@ -48,7 +48,7 @@ class BestReplyTest extends TestCase
     {
         $this->signIn();
 
-        $reply = create('App\Reply', ['user_id' => auth()->id()]);
+        $reply = create('Modules\Developers\Entities\Reply', ['user_id' => auth()->id()]);
 
         $reply->thread->markBestReply($reply);
 

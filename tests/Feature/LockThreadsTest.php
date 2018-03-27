@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Feature;
+namespace tests\Feature;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Tests\TestCase;
+use tests\TestCase;
 
 class LockThreadsTest extends TestCase
 {
@@ -16,7 +16,7 @@ class LockThreadsTest extends TestCase
 
         $this->signIn();
 
-        $thread = create('App\Thread', ['user_id' => auth()->id()]);
+        $thread = create('Modules\Developers\Entities\Thread', ['user_id' => auth()->id()]);
 
         $this->post(route('locked-threads.store', $thread))->assertStatus(403);
 
@@ -28,7 +28,7 @@ class LockThreadsTest extends TestCase
     {
         $this->signIn(factory('App\User')->states('administrator')->create());
 
-        $thread = create('App\Thread', ['user_id' => auth()->id()]);
+        $thread = create('Modules\Developers\Entities\Thread', ['user_id' => auth()->id()]);
 
         $this->post(route('locked-threads.store', $thread));
 
@@ -40,7 +40,7 @@ class LockThreadsTest extends TestCase
     {
         $this->signIn(factory('App\User')->states('administrator')->create());
 
-        $thread = create('App\Thread', ['user_id' => auth()->id(), 'locked' => true]);
+        $thread = create('Modules\Developers\Entities\Thread', ['user_id' => auth()->id(), 'locked' => true]);
 
         $this->delete(route('locked-threads.destroy', $thread));
 
@@ -52,7 +52,7 @@ class LockThreadsTest extends TestCase
     {
         $this->signIn();
 
-        $thread = create('App\Thread', ['locked' => true]);
+        $thread = create('Modules\Developers\Entities\Thread', ['locked' => true]);
 
         $this->post($thread->path() . '/replies', [
             'body' => 'Foobar',

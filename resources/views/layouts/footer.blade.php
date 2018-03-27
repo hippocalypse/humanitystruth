@@ -34,7 +34,7 @@
                 <div class="w3-col w3-center">
                     <strong class="w3-container">External Links</strong><br>
                     <a href="/affiliates">Affiliates</a><br>
-                    <a target="_blank" href="https://bitbucket.org/humanitystruth/humanitystruth/src">Git Repository</a><br>
+                    <a target="_blank" href="https://github.com/humanitystruth/humanitystruth/">Git Repository</a><br>
                     <a target="_blank" href="https://www.torproject.org/">Tor</a><br>
                     <a target="_blank" href="https://tails.boum.org/">Tails</a><br>
                     <a target="_blank" href="https://www.kali.org/">Kali</a><br><br>

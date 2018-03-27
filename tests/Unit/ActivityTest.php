@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Feature;
+namespace tests\Feature;
 
-use App\Activity;
+use Modules\Developers\Entities\Activity;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Tests\TestCase;
+use tests\TestCase;
 
 class ActivityTest extends TestCase
 {

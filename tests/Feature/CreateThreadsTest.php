@@ -1,12 +1,12 @@
 <?php
 
-namespace Tests\Feature;
+namespace tests\Feature;
 
-use App\Activity;
+use Modules\Developers\Entities\Activity;
 use App\Rules\Recaptcha;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
-use Tests\TestCase;
+use tests\TestCase;
 
 class CreateThreadsTest extends TestCase
 {
@@ -42,11 +42,11 @@ class CreateThreadsTest extends TestCase
 
         $this->signIn($user);
 
-        $thread = make('App\Thread');
+        $thread = make('Modules\Developers\Entities\Thread');
 
         $this->post(route('threads'), $thread->toArray())
             ->assertRedirect(route('threads'))
-            ->assertSessionHas('flash', 'You must first confirm your email address.');
+            ->assertSessionHasErrors();
     }
 
     /** @test */
@@ -85,7 +85,7 @@ class CreateThreadsTest extends TestCase
     /** @test */
     function a_thread_requires_a_valid_channel()
     {
-        factory('App\Channel', 2)->create();
+        factory('Modules\Developers\Entities\Channel', 2)->create();
 
         $this->publishThread(['channel_id' => null])
             ->assertSessionHasErrors('channel_id');
@@ -99,7 +99,7 @@ class CreateThreadsTest extends TestCase
     {
         $this->signIn();
 
-        $thread = create('App\Thread', ['title' => 'Foo Title']);
+        $thread = create('Modules\Developers\Entities\Thread', ['title' => 'Foo Title']);
 
         $this->assertEquals($thread->slug, 'foo-title');
 
@@ -113,7 +113,7 @@ class CreateThreadsTest extends TestCase
     {
         $this->signIn();
 
-        $thread = create('App\Thread', ['title' => 'Some Title 24']);
+        $thread = create('Modules\Developers\Entities\Thread', ['title' => 'Some Title 24']);
 
         $thread = $this->postJson(route('threads'), $thread->toArray() + ['g-recaptcha-response' => 'token'])->json();
 
@@ -125,7 +125,7 @@ class CreateThreadsTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $thread = create('App\Thread');
+        $thread = create('Modules\Developers\Entities\Thread');
 
         $this->delete($thread->path())->assertRedirect('/login');
 
@@ -138,8 +138,8 @@ class CreateThreadsTest extends TestCase
     {
         $this->signIn();
 
-        $thread = create('App\Thread', ['user_id' => auth()->id()]);
-        $reply = create('App\Reply', ['thread_id' => $thread->id]);
+        $thread = create('Modules\Developers\Entities\Thread', ['user_id' => auth()->id()]);
+        $reply = create('Modules\Developers\Entities\Reply', ['thread_id' => $thread->id]);
 
         $response = $this->json('DELETE', $thread->path());
 
@@ -155,7 +155,7 @@ class CreateThreadsTest extends TestCase
     {
         $this->withExceptionHandling()->signIn();
 
-        $thread = make('App\Thread', $overrides);
+        $thread = make('Modules\Developers\Entities\Thread', $overrides);
 
         return $this->post(route('threads'), $thread->toArray() + ['g-recaptcha-response' => 'token']);
     }

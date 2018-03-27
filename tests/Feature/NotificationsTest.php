@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Feature;
+namespace tests\Feature;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Notifications\DatabaseNotification;
-use Tests\TestCase;
+use tests\TestCase;
 
 class NotificationsTest extends TestCase
 {
@@ -20,7 +20,7 @@ class NotificationsTest extends TestCase
     /** @test */
     function a_notification_is_prepared_when_a_subscribed_thread_receives_a_new_reply_that_is_not_by_the_current_user()
     {
-        $thread = create('App\Thread')->subscribe();
+        $thread = create('Modules\Developers\Entities\Thread')->subscribe();
 
         $this->assertCount(0, auth()->user()->notifications);
 

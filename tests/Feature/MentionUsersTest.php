@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Feature;
+namespace tests\Feature;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Tests\TestCase;
+use tests\TestCase;
 
 class MentionUsersTest extends TestCase
 {
@@ -21,10 +21,10 @@ class MentionUsersTest extends TestCase
         $jane = create('App\User', ['name' => 'JaneDoe']);
 
         // If we have a thread
-        $thread = create('App\Thread');
+        $thread = create('Modules\Developers\Entities\Thread');
 
         // And JohnDoe replies to that thread and mentions @JaneDoe.
-        $reply = make('App\Reply', [
+        $reply = make('Modules\Developers\Entities\Reply', [
             'body' => 'Hey @JaneDoe check this out.'
         ]);
 

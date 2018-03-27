@@ -1,5 +1,9 @@
 /* standard styles.. FIRST, style for mobile phones: */
 
+[v-cloak] {
+  display: none;
+}
+
 @font-face {
   font-family: logoFont;
   src: url(/data/fonts/prcb.ttf);

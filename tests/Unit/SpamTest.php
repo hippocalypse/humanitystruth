@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Feature;
+namespace tests\Unit;
 
-use App\Inspections\Spam;
-use Tests\TestCase;
+use Modules\Developers\Inspections\Spam;
+use tests\TestCase;
 
 class SpamTest extends TestCase
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Feature;
+namespace tests\Feature;
 
-use App\Thread;
+use Modules\Developers\Entities\Thread;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
+use tests\TestCase;
 
 class SearchTest extends TestCase
 {
@@ -15,8 +15,8 @@ class SearchTest extends TestCase
     {
         config(['scout.driver' => 'algolia']);
 
-        create('App\Thread', [], 2);
-        create('App\Thread', ['body' => 'A thread with the foobar term.'], 2);
+        create('Modules\Developers\Entities\Thread', [], 2);
+        create('Modules\Developers\Entities\Thread', ['body' => 'A thread with the foobar term.'], 2);
 
         do {
             // Account for latency.

@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Feature;
+namespace tests\Feature;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Tests\TestCase;
+use tests\TestCase;
 
 class SubscribeToThreadsTest extends TestCase
 {
@@ -15,7 +15,7 @@ class SubscribeToThreadsTest extends TestCase
         $this->signIn();
 
         // Given we have a thread...
-        $thread = create('App\Thread');
+        $thread = create('Modules\Developers\Entities\Thread');
 
         // And the user subscribes to the thread...
         $this->post($thread->path() . '/subscriptions');
@@ -28,7 +28,7 @@ class SubscribeToThreadsTest extends TestCase
     {
         $this->signIn();
 
-        $thread = create('App\Thread');
+        $thread = create('Modules\Developers\Entities\Thread');
 
         $thread->subscribe();
 

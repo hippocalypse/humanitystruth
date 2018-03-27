@@ -3,6 +3,7 @@
 namespace Modules\Developers\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Modules\Developers\Entities\Thread;
 
 class Channel extends Model
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Feature;
+namespace tests\Feature;
 
-use App\Trending;
+use Modules\Developers\Entities\Trending;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Tests\TestCase;
+use tests\TestCase;
 
 class TrendingThreadsTest extends TestCase
 {
@@ -24,7 +24,7 @@ class TrendingThreadsTest extends TestCase
     {
         $this->assertEmpty($this->trending->get());
 
-        $thread = create('App\Thread');
+        $thread = create('Modules\Developers\Entities\Thread');
 
         $this->call('GET', $thread->path());
 

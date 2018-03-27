@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Feature;
+namespace tests\Feature;
 
-use Tests\TestCase;
+use tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ProfilesTest extends TestCase
@@ -23,7 +23,7 @@ class ProfilesTest extends TestCase
     {
         $this->signIn();
 
-        $thread = create('App\Thread', ['user_id' => auth()->id()]);
+        $thread = create('Modules\Developers\Entities\Thread', ['user_id' => auth()->id()]);
 
         $this->get("/profiles/" . auth()->user()->name)
             ->assertSee($thread->title)

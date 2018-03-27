@@ -49,7 +49,7 @@ Route::get('download', function () {
 
 Route::get('ethics-policy', function () {
     return view('ethics');
-});
+})->name("ethics");
 
 Route::get('join', function () {
     return view('join');

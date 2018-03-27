@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Inspections;
+namespace Modules\Developers\Inspections;
 
 use Exception;
 
@@ -12,7 +12,9 @@ class InvalidKeywords
      * @var array
      */
     protected $keywords = [
-        'yahoo customer support'
+        'yahoo customer support',
+        '<script>',
+        '</script>'
     ];
 
     /**

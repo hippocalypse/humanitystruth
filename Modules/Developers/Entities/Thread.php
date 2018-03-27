@@ -7,6 +7,9 @@ use Modules\Developers\Filters\ThreadFilters;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
+use App\User;
+use Modules\Developers\Entities\Channel;
+use Modules\Developers\Entities\Reply;
 
 class Thread extends Model
 {
@@ -205,7 +208,7 @@ class Thread extends Model
      */
     public function getBodyAttribute($body)
     {
-        return \Purify::clean($body);
+        return \App\Services\Purifier::clean($body);
     }
 
     /**

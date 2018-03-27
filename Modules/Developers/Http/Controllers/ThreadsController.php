@@ -30,7 +30,6 @@ class ThreadsController extends Controller
     public function index(Channel $channel, ThreadFilters $filters, Trending $trending)
     {
         $threads = $this->getThreads($channel, $filters);
-
         if (request()->wantsJson()) {
             return $threads;
         }
@@ -46,9 +45,11 @@ class ThreadsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Trending $trending)
     {
-        return view('developers::threads.create');
+        return view('developers::threads.create', [
+            'trending' => $trending->get()
+        ]);
     }
 
     /**

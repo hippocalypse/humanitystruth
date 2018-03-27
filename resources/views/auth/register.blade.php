@@ -20,6 +20,12 @@
                 <p><input id="alias" placeholder=" Alias (public, optional)" type="alias" class="ht-form-control{{ $errors->has('alias') ? ' is-invalid' : '' }}" name="alias" value="{{ old('alias') }}"></p>
                 <p><input id="password" placeholder=" Password" type="password" class="ht-form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required></p>
                 <p><input id="password-confirm" placeholder=" Confirm Password" class="ht-form-control" type="password" name="password_confirmation" required></p>
+                <p class="w3-center">
+                    <label for="agreement">I agree to the 
+                        <b><a href="{{ route('ethics') }}">terms and ethics</a></b>
+                    </label>
+                    <input style="width: 10%" id="agreement" type="checkbox" class="w3-check" name="agreement" required>
+                </p>
                 <p><div class="g-recaptcha" data-sitekey="{{env('RECAPTCHA_SITE_KEY')}}"></div></p>
             </div>
             <div class="w3-container">

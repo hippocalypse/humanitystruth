@@ -4,6 +4,8 @@ namespace Modules\Developers\Entities;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use App\User;
+use Modules\Developers\Entities\Thread;
 
 class Reply extends Model
 {

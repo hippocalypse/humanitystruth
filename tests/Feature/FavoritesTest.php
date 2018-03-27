@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Feature;
+namespace tests\Feature;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Tests\TestCase;
+use tests\TestCase;
 
 class FavoritesTest extends TestCase
 {
@@ -22,7 +22,7 @@ class FavoritesTest extends TestCase
     {
         $this->signIn();
 
-        $reply = create('App\Reply');
+        $reply = create('Modules\Developers\Entities\Reply');
 
         $this->post('replies/' . $reply->id . '/favorites');
 
@@ -34,7 +34,7 @@ class FavoritesTest extends TestCase
     {
         $this->signIn();
 
-        $reply = create('App\Reply');
+        $reply = create('Modules\Developers\Entities\Reply');
 
         $reply->favorite();
 
@@ -48,7 +48,7 @@ class FavoritesTest extends TestCase
     {
         $this->signIn();
 
-        $reply = create('App\Reply');
+        $reply = create('Modules\Developers\Entities\Reply');
 
         try {
             $this->post('replies/' . $reply->id . '/favorites');

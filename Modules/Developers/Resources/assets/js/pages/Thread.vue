@@ -50,7 +50,7 @@
                 };
 
                 this.editing = false;
-            }
+            },
         }
     }
 </script>

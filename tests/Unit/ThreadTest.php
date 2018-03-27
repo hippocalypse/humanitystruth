@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Unit;
+namespace tests\Unit;
 
-use App\Notifications\ThreadWasUpdated;
+use Modules\Developers\Notifications\ThreadWasUpdated;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Notification;
-use Tests\TestCase;
+use tests\TestCase;
 
 class ThreadTest extends TestCase
 {
@@ -17,13 +17,13 @@ class ThreadTest extends TestCase
     {
         parent::setUp();
 
-        $this->thread = create('App\Thread');
+        $this->thread = create('Modules\Developers\Entities\Thread');
     }
 
     /** @test */
     function a_thread_has_a_path()
     {
-        $thread = create('App\Thread');
+        $thread = create('Modules\Developers\Entities\Thread');
 
         $this->assertEquals(
             "/threads/{$thread->channel->slug}/{$thread->slug}", $thread->path()
@@ -74,15 +74,15 @@ class ThreadTest extends TestCase
     /** @test */
     function a_thread_belongs_to_a_channel()
     {
-        $thread = create('App\Thread');
+        $thread = create('Modules\Developers\Entities\Thread');
 
-        $this->assertInstanceOf('App\Channel', $thread->channel);
+        $this->assertInstanceOf('Modules\Developers\Entities\Channel', $thread->channel);
     }
 
     /** @test */
     function a_thread_can_be_subscribed_to()
     {
-        $thread = create('App\Thread');
+        $thread = create('Modules\Developers\Entities\Thread');
 
         $thread->subscribe($userId = 1);
 
@@ -95,7 +95,7 @@ class ThreadTest extends TestCase
     /** @test */
     function a_thread_can_be_unsubscribed_from()
     {
-        $thread = create('App\Thread');
+        $thread = create('Modules\Developers\Entities\Thread');
 
         $thread->subscribe($userId = 1);
 
@@ -107,7 +107,7 @@ class ThreadTest extends TestCase
     /** @test */
     function it_knows_if_the_authenticated_user_is_subscribed_to_it()
     {
-        $thread = create('App\Thread');
+        $thread = create('Modules\Developers\Entities\Thread');
 
         $this->signIn();
 
@@ -123,7 +123,7 @@ class ThreadTest extends TestCase
     {
         $this->signIn();
 
-        $thread = create('App\Thread');
+        $thread = create('Modules\Developers\Entities\Thread');
 
         tap(auth()->user(), function ($user) use ($thread) {
             $this->assertTrue($thread->hasUpdatesFor($user));
@@ -137,7 +137,7 @@ class ThreadTest extends TestCase
     /** @test */
     function a_threads_body_is_sanitized_automatically()
     {
-        $thread = make('App\Thread', ['body' => '<script>alert("bad")</script><p>This is okay.</p>']);
+        $thread = make('Modules\Developers\Entities\Thread', ['body' => '<script>alert("bad")</script><p>This is okay.</p>']);
 
         $this->assertEquals("<p>This is okay.</p>", $thread->body);
     }

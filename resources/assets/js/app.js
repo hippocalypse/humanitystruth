@@ -1,19 +1,8 @@
 /**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-require('./bootstrap');
-
-window.Vue = require('vue');
-
-/**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
 Vue.component('donate-component', require('./components/DonateComponent.vue'));
 
 // Import the individual components
@@ -33,6 +22,13 @@ Vue.component('b-card-footer', bCardFooter);
 Vue.component('b-table', bTable);
 Vue.component('b-tabs', bTabs);
 Vue.component('b-tab', bTab);
+
+Vue.component('flash', require('./../../../Modules/Developers/Resources/assets/js/components/Flash.vue'));
+Vue.component('paginator', require('./../../../Modules/Developers/Resources/assets/js/components/Paginator.vue'));
+Vue.component('user-notifications', require('./../../../Modules/Developers/Resources/assets/js/components/UserNotifications.vue'));
+Vue.component('avatar-form', require('./../../../Modules/Developers/Resources/assets/js/components/AvatarForm.vue'));
+Vue.component('wysiwyg', require('./../../../Modules/Developers/Resources/assets/js/components/Wysiwyg.vue'));
+Vue.component('thread-view', require('./../../../Modules/Developers/Resources/assets/js/pages/Thread.vue'));
 
 // Or make available to your component or app:
 export default {

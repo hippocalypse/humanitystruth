@@ -12,7 +12,6 @@ class ExcerptTableSeeder extends Seeder
      */
     public function run()
     {
-        
         return [
             Excerpt::create(['content' => 'When the people fear the government, there is tyranny. When government fears the people, there is liberty.', 'author' => 'Thomas Jefferson']),
             Excerpt::create(['content' => 'Education is the most powerful weapon which you can use to change the world.', 'author' => 'Nelson Mandela']),
@@ -30,8 +29,12 @@ class ExcerptTableSeeder extends Seeder
             Excerpt::create(['content' => 'The goal of education is the advancement of knowledge and the dissemination of truth.', 'author' => 'John F. Kennedy']),
             Excerpt::create(['content' => 'A nation that is afraid to let its people judge the truth and falsehood in an open market is a nation that is afraid of its people.', 'author' => 'John F. Kennedy']),
             Excerpt::create(['content' => 'Those who cannot remember the past are condemned to repeat it.', 'author' => 'George Santayana'])
-
-            //Excerpt::create(['content' => '...', 'author' => '...'])
+            //Excerpt::create(['content' => 'Pessimism never won any battle.', 'author' => 'Dwight D. Eisenhower'])
+            
+            
+            
+            // too long Excerpt::create(['content' => 'A human being is part of a whole, called by us the \'Universe\' - a part limited in time and space. He experiences himself, his thoughts, and feelings, as something separated from the rest - a kind of optical delusion of his consciousness. This delusion is a kind of prison for us, restricting us to our personal desires and to affection for a few persons nearest us. Our task must be to free ourselves from this prison by widening our circles of compassion to embrace all living creatures and the whole of nature in its beauty.', 'author' => 'Albert Einstein'])
+            
         ];
     }
 }

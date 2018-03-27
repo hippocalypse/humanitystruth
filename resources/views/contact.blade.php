@@ -16,18 +16,17 @@
                 <p><b>Your IP is public: {{$_SERVER['REMOTE_ADDR']}}</b><br>You must connect via <a href="https://www.torproject.org/" target="_blank"><b>Tor</b></a></p>
                 <p>HumanitysTruth specializes in pushing censored/suppressed technologies to mass-consciousness.</p>
                 <p>The following is the address of our secure site where you can anonymously upload your documents to our editors.</p>
-
                 <div class="alert alert-info">
                     <div><a href="https://wlupld3ptjvsgwqw.onion" target="_blank"><b>https://wlupld3ptjvsgwqw.onion</b></a></div><br>
                     <div>
-                        Copy this address into your <a href="https://torproject.org/" target="_blank"><b>Tor Browser</b></a>. We highly recommend further increasing your encryption layer by using our <a href="#"><b>Public PGP Key</b></a>.
+                        Copy this address into your <a href="https://torproject.org/" target="_blank"><b>Tor Browser</b></a>. When the page loads, you will find further instructions on how to submit files and messages through our securedrop system. We highly recommend further increasing your encryption layer by using our <a href="#"><b>Public PGP Key</b></a>.
                     </div>
                 </div>
             </b-tab>
 
             <b-tab title="Tips" class="w3-margin">
                 <div class="w3-container">
-                    <p>When accessing the anonymous submission form, <b>adhere to these guidelines</b>:</p>
+                    <p>When accessing the anonymous submission form, <b>adhere to these rules</b>:</p>
                     <ol class="w3-container">
                         <li>
                             Make sure you're always connecting using (https://) a secure socket layer.
@@ -39,7 +38,10 @@
                             Further encrypt all sensitive data using our <a href="#"><b>Public PGP Key</b><a>.
                         </li>
                         <li>
-                            Download the <a href="https://tails.boum.org/" target="_blank"><b>Tails OS</b></a> to remain anonymous at the hardware level.
+                            Download the <a href="https://tails.boum.org/" target="_blank"><b>Tails OS</b></a> to remain anonymous at the hardware level and, especially if you are uploading documents, do not to use your home or work network. Instead, use a public Wi-Fi network in an area where your screen is not visible to security cameras.
+                        </li>
+                        <li>
+                            After accessing SecureDrop, you will be assigned a randomly generated and unique code phrase. If we need to further contact you about the information you have submitted, we will leave a message for you in SecureDrop. The messages can only be accessed using your code name. These messages are the only way we will be able to reach you. Write this down on a piece of paper and never store it digitally.
                         </li>
                         <li class="alert alert-info w3-margin-top">
                             Make sure the information you've got is suppressed and worth publishing. Some examples of the types suppressed intelligence we will push:

@@ -2,12 +2,13 @@
 @section('content')
 <div class="w3-container w3-padding w3-card-4 w3-round-large w3-margin w3-white">
         <h2>Battles of Truth VS Suppression:</h2>
-        <p>Here's a list of true patriots who risked their life and freedom fighting battles of truth versus suppression. 
+        <p>Here's a list of true patriots who risk(ed) their life and liberty fighting battles of truth versus suppression. 
            They all deserve our deepest respect and attention.</p>
         <ul><!-- link these tags for files -->
             <li>Nikola Tesla</li>
             <li>President J.F.K.</li>
             <li>Stan Meyer</li>
+            <li>Dr. Steven Greer</li>
             <li>Philip Schneider</li>
             <li>Edward Snowden</li>
             <li>Gary Webb</li>
@@ -17,7 +18,6 @@
             <li>John Kiriakou</li>
             <li>Kirk Wiebe</li>
             <li>Michael Hastings</li>
-            <li>Dr. Steven Greer</li>
             <li>...</li>
             
         </ul>
@@ -25,18 +25,19 @@
         <p>Here's a list of world events, which have significant untold truths. 
            These situations all deserve an extended open-source investigation, so we may not be influenced by misinformation.
         </p>
-        <ul><!-- link these tags for investigations -->
+        <ul><!-- link these as channels /tags for investigations -->
             <li>9/11</li>
             <li>Operation Paperclip</li>
             <li>Operation Highjump</li>
             <li>The Battle of L.A.</li>
+            <li>Philadelphia Project</li>
             
         </ul>
         
         <p>Here's a list of suppressed artifacts, another loss in a battle of truth versus suppression. 
            These artifacts also deserve an extended open-source investigation, so we may not be influenced by misinformation.
         </p>
-        <ul><!-- link these tags for investigations -->
+        <ul><!-- link these as channels/tags for investigations -->
             <li>Dead Sea Scrolls</li>
             <li>Sumerian Tablets</li>
             

@@ -3,6 +3,10 @@
 namespace Modules\Developers\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\User;
+use Modules\Developers\Entities\Thread;
+use Modules\Developers\Entities\Channel;
+use Modules\Developers\Entities\Reply;
 
 class DevelopersDatabaseSeeder extends Seeder
 {
@@ -13,9 +17,9 @@ class DevelopersDatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //factory seed the forums
-        $this->call(Modules\Developers\Database\factories\DevelopersModuleFactory::class);
-
-        // $this->call("OthersTableSeeder");
+        factory(User::class, 20)->create();
+        factory(Thread::class, 20)->create();
+        factory(Channel::class, 20)->create();
+        factory(Reply::class, 20)->create();
     }
 }

@@ -40,7 +40,7 @@ class RegisterController extends Controller
         event(new Registered($user = $this->create($request->all())));
         dispatch(new SendVerificationEmail($user));
         \Session::flash('warning', 'You have successfully registered. Please verify your email.'); 
-        return view('home');
+        return redirect('ethics-policy');
     }
 
     /**
@@ -94,7 +94,7 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'phone' => 'nullable|integer|min:10|unique:users',
             'phone_carrier_id' => 'nullable|string',
-            'alias' => 'nullable|string|min:5|max:32|unique:users',
+            'alias' => 'nullable|string|without_spaces|min:5|max:32|unique:users',
             'password' => 'required|string|min:6|confirmed'
             //'g-recaptcha-response' => ['required', new Recaptcha]
         ]);

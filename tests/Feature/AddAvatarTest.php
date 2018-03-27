@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Feature;
+namespace tests\Feature;
 
-use Tests\TestCase;
+use tests\TestCase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Testing\DatabaseMigrations;

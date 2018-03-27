@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Feature;
+namespace tests\Feature;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Tests\TestCase;
+use tests\TestCase;
 
 class ParticipateInThreadsTest extends TestCase
 {
@@ -22,8 +22,8 @@ class ParticipateInThreadsTest extends TestCase
     {
         $this->signIn();
 
-        $thread = create('App\Thread');
-        $reply = make('App\Reply');
+        $thread = create('Modules\Developers\Entities\Thread');
+        $reply = make('Modules\Developers\Entities\Reply');
 
         $this->post($thread->path() . '/replies', $reply->toArray());
 
@@ -36,8 +36,8 @@ class ParticipateInThreadsTest extends TestCase
     {
         $this->withExceptionHandling()->signIn();
 
-        $thread = create('App\Thread');
-        $reply = make('App\Reply', ['body' => null]);
+        $thread = create('Modules\Developers\Entities\Thread');
+        $reply = make('Modules\Developers\Entities\Reply', ['body' => null]);
 
         $this->post($thread->path() . '/replies', $reply->toArray())
              ->assertSessionHasErrors('body');
@@ -48,7 +48,7 @@ class ParticipateInThreadsTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $reply = create('App\Reply');
+        $reply = create('Modules\Developers\Entities\Reply');
 
         $this->delete("/replies/{$reply->id}")
             ->assertRedirect('login');
@@ -62,7 +62,7 @@ class ParticipateInThreadsTest extends TestCase
     function authorized_users_can_delete_replies()
     {
         $this->signIn();
-        $reply = create('App\Reply', ['user_id' => auth()->id()]);
+        $reply = create('Modules\Developers\Entities\Reply', ['user_id' => auth()->id()]);
 
         $this->delete("/replies/{$reply->id}")->assertStatus(302);
 
@@ -76,7 +76,7 @@ class ParticipateInThreadsTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $reply = create('App\Reply');
+        $reply = create('Modules\Developers\Entities\Reply');
 
         $this->patch("/replies/{$reply->id}")
             ->assertRedirect('login');
@@ -91,7 +91,7 @@ class ParticipateInThreadsTest extends TestCase
     {
         $this->signIn();
 
-        $reply = create('App\Reply', ['user_id' => auth()->id()]);
+        $reply = create('Modules\Developers\Entities\Reply', ['user_id' => auth()->id()]);
 
         $updatedReply = 'You been changed, fool.';
         $this->patch("/replies/{$reply->id}", ['body' => $updatedReply]);
@@ -106,8 +106,8 @@ class ParticipateInThreadsTest extends TestCase
 
         $this->signIn();
 
-        $thread = create('App\Thread');
-        $reply = make('App\Reply', [
+        $thread = create('Modules\Developers\Entities\Thread');
+        $reply = make('Modules\Developers\Entities\Reply', [
             'body' => 'Yahoo Customer Support'
         ]);
 
@@ -122,8 +122,8 @@ class ParticipateInThreadsTest extends TestCase
 
         $this->signIn();
 
-        $thread = create('App\Thread');
-        $reply = make('App\Reply');
+        $thread = create('Modules\Developers\Entities\Thread');
+        $reply = make('Modules\Developers\Entities\Reply');
 
         $this->post($thread->path() . '/replies', $reply->toArray())
             ->assertStatus(200);

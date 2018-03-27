@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Feature;
+namespace tests\Unit;
 
-use Tests\TestCase;
+use tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class UserTest extends TestCase
@@ -14,7 +14,7 @@ class UserTest extends TestCase
     {
         $user = create('App\User');
 
-        $reply = create('App\Reply', ['user_id' => $user->id]);
+        $reply = create('Modules\Developers\Entities\Reply', ['user_id' => $user->id]);
 
         $this->assertEquals($reply->id, $user->lastReply->id);
     }
@@ -24,10 +24,10 @@ class UserTest extends TestCase
     {
         $user = create('App\User');
 
-        $this->assertEquals(asset('images/avatars/default.png'), $user->avatar_path);
+        $this->assertEquals(asset('data/imgs/avatars/default.png'), $user->avatar_path);
 
-        $user->avatar_path = 'avatars/me.jpg';
+        $user->avatar_path = 'avatars/hippo.jpg';
 
-        $this->assertEquals(asset('avatars/me.jpg'), $user->avatar_path);
+        $this->assertEquals(asset('avatars/hippo.jpg'), $user->avatar_path);
     }
 }

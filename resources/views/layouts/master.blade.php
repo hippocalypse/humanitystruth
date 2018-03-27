@@ -18,18 +18,22 @@
 
     <body>
         <div class="w3-row">
-            <div class="w3-threequarter w3-col w3-margin-bottom">
+            <div class="w3-threequarter w3-col">
                 @yield('content')
             </div>
 
             <div id="side-panel" class="w3-quarter w3-col">
                 <div class="w3-margin">
-                    <div class="w3-container w3-padding w3-round w3-white">
+                    
+                    @yield('side-content')
+                    
+                    <div class="w3-container w3-padding w3-round w3-white w3-margin-bottom">
                         @include('layouts.excerpts')
                     </div>
                 </div>
             </div>
         </div>
+        @yield('post-scripts')
         
         @include('layouts.footer')
     </body>

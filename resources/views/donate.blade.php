@@ -46,7 +46,6 @@
         <div id="vue_app">
             <donate-component></donate-component>
         </div>
-        <script src="/js/app.js" type="text/javascript"></script>
     </div>
 </div>
 @stop
