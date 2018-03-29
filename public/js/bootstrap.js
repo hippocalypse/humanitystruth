@@ -66184,7 +66184,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_instantsearch__["a" /* default */]);
 
 var authorizations = __webpack_require__("./resources/assets/js/authorizations.js");
 
-Vue.prototype.$authorize = function () {
+Vue.prototype.authorize = function () {
     if (!window.App.signedIn) return false;
 
     for (var _len = arguments.length, params = Array(_len), _key = 0; _key < _len; _key++) {
@@ -66198,7 +66198,7 @@ Vue.prototype.$authorize = function () {
     return params[0](window.App.user);
 };
 
-Vue.prototype.$signedIn = window.App.signedIn;
+Vue.prototype.signedIn = window.App.signedIn;
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

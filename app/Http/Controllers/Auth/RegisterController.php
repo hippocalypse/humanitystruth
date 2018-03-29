@@ -7,10 +7,12 @@ use App\Carrier;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Rules\Recaptcha;
+use App\NewsletterSubscription;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use App\Jobs\SendVerificationEmail;
 use Illuminate\Foundation\Auth\RedirectsUsers;
+use App\Mail\EmailSMSCode;
 
 
 class RegisterController extends Controller
@@ -24,7 +26,7 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        $carriers = \App\Carrier::all();
+        $carriers = Carrier::all();
         return view('auth.register', compact('carriers'));
     }
     
@@ -36,11 +38,32 @@ class RegisterController extends Controller
     */
     public function register(Request $request)
     {
-        $this->validator($request->all())->validate();
-        event(new Registered($user = $this->create($request->all())));
+        $request->validate([
+            'email' => 'required|string|email|max:255|unique:users',
+            'phone' => 'nullable|integer|min:10|unique:users',
+            'phone_carrier_id' => 'required|integer',
+            'alias' => 'required|string|without_spaces|min:5|max:32|unique:users',
+            'password' => 'required|string|min:6|confirmed'
+            //'g-recaptcha-response' => ['required', new Recaptcha]
+        ]);
+        
+        $user = User::create([
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'phone_carrier_id' => $request->phone_carrier_id,
+            'alias' => $request->alias,
+            'password' => bcrypt($request->password),
+            'email_token' => bin2hex(random_bytes(64))
+        ]);
+
+        event(new Registered($user));
+        
         dispatch(new SendVerificationEmail($user));
-        \Session::flash('warning', 'You have successfully registered. Please verify your email.'); 
-        return redirect('ethics-policy');
+
+        //if user provided phone
+        if(strlen($user->phone) >= 10) dispatch(new EmailSMSCode($user));
+
+        return redirect('/profiles/' . $user->alias );
     }
 
     /**
@@ -62,15 +85,8 @@ class RegisterController extends Controller
      */
     protected function registered(Request $request, $user)
     {
-        //Session::flash('warning', 'You have successfully registered. Please verify your email.'); 
+        \Session::flash('warning', 'You have successfully registered! Please verify your email ' . (strlen($user->phone) < 10 ?: "and phone "). 'before utilizing the site.'); 
     }
-
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/';
     
     /**
      * Create a new controller instance.
@@ -81,55 +97,27 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'email' => 'required|string|email|max:255|unique:users',
-            'phone' => 'nullable|integer|min:10|unique:users',
-            'phone_carrier_id' => 'nullable|string',
-            'alias' => 'nullable|string|without_spaces|min:5|max:32|unique:users',
-            'password' => 'required|string|min:6|confirmed'
-            //'g-recaptcha-response' => ['required', new Recaptcha]
-        ]);
-    }
-
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'email' => $data['email'],
-            'phone' => $data['phone'],
-            'phone_carrier_id' => $data['phone_carrier_id'],
-            'alias' => $data['alias'],
-            'password' => bcrypt($data['password']),
-            'email_token' => bin2hex(random_bytes(64))
-        ]);
-    }
     
     /**
-    * Handle a registration request for the application.
+    * Handle a registration verification request for the application.
     *
     * @param $token
     * @return \Illuminate\Http\Response
     */
     public function verify($token)
     {
+        //validate first
         $user = User::where('email_token',$token)->first();
         if($user->confirmEmail()){
-            \Session::flash('notify', 'Thanks for verifying your email!'); 
-            return view('home');
+            //add user to subscriptions
+            if(!NewsletterSubscription::where('email_id', $user->id)->count()) {
+                    NewsletterSubscription::create([
+                    'email_id' => $user->id,
+                    'authenticated' => true
+                ]);
+            }
+            
+            return Redirect::back()->with('notify', 'Thanks for verifying your email!');
         }
     }
 }

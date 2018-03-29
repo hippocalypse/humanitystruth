@@ -19,6 +19,11 @@ Route::get('verifyemail/{token}', 'Auth\RegisterController@verify');
 Route::get('two-step', 'Auth\LoginController@show2FAForm');
 Route::post('two-step', 'Auth\LoginController@verify');
 
+/* Newsletter Subscriptions */
+Route::get('newsletter/subscribe/{email}/{token}', 'NewsletterSubscriptionController@verify');
+Route::post('newsletter/subscribe', 'NewsletterSubscriptionController@create');
+Route::delete('newsletter/subscribe', 'NewsletterSubscriptionController@destroy');
+
 /* Homepage */
 Route::get('/', function () {return view('index');})->name('home');
 

@@ -28,8 +28,12 @@ class ExcerptTableSeeder extends Seeder
             Excerpt::create(['content' => 'Conformity is the jailer of freedom and the enemy of growth.', 'author' => 'John F. Kennedy']),
             Excerpt::create(['content' => 'The goal of education is the advancement of knowledge and the dissemination of truth.', 'author' => 'John F. Kennedy']),
             Excerpt::create(['content' => 'A nation that is afraid to let its people judge the truth and falsehood in an open market is a nation that is afraid of its people.', 'author' => 'John F. Kennedy']),
-            Excerpt::create(['content' => 'Those who cannot remember the past are condemned to repeat it.', 'author' => 'George Santayana'])
-            //Excerpt::create(['content' => 'Pessimism never won any battle.', 'author' => 'Dwight D. Eisenhower'])
+            Excerpt::create(['content' => 'Those who cannot remember the past are condemned to repeat it.', 'author' => 'George Santayana']),
+            Excerpt::create(['content' => 'The very word \'secrecy\' is repugnant in a free and open society; and we are as a people inherently and historically opposed to secret societies, to secret oaths, and to secret proceedings.', 'author' => 'John F. Kennedy']),
+            Excerpt::create(['content' => 'We decided long ago that the dangers of excessive and unwarranted concealment of pertinent facts far outweighed the dangers which are cited to justify it.', 'author' => 'John F. Kennedy']),
+            Excerpt::create(['content' => '.. There is very grave danger that an announced need for increased security will be seized upon by those anxious to expand its meaning to the very limits of official censorship and concealment. That I do not intend to permit to the extent that it is in my control..', 'author' => 'John F. Kennedy'])
+            //Excerpt::create(['content' => 'Pessimism never won any battle.', 'author' => 'Dwight D. Eisenhower']),
+            //Excerpt::create(['content' => 'Pessimism never won any battle.', 'author' => 'Dwight D. Eisenhower']),
             
             
             

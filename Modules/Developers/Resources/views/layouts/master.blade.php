@@ -32,9 +32,10 @@
             </div>
         </form>
     </div>
+    
     <hr>
 
-    @if (count($trending))
+    @if (isset($trending))
         <div class="panel panel-default">
             <div class="panel-heading">
                 Trending Threads
@@ -55,4 +56,3 @@
     @endif
 </div>
 @stop
-

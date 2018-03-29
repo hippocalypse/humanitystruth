@@ -26,7 +26,7 @@ Vue.use(InstantSearch);
 
 let authorizations = require('./authorizations');
 
-Vue.prototype.$authorize = function (...params) {
+Vue.prototype.authorize = function (...params) {
     if (! window.App.signedIn) return false;
 
     if (typeof params[0] === 'string') {
@@ -36,7 +36,7 @@ Vue.prototype.$authorize = function (...params) {
     return params[0](window.App.user);
 };
 
-Vue.prototype.$signedIn = window.App.signedIn;
+Vue.prototype.signedIn = window.App.signedIn;
 
 
 

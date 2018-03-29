@@ -25,11 +25,6 @@
             </div>
 
             <div class="w3-container w3-center w3-margin-bottom">
-                <label for="subscribe">Subscribe to significant intelligence leaks!</label>
-                <input id="subscribe" type="checkbox" class="w3-check w3-margin-right">
-            </div>
-
-            <div class="w3-container w3-center w3-margin-bottom">
                 <h3><strong>Donation Method</strong></h3>
 
                 <div class="w3-container w3-padding">

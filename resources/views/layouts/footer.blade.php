@@ -5,7 +5,7 @@
                     <a href="#top" title="Back to Top">
                         <img id="footer-logo" class="w3-container" src="/data/imgs/logos/humanitystruth.png">
                     </a>
-                    <p>{{$vision}}</p>
+                    <p class="w3-small">{{$vision}}</p>
                 </div>
             </div>
 

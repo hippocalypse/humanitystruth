@@ -45,11 +45,9 @@ class ThreadsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Trending $trending)
+    public function create()
     {
-        return view('developers::threads.create', [
-            'trending' => $trending->get()
-        ]);
+        return view('developers::threads.create');
     }
 
     /**

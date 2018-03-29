@@ -2,7 +2,7 @@
 @section('content')
 <script> error("SITE UNDER CONSTRUCTION!");</script>
         <!-- 3 landing page links  -->
-        <div class="w3-margin">
+        <div class="w3-margin-top">
           	
             <div class="w3-container w3-half w3-margin-bottom">
               	<div class="w3-round w3-white">

@@ -23,7 +23,7 @@ class EmailSMSCode extends Mailable
      */
     public function __construct(User $user)
     {
-        $date = new DateTime();
+        $date = new \DateTime();
         $date->modify("+5 minutes");
         
         $this->user = $user;

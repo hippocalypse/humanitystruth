@@ -23,7 +23,6 @@ Vue.component('b-table', bTable);
 Vue.component('b-tabs', bTabs);
 Vue.component('b-tab', bTab);
 
-Vue.component('flash', require('./../../../Modules/Developers/Resources/assets/js/components/Flash.vue'));
 Vue.component('paginator', require('./../../../Modules/Developers/Resources/assets/js/components/Paginator.vue'));
 Vue.component('user-notifications', require('./../../../Modules/Developers/Resources/assets/js/components/UserNotifications.vue'));
 Vue.component('avatar-form', require('./../../../Modules/Developers/Resources/assets/js/components/AvatarForm.vue'));
