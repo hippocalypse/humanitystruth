@@ -4,21 +4,21 @@
 <div class="form-control-large">
     <div class="w3-container w3-card-4 w3-round w3-margin w3-white form-control-large">
         <div class="w3-container">
-            <h2 class="w3-center w3-black">
+            <h2 class="w3-center w3-black w3-round-large">
                 <div class="w3-panel w3-center">
-                    <strong>Values and Ethics for a renewed civilization</strong>
+                    <b>Ethical Values for an Intelligent and Sovereign Civilization</b>
                 </div>
             </h2>
         </div>
+        
         <div class="w3-container">
-            <p>Statement of Values
-                Any code of ethics is built on a foundation of widely shared values. The values of the
-                independent sector include:
-            </p>
+            <h3 class="w3-center">HumanitysTruth is ethically-bound to you. We are:</h3>
             <ul>
-                <li>Committed to serving humanity through social responsibility</li>
-                <li>Accountability to the public</li>
-                <li>Commitment beyond the law</li>
+                <li>Committed: to serving humanity through social responsibility by divine right of truth</li>
+                <li>Accountable: to the public by our entire open-source <a target="_blank" href="https://github.com/humanitystruth/humanitystruth/">framework</a></li>
+                <li>Discernable: by leading the commitment to humanity's future, far beyond compliance - Entirely opposed to LEGAL opportunism, extortion, secrecy, fear, and exploitation</li>
+                <li>Concerned: with the safety and security of each individual in our community.</li>
+                
                 <li>Respect for the worth and dignity of individuals</li>
                 <li>Inclusiveness and social justice</li>
                 <li>Respect for pluralism and diversity</li>
@@ -26,25 +26,26 @@
                 <li>Commitment to maintaining the public trust</li>
             </ul>
 
-            <p>I. Personal and Professional Integrity
+            <h3 class="w3-center">I. Personal and Professional Integrity</h3>
+            <p>
                 All staff, board members and volunteers of the organization act with honesty, integrity and
                 openness in all their dealings as representatives of the organization. The organization promotes a
                 working environment that values respect, fairness and integrity.
             </p>
 
-            <h2>II. Mission</h2>
+            <h3 class="w3-center">II. Mission</h3>
             <p>
-                Our mission, though it may be long and difficult, is to raise the mass-consciousness of humankind
+                Our mission, though it may be arduous and perilous, is to <b>raise the mass-consciousness of humankind
                 from an enslaved-mind driven by elite priorities, to a sovereign, peaceful, self-sufficient
-                species traveling among the universe. 
-
-                The organization has a clearly stated mission and purpose, approved by the board of directors, in
-                pursuit of the public good. All of its programs support that mission and all who work for or on
-                behalf of the organization understand and are loyal to that mission and purpose. The mission is
-                responsive to the constituency and communities served by the organization and of value to the
-                society at large.
+                species</b> traveling among the universe. All our actions are in pursuit of the truth for all humanity.
+                All of our programs support this mission and all who work for or on behalf of humanitystruth understand 
+                and are loyal to this purpose. Our <b>harmonic-rebellion</b> will be perceived by the establishment as a threat..
+                However, this is by design as we are being farmed as a resource by that very same entity. 
+                All our efforts benefit and are entirely responsive to, and accountable to, <b>all of humanity on earth</b>.
             </p>
-            <p>III. Governance
+            
+            <h3 class="w3-center">III. Governance</h3>
+            <p>
                 The organization has an active governing body that is responsible for setting the mission and
                 strategic direction of the organization and oversight of the finances, operations, and policies of
                 the organization. The governing body:
@@ -74,12 +75,15 @@
                 adopted;
                  Ensures that the resources of the organization are responsibly and prudently managed;
                 and,
-                 Ensures that the organization has the capacity to carry out its programs effectively.</p>
+                 Ensures that the organization has the capacity to carry out its programs effectively.
+            </p>
+            
             <p>
                 IV. Legal Compliance
                 The organization is knowledgeable of and complies with all laws, regulations and applicable
                 international conventions.
             </p>
+            
             <p>
                 V. Responsible Stewardship
                 The organization and its subsidiaries manage their funds responsibly and prudently. This should
@@ -102,7 +106,9 @@
                 Statement of Values and Code of Ethics
                 for Nonprofit and Philanthropic Organizations
             </p>
-            <p>VI. Openness and Disclosure
+            
+            <h3 class="w3-center">VI. Openness and Disclosure</h3>
+            <p>
                 The organization provides comprehensive and timely information to the public, the media, and
                 all stakeholders and is responsive in a timely manner to reasonable requests for information. All
                 information about the organization will fully and honestly reflect the policies and practices of the

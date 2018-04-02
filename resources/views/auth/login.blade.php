@@ -2,13 +2,10 @@
 
 @section('content')
 <div class="ht-form-control">
-    <div class="w3-container w3-card-4 w3-round w3-margin w3-white">
+    <div class="w3-container w3-padding w3-card-4 w3-round w3-margin w3-white">
+        
         <div class="w3-container">
-            <h2 class="w3-center w3-black">
-                <div class="w3-panel w3-center">
-                    <strong>Login</strong>
-                </div>
-            </h2>
+            <h2 class="w3-padding w3-round-large w3-center w3-black"><b>Login</b></h2>
         </div>
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -29,7 +26,7 @@
             </div>
 
             <div class="w3-container">
-                <button class="w3-button w3-black w3-right" type="submit">Login</button>
+                <button class="w3-button w3-black w3-round w3-right" type="submit">Login</button>
             </div>
         </form>
     </div>

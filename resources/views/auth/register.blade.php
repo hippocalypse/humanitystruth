@@ -5,7 +5,9 @@
     <div class="w3-container w3-padding w3-card-4 w3-round w3-margin w3-white">
         <form method="POST" action="{{ route('register') }}">
             @csrf
-            <div class="w3-container"><h2 class="w3-padding w3-round-large w3-center w3-black"><b>Registration Form</b></h2></div>
+            <div class="w3-container">
+                <h2 class="w3-padding w3-round-large w3-center w3-black"><b>Registration Form</b></h2>
+            </div>
             <div class="w3-container w3-padding">
                 <p><input id="email" placeholder=" E-Mail Address" type="email" class="w3-input ht-form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required></p>
                 

@@ -42,7 +42,8 @@
             <li>Financially support the community with a small donation to HumanitysTruth!</li>
             <li>Join our developers forums and help build various open-source plugins needed for our system.</li>
             <li>If you've got some suppressed technology and are seeking a publishing outlet: Utilize our anonymous submission system.</li>
-            <li>Further educate yourself daily, the truth is only for those who actively seek it. (Joining our community is a great start!)</li>
+            <li>Expand your education daily, the truth is only for those who actively seek it. (Joining our community is a great start!)</li>
+            <li>Transition away from specializing in a particular subject and executing the same logical process daily. This is how ignorance is bred.</li>
         </ol>
     </div>
 </div>

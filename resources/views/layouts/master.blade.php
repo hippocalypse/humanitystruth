@@ -27,7 +27,7 @@
                     
                     @yield('side-content')
                     
-                    <div class="w3-container w3-padding w3-round w3-white w3-margin-bottom">
+                    <div class="w3-container w3-card-4 w3-padding w3-round w3-white w3-margin-bottom">
                         @include('layouts.excerpts')
                     </div>
                     

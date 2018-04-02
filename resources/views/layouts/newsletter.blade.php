@@ -1,5 +1,5 @@
 @if(!($id = Auth::id()) || !\App\NewsletterSubscription::where("email_id", $id)->count())
-<div class="w3-container w3-padding w3-round w3-white w3-margin-bottom">
+<div class="w3-container w3-card-4 w3-padding w3-round w3-white w3-margin-bottom">
     <div class="w3-center w3-container">
         <form id="newsletter_subscription">
             <h3>Subscribe for the latest intelligence and technology leaks!</h3>

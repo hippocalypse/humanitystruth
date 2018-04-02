@@ -8,8 +8,8 @@
             <thead>
                 <tr>
                     <th>URI</th>
-                    <th>Name</th>
-                    <th>Type</th>
+                    <!--<th>Name</th>-->
+                    <th>Module</th>
                     <th>Method</th>
                 </tr>
             </thead>
@@ -17,7 +17,7 @@
             @foreach($routes as $route)
                 <tr>
                     <td><a href="{{$route->uri}}">{{$route->uri}}</a></td>
-                    <td>{{$route->getName()}}</td>
+                    <!--<td>{{$route->getName()}}</td>-->
                     <td>{{$route->getPrefix()}}</td>
                     <td>{{$route->getActionMethod()}}</td>
                 </tr>
