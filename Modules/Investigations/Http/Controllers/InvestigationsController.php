@@ -18,6 +18,17 @@ class InvestigationsController extends Controller
         $investigations = Investigation::all();
         return view('investigations::index', compact("investigations"));
     }
+    
+    
+    /**
+     * Display a listing of the resource.
+     * @return Response
+     */
+    public function topics()
+    {
+        //we want to dynamically return this category list
+        return view('investigations::topics');
+    }
 
     /**
      * Show the form for creating a new resource.

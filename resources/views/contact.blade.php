@@ -17,7 +17,8 @@
                 <p>HumanitysTruth specializes in pushing censored/suppressed technologies to mass-consciousness.</p>
                 <p>The following is the address of our secure site where you can anonymously upload your documents to our editors.</p>
                 <div class="alert alert-info">
-                    <div><a href="https://wlupld3ptjvsgwqw.onion" target="_blank"><b>https://wlupld3ptjvsgwqw.onion</b></a></div><br>
+                    <h3 class="w3-center"><a href="https://unavailable.onion" target="_blank"><b>https://unavailable.onion</b></a></h3>
+                    <br>
                     <div>
                         Copy this address into your <a href="https://torproject.org/" target="_blank"><b>Tor Browser</b></a>. When the page loads, you will find further instructions on how to submit files and messages through our securedrop system. We highly recommend further increasing your encryption layer by using our <a href="#"><b>Public PGP Key</b></a>.
                     </div>

@@ -39,11 +39,11 @@
     Morris.Donut({
         element: 'donations_pay_for',
         data: [
-          {value: 15, label: 'Servers/Bandwidth'},
-          {value: 20, label: 'Infrastructure'},
+          {value: 30, label: 'Servers+Fiber'},
+          {value: 25, label: 'Infrastructure'},
           {value: 10, label: 'Security'},
-          {value: 10, label: 'Advancing R&D'},
-          {value: 40, label: 'Promoting Leaks'},
+          {value: 15, label: 'Advancing R&D'},
+          {value: 15, label: 'Promoting Leaks'},
           {value: 5, label: 'Community Donations'}
         ],
         labels: ['test'],

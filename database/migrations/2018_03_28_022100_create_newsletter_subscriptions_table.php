@@ -14,7 +14,7 @@ class CreateNewsletterSubscriptionsTable extends Migration
     public function up() {
         Schema::create('newsletter_subscriptions', function (Blueprint $table) {
             $table->increments('id');
-            $table->email('email')->unique();
+            $table->string('email')->unique();
             //$table->boolean('authenticated')->default(false);
             //instead lets null this column after user confirms the subscription (using this authenticate_token)
             $table->string('authenticate_token')->nullable()->default(bin2hex(random_bytes(64)));

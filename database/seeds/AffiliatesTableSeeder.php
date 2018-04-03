@@ -21,7 +21,8 @@ class AffiliatesTableSeeder extends Seeder
             Affiliate::create(['logo' => 'wikileaks.png',         'website' => 'https://wikileaks.org/']),
             Affiliate::create(['logo' => 'siriusdisclosure.png',  'website' => 'https://siriusdisclosure.com/']),
             Affiliate::create(['logo' => 'etcher.png',            'website' => 'https://etcher.io/']),
-            Affiliate::create(['logo' => 'secureteam10.png',      'website' => 'https://www.youtube.com/user/secureteam10'])
+            Affiliate::create(['logo' => 'secureteam10.png',      'website' => 'https://www.youtube.com/user/secureteam10']),
+            Affiliate::create(['logo' => 'idl_shield.png',        'website' => 'https://internetdefenseleague.org/'])
         ];
     }
 }

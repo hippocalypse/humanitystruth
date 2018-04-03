@@ -10,7 +10,7 @@
            
             
         <p>The Lightworkers Union is a collective of free-thinking minds. 
-           We're developing an open-source investigative research and development community. 
+           We're developing an open-source investigative research and development community, wrapped in an app.
            Securely distributing suppressed technology that the global elite
            work hard to silence is our profession.
            
@@ -33,7 +33,7 @@
             <li>Crystal/Quasi-Crystalline Technologies</li>
             <li>Exo-politics/news</li>
             <li>Resonance/Harmonic Frequencies</li>
-            <li>Advanced Pharmaceuticals</li>
+            <li>Pharmaceutical Cures</li>
         </ul>
         <p>You may support bringing truth to mass-consciousness in a few ways:</p>
         <ol>
@@ -43,7 +43,7 @@
             <li>Join our developers forums and help build various open-source plugins needed for our system.</li>
             <li>If you've got some suppressed technology and are seeking a publishing outlet: Utilize our anonymous submission system.</li>
             <li>Expand your education daily, the truth is only for those who actively seek it. (Joining our community is a great start!)</li>
-            <li>Transition away from specializing in a particular subject and executing the same logical process daily. This is how ignorance is bred.</li>
+            <!--<li>Transition away from specializing in a particular subject and executing the same logical process daily. This is how ignorance is bred.</li>-->
         </ol>
     </div>
 </div>

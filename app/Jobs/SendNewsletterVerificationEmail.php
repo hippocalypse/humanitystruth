@@ -10,7 +10,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Mail;
 use App\Mail\EmailNewsletterVerification;
 
-class SendVerificationEmail implements ShouldQueue
+class SendNewsletterVerificationEmail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
