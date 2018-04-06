@@ -27,6 +27,11 @@ Route::delete('newsletter/subscribe', 'NewsletterSubscriptionController@destroy'
 /* Homepage */
 Route::get('/', function () {return view('index');})->name('home');
 
+/* working on Instant Messaging with Admin 
+Route::get('chat', function() {
+    event(new UserRegistered(new App\User()));
+    return "done";
+}); */
 
 /* Affiliates */
 Route::get('affiliates', function() {

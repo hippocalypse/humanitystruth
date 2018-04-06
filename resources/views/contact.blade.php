@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <div class="ht-form-control-large">
-    <div id="vue_app" class="w3-container w3-round w3-margin w3-white ht-form-control-large">
+    <div id="vue_app" class="w3-container w3-round w3-margin w3-card-4 w3-white ht-form-control-large">
         <b-tabs class="w3-padding w3-margin">
             <b-tab title="Contact Us" class="w3-margin">
                 <p>If you have no sensitive data to transmit, you may email us at  <a href="mailto:admin@humanitystruth.com"><b>admin@humanitystruth.com</b></a></p>
@@ -50,7 +50,7 @@
                                 <li>Zero-Point Energy</li>
                                 <li>Electro/Magneto Gravitics</li>
                                 <li>Exo-politics/News</li>
-                                <li>Advanced Pharmaceuticals</li>
+                                <li>Pharmaceutical Cures</li>
                             </ul>
                         </li>
                     </ol>
@@ -81,8 +81,8 @@
         </b-tabs>           
     </div>
 </div>
-
-<script src="/js/app.js" type="text/javascript"></script>
 @stop
 
-
+@section('post-scripts')
+<script src="/js/app.js" type="text/javascript"></script>
+@stop

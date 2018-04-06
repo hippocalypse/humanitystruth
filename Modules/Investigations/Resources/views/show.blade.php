@@ -6,4 +6,8 @@
     <p>{{$investigation->title}}</p>
 </div>
 
-@endsection
+@stop
+
+@section('post-scripts')
+    <script src="{{ asset('/js/app.js') }}"></script>
+@stop

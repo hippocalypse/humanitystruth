@@ -6,6 +6,8 @@
             <input {{ $id ? "type='hidden' value='" . Auth::user()->email . "'" : "" }} id="subscribe" name="subscribe" class="w3-input w3-block w3-margin-bottom" type="text" placeholder="Enter your Email" required>
             <input type="submit" class="w3-button w3-round w3-card-4 w3-blue" value="Subscribe">
         </form>
+        
+       
     </div>
 </div>
 @endif
@@ -22,7 +24,7 @@
                 url: '/newsletter/subscribe',
                 data: {subscribe: subscribe},
                 success: function( msg ) {
-                    warning('Please verify your subscription request via email confirmation..');
+                    warning('Verify your subscription via email confirmation..');
                 },
                 error: function( msg ) {
                     error('Error adding to mailing list..');

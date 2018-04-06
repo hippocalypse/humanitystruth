@@ -4,8 +4,14 @@
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 Vue.component('donate-component', require('./components/DonateComponent.vue'));
+Vue.component('paginator', require('./../../../Modules/Developers/Resources/assets/js/components/Paginator.vue'));
+Vue.component('user-notifications', require('./../../../Modules/Developers/Resources/assets/js/components/UserNotifications.vue'));
+Vue.component('avatar-form', require('./../../../Modules/Developers/Resources/assets/js/components/AvatarForm.vue'));
+Vue.component('wysiwyg', require('./../../../Modules/Developers/Resources/assets/js/components/Wysiwyg.vue'));
+Vue.component('thread-view', require('./../../../Modules/Developers/Resources/assets/js/pages/Thread.vue'));
+Vue.component('investigation-view', require('./../../../Modules/Investigations/Resources/assets/js/pages/Investigation.vue'));
 
-// Import the individual components
+// Import the individual js components
 import bCard from 'bootstrap-vue/es/components/card/card';
 import bCardHeader from 'bootstrap-vue/es/components/card/card-header';
 import bCardBody from 'bootstrap-vue/es/components/card/card-body';
@@ -23,25 +29,19 @@ Vue.component('b-table', bTable);
 Vue.component('b-tabs', bTabs);
 Vue.component('b-tab', bTab);
 
-Vue.component('paginator', require('./../../../Modules/Developers/Resources/assets/js/components/Paginator.vue'));
-Vue.component('user-notifications', require('./../../../Modules/Developers/Resources/assets/js/components/UserNotifications.vue'));
-Vue.component('avatar-form', require('./../../../Modules/Developers/Resources/assets/js/components/AvatarForm.vue'));
-Vue.component('wysiwyg', require('./../../../Modules/Developers/Resources/assets/js/components/Wysiwyg.vue'));
-Vue.component('thread-view', require('./../../../Modules/Developers/Resources/assets/js/pages/Thread.vue'));
-
-// Or make available to your component or app:
-export default {
-  components: {
-    bCard,
-    bCardHeader,
-    bCardBody,
-    bCardFooter,
-    bTable,
-    bTabs,
-    bTab
-  } 
-  // ...
-}
+//// Or make available to your component or app:
+//export default {
+//  components: {
+//    bCard,
+//    bCardHeader,
+//    bCardBody,
+//    bCardFooter,
+//    bTable,
+//    bTabs,
+//    bTab
+//  } 
+//  // ...
+//}
 
 const app = new Vue({
     el: '#vue_app'

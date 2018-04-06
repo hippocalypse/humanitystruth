@@ -27,10 +27,10 @@
                 </ul>
                 <hr>
                 
-                <h3 class="w3-center">We the People, Acknowledge the Great Deception</h3>
+                <h3 class="w3-center">We the People Acknowledge the Great Deception</h3>
                 <p>
-                    The <b>pretense</b> to HumanityTruth.com is it's designed, built, and implemented because we,
-                    as a society (aka humanity), have obviously been deceived by our economic, political, military, 
+                    The <b>pretense</b> to HumanityTruth.com is it's designed, built, and implemented because we
+                    as a society (aka humanity) have obviously been deceived by our economic, political, military, 
                     media, religious, and academic leaders.
                 </p>
                 <hr>
@@ -55,6 +55,8 @@
                     All our efforts benefit and are entirely responsive to, and accountable to, <b>all of humanity on earth</b>.
                 </p>
                 <hr>
+                
+                
 
                 <h3 class="w3-center"><b>III.</b> Governance</h3>
                 <p>
@@ -183,6 +185,41 @@
                      To feel free to ask questions when making a donation and to receive prompt, truthful and
                     forthright answers.3
                 </p>
+                
+                
+                <h3 class="w3-center"><b>X.</b> Crypto-currency and Mining</h3>
+                <p>
+                    todo
+                </p>
+                <hr>
+                
+                <h3 class="w3-center"><b>XI.</b> Peer-to-Peer File Persistence</h3>
+                <p>
+                    todo
+                </p>
+                <hr>
+
+                <h3 class="w3-center"><b>XII.</b> Code Contributions</h3>
+                <p>
+                    We're always encouraging like-minded ideas and efforts. If you'd like to contribute to the humanitystruth vision, please utilize github for code-contributions as well as our <a href="https://humanitystruth.com/developers/threads"><b>developers forums</b></a> for discussion.
+                </p>
+                <hr>
+                
+                <h3 class="w3-center"><b>XIII.</b> Framework Issues</h3>
+                <p>
+                    Please submit any issues you may experience via <a href="https://github.com/humanitystruth/humanitystruth/issues"><b>github</b></a>.
+                </p>
+                <hr>
+                
+                
+                <!--
+                <h3 class="w3-center"><b>next</b></h3>
+                <p>
+                    todo
+                </p>
+                <hr>
+                -->
+                
             </div>
         </div>
     </div>
