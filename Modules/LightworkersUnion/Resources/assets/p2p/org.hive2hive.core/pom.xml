@@ -1,0 +1,116 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.hive2hive</groupId>
+		<artifactId>org.hive2hive.parent</artifactId>
+		<version>1.2.2</version>
+	</parent>
+
+	<artifactId>org.hive2hive.core</artifactId>
+	<packaging>jar</packaging>
+
+	<name>Hive2Hive Core</name>
+	<url>http://www.hive2hive.org</url>
+	<description>The core project of the Hive2Hive library.</description>
+
+	<dependencies>
+		<dependency>
+			<!-- Hive2Hive Process Framework -->
+			<groupId>org.hive2hive</groupId>
+			<artifactId>org.hive2hive.processframework</artifactId>
+			<version>1.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.tomp2p</groupId>
+			<artifactId>tomp2p-dht</artifactId>
+			<version>5.0-Beta5</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.tomp2p</groupId>
+			<artifactId>tomp2p-replication</artifactId>
+			<version>5.0-Beta5</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk15on</artifactId>
+			<version>1.51</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>de.ruedigermoeller</groupId>
+			<artifactId>fst</artifactId>
+			<version>2.23</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.engio</groupId>
+			<artifactId>mbassador</artifactId>
+			<version>1.2.0</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Test dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<!-- Hive2Hive Repository -->
+		<repository>
+			<id>hive2hive.org</id>
+			<name>Hive2Hive Repository</name>
+			<url>http://repo.hive2hive.org</url>
+		</repository>
+
+		<!-- TomP2P Repository -->
+		<repository>
+			<id>tomp2p.net</id>
+			<name>TomP2P Repository</name>
+			<url>http://tomp2p.net/dev/mvn/</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+
+			<!-- create a test jar with the test classes -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.5</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>test-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

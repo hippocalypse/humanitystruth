@@ -16,8 +16,6 @@ abstract class TestCase extends BaseTestCase
     {
         parent::setUp();
 
-        //DB::statement('PRAGMA foreign_keys=on;');
-
         $this->disableExceptionHandling();
     }
 

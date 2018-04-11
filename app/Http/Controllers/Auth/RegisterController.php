@@ -43,8 +43,8 @@ class RegisterController extends Controller
             'phone' => 'nullable|integer|min:10|unique:users',
             'phone_carrier_id' => 'required|integer',
             'alias' => 'required|string|without_spaces|min:5|max:32|unique:users',
-            'password' => 'required|string|min:6|confirmed'
-            //'g-recaptcha-response' => ['required', new Recaptcha]
+            'password' => 'required|string|min:8|confirmed',
+            'g-recaptcha-response' => ['required', new Recaptcha]
         ]);
         
         $user = User::create([

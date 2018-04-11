@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Carrier;
+use Modules\Developers\Entities\Reply;
 
 class User extends Authenticatable
 {
@@ -77,7 +78,7 @@ class User extends Authenticatable
      */
     public function activity()
     {
-        return $this->hasMany(Activity::class);
+        return $this->hasMany(\Modules\Developers\Entities\Activity::class);
     }
 
     /**

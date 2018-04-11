@@ -1,28 +1,28 @@
 <?php
 
-namespace Tests\Unit;
+namespace tests\Unit;
 
-use App\Reply;
+use Modules\Developers\Entities\Reply;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Tests\TestCase;
+use tests\TestCase;
 
 class ReplyTest extends TestCase
 {
-    use DatabaseMigrations;
+    //use DatabaseMigrations;
 
     /** @test */
-    function it_has_an_owner()
+    function a_reply_has_an_owner()
     {
-        $reply = create('App\Reply');
+        $reply = create('Modules\Developers\Entities\Reply');
 
         $this->assertInstanceOf('App\User', $reply->owner);
     }
 
     /** @test */
-    function it_knows_if_it_was_just_published()
+    function a_reply_knows_if_it_was_just_published()
     {
-        $reply = create('App\Reply');
+        $reply = create('Modules\Developers\Entities\Reply');
 
         $this->assertTrue($reply->wasJustPublished());
 
@@ -32,7 +32,7 @@ class ReplyTest extends TestCase
     }
 
     /** @test */
-    function it_can_detect_all_mentioned_users_in_the_body()
+    function a_reply_can_detect_all_mentioned_users_in_the_body()
     {
         $reply = new Reply([
             'body' => '@JaneDoe wants to talk to @JohnDoe'
@@ -42,7 +42,7 @@ class ReplyTest extends TestCase
     }
 
     /** @test */
-    function it_wraps_mentioned_usernames_in_the_body_within_anchor_tags()
+    function a_reply_wraps_mentioned_usernames_in_the_body_within_anchor_tags()
     {
         $reply = new Reply([
             'body' => 'Hello @Jane-Doe.'
@@ -56,9 +56,9 @@ class ReplyTest extends TestCase
     }
 
     /** @test */
-    function it_knows_if_it_is_the_best_reply()
+    function a_reply_knows_if_it_is_the_best_reply()
     {
-        $reply = create('App\Reply');
+        $reply = create('Modules\Developers\Entities\Reply');
 
         $this->assertFalse($reply->isBest());
 
@@ -70,7 +70,7 @@ class ReplyTest extends TestCase
     /** @test */
     function a_reply_body_is_sanitized_automatically()
     {
-        $reply = make('App\Reply', ['body' => '<script>alert("bad")</script><p>This is okay.</p>']);
+        $reply = make('Modules\Developers\Entities\Reply', ['body' => '<script>alert("bad")</script><p>This is okay.</p>']);
 
         $this->assertEquals("<p>This is okay.</p>", $reply->body);
     }

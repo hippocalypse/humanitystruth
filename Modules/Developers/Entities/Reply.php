@@ -143,6 +143,6 @@ class Reply extends Model
      */
     public function getBodyAttribute($body)
     {
-        return \Purify::clean($body);
+        return \HTMLPurifier::getInstance()->purify($body);
     }
 }

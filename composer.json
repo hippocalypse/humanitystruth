@@ -1,7 +1,7 @@
 {
     "name": "humanitystruth/humanitystruth",
     "description": "HumanitysTruth Framework",
-    "keywords": ["truth", "humanitys", "intelligence", "open", "source", "laravel"],
+    "keywords": ["truth", "humanity", "intelligence", "open", "source", "free"],
     "license": "MIT",
     "type": "project",
     "require": {
@@ -12,7 +12,8 @@
         "laravel/tinker": "~1.0",
         "nwidart/laravel-modules": "^3.0",
         "predis/predis": "^1.1",
-        "ezyang/htmlpurifier":"dev-master"
+        "ezyang/htmlpurifier":"dev-master",
+        "phpseclib/phpseclib": "^2.0.4"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

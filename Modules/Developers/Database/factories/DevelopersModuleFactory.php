@@ -15,7 +15,7 @@
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
-
+    
     return [
         'alias' => $faker->name,
         'email' => $faker->unique()->safeEmail,

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Modules\Developers\Events;
 
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
@@ -20,4 +20,6 @@ class ThreadReceivedNewReply
     {
         $this->reply = $reply;
     }
+    
+    //fire thread was updated notification to each subscriber?
 }

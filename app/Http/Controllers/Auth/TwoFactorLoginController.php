@@ -71,6 +71,10 @@ class TwoFactorLoginController extends Controller
         
         return show2FAForm($user);
     }
+    
+    protected static function cleanup() {
+        return SmsCode::where(['expiration', "<" , new DateTime()])->delete();
+    }
 
     /**
      * The user is verifying their 2-factor authentication code after the initial login step
@@ -82,12 +86,12 @@ class TwoFactorLoginController extends Controller
     {
         $this->validate2FA($request);
         
-        //todo implement throttle traffic over laravels existing decaying model
+        //TODO implement throttle traffic over laravels existing decaying model
         
         if(SmsCode::where(
                     ['verification_code', $request->sms_code],
                     ['phone', $request->phone],
-                    ['expiration', "<" , new DateTime()])->delete()) {
+                    ['expiration', ">" , new DateTime()])->delete()) {
                     
             /*
             if(new DateTime() > new DateTime($verified->expiration)) {

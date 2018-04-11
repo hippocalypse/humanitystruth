@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ChannelTest extends TestCase
 {
-    use DatabaseMigrations;
+    //use DatabaseMigrations;
     
     /** @test */
     public function a_channel_consists_of_threads()

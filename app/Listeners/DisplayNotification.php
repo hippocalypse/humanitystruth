@@ -26,6 +26,6 @@ class DisplayNotification
      */
     public function handle(NotificationEvent $event)
     {
-        //
+        //tell browser to display the event
     }
 }

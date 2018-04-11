@@ -1,9 +1,9 @@
-@extends('investigations::layouts.master')
+@extends('developers::layouts.master')
 
 @section('content')
 <div id="vue_app" class="w3-container ht-form-control-large">
     <div class="w3-container w3-padding w3-card-4 w3-round w3-margin w3-white">
-        <investigation-view :investigation="{{ $investigation }}" inline-template>
+        <thread-view :thread="{{ $thread }}" inline-template>
             <div>
                 <div class="w3-container w3-padding w3-round w3-white w3-margin-bottom">
                     <div class="panel panel-default">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-        </investigation-view>
+        </thread-view>
     </div>
 </div>
 @stop

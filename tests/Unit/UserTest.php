@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class UserTest extends TestCase
 {
-    use DatabaseMigrations;
+    //use DatabaseMigrations;
     
     /** @test */
     public function a_user_can_fetch_their_most_recent_reply()
@@ -26,8 +26,8 @@ class UserTest extends TestCase
 
         $this->assertEquals(asset('data/imgs/avatars/default.png'), $user->avatar_path);
 
-        $user->avatar_path = 'avatars/hippo.jpg';
+        $user->avatar_path = 'data/imgs/avatars/hippo.jpg';
 
-        $this->assertEquals(asset('avatars/hippo.jpg'), $user->avatar_path);
+        $this->assertEquals(asset('data/imgs/avatars/hippo.jpg'), $user->avatar_path);
     }
 }
