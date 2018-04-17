@@ -30,4 +30,25 @@ class UserTest extends TestCase
 
         $this->assertEquals(asset('data/imgs/avatars/hippo.jpg'), $user->avatar_path);
     }
+    
+    /** @test */
+    function a_user_can_subscribe_to_the_newsletter()
+    {
+        //
+    
+    }
+    
+    /** @test */
+    function a_subscribed_user_cannot_see_the_newsletter_subscription_div()
+    {
+        //
+    
+    }
+    
+    /** @test */
+    function a_subscribed_user_cannot_resubscribe_to_the_newsletter()
+    {
+        //
+    
+    }
 }

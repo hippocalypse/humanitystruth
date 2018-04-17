@@ -146,7 +146,7 @@ class TwoFactorLoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/investigations';
+    protected $redirectTo = '/investigations/topics';
 
     /**
      * The user has been authenticated.
