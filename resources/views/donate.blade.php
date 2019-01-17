@@ -24,12 +24,13 @@
     Morris.Donut({
         element: 'supported_affiliates',
         data: [
-          {value: 25, label: 'freedom.press'},
+          {value: 7, label: 'freedom.press'},
           {value: 7, label: 'securedrop.org'},
           {value: 5, label: 'wikileaks.org'},
-          {value: 5, label: 'torproject.org'},
+          {value: 1, label: 'torproject.org'},
           {value: 20, label: 'siriusdisclosure.com'},
-          {value: 5, label: 'youtube.com/secureteam10'}
+          {value: 5, label: 'youtube.com/secureteam10'},
+          {value: 5, label: 'infowars.com'}
         ],
         formatter: function (x) { return "$" + x + "/mo"}
     }).on('click', function(i, row){

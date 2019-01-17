@@ -3,7 +3,7 @@
 <div class="w3-container w3-padding w3-card-4 w3-round w3-margin w3-white">
     <div class="w3-container">
         <h2 class="w3-center">Affilates</h2>
-        <p>These affiliates may or may not have approved their links here. In any case, we support them and they're all open-source.. Check these guys out, what they're doing is great:</p>
+        <p>These affiliates may or may not have approved their links here. In any case, we support them.. Check these guys out, what they're doing is great:</p>
     </div>
     <hr>
     <div class="w3-container w3-padding w3-row w3-mobile">

@@ -52,7 +52,7 @@
                     All of our programs support this mission and all who work for or on behalf of humanitystruth understand 
                     and are loyal to this purpose. Our <b>harmonic-rebellion</b> will be perceived by the establishment as a threat..
                     However, this is by design as we are being farmed as a resource by that very same entity. 
-                    All our efforts benefit and are entirely responsive to, and accountable to, <b>all of humanity on earth</b>.
+                    All our efforts benefit and are entirely accountable to <b>all of humanity on earth</b>.
                 </p>
                 <hr>
                 

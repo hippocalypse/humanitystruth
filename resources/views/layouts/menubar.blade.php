@@ -15,6 +15,7 @@
 ?>
 
 <div id="menu-bar" class="w3-bar w3-black w3-mobile">
+    <!--temporarily disabled
     @if(Request::url() === 'shop')
         <div class="shopping-cart w3-button w3-bar-item w3-right w3-mobile">
             <a href="/shopping-cart">{{$cart_summary}}</a>
@@ -29,11 +30,15 @@
         @endif
         
     @endif
+    -->
+    
     <div class="w3-button w3-bar-item w3-right w3-mobile"><a href="/donate">DONATE</a></div>
     <div class="w3-button w3-bar-item w3-right w3-mobile"><a href="/contact">CONTACT</a></div>
     <div class="w3-button w3-bar-item w3-right w3-mobile"><a href="/securedrop">SECURE DROP</a></div>
+    <!--temporarily disabled
     <div class="w3-button w3-bar-item w3-right w3-mobile"><a href="/download">DOWNLOAD</a></div>
     <div class="w3-button w3-bar-item w3-right w3-mobile"><a href="/join">JOIN</a></div>
+    -->
     @guest
         <div class="w3-button w3-bar-item w3-right w3-mobile"><a href="{{ route('login') }}">LOGIN</a></div>
         <div class="w3-button w3-bar-item w3-right w3-mobile"><a href="{{ route('register') }}">REGISTER</a></div>
@@ -43,8 +48,7 @@
         @endif
         <div class="w3-button w3-bar-item w3-right w3-mobile"><a href="/profile">{{ Auth::user()->email }}</a></div>
         <div class="w3-button w3-bar-item w3-right w3-mobile">
-            <a href="{{ route('logout') }}" onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();">
+            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                 LOGOUT
             </a>
         </div>

@@ -9,7 +9,7 @@
                     <a href="/join">
                         <img src="/data/imgs/join_link.jpg" class="w3-image w3-round">
                     </a>
-                    <div class="w3-container w3-center">
+                    <div class="w3-panel w3-center">
                         <p>Utilizing onion-routing, hybrid-p2p architecture, and a mining-pool, we can financially promote and securely distribute suppressed information to the masses. Read more..</p>
                     </div>
             	</div>
@@ -20,7 +20,7 @@
                     <a href="/securedrop">
                         <img src="/data/imgs/secure-drop_link.jpg" class="w3-image w3-round">
                     </a>
-                    <div class="w3-container w3-center">
+                    <div class="w3-panel w3-center">
                         <p>Anonymous whistle-blowers intelligence submission system...</p>
                     </div>
               	</div>
@@ -31,7 +31,7 @@
                     <a href="/investigations">
                         <img src="/data/imgs/search_link.jpg" class="w3-image w3-round">
                     </a>
-                    <div class="w3-container w3-center">
+                    <div class="w3-panel w3-center">
                         <p>Browse crowd-sourced investigations and evidence...</p>
                     </div>
               	</div>

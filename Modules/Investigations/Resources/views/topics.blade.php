@@ -2,14 +2,9 @@
 
 @section('content')
 <div class="w3-container w3-padding w3-card-4 w3-round-large w3-margin w3-white">
-    <p> This is the investigations categorys list. </p>
+    <p> This is the investigations categories list. </p>
     <hr>
-    <h2>Battles of Truth VS Suppression:</h2>
-    <p>
-       Here's a list of true patriots who risk(ed) their life and liberty fighting battles of truth versus suppression. 
-       They all deserve a major open-source investigation.
-    </p>
-    <ul><!-- link these tags for files -->
+    <ul><!-- link these tags for files and investigations -->
         <li>Nikola Tesla</li>
         <li>President John F. Kennedy</li>
         <li>President Dwight D. Eisenhower</li>
@@ -21,6 +16,7 @@
         <li>Gary Mckinnon</li>
         <li>Gary Webb</li>
         <li>William Binney</li>
+        <li>William Cooper</li>
         <li>Kevin Shipp</li>
         <li>Thomas Drake</li>
         <li>John Kiriakou</li>
@@ -28,10 +24,15 @@
         <li>Alfred Bielek</li>
         <li>Michael Hastings</li>
         <li>Bob Lazar</li>
+        <li>Andrew Basiago</li>
         <li>Paul Bennewitz</li>
         <li>Ron Rummel</li>
         <li>Alex Collier</li>
-        <li>...</li>
+        <li>James Forrestal</li>
+        <li>Admiral Richard E. Byrd</li>
+        <li>Buzz Aldrin</li>
+        <li>Neil Armstrong</li>
+        <li>J. Allen Hynek</li>
     </ul>
 
     <p>A 'false-flag operation' was coined by naval ships deceiving the enemy and gaining a strategic advantage by literally flying the wrong flags. Here's a list of (false-flag) events, which have significant untold truths and changed the course of history through misinformation.
@@ -56,10 +57,13 @@
         <li>Operation AJAX</li>
         <li>COINTELPRO</li>
         <li>Operation Gladio</li>
+        <li>Operation Mockingbird</li>
         <li>Bilderberg Group</li>
         <li>1954 Greada Treaty</li>
         <li>Philadelphia Experiment</li>
+        <li>Project Pegasus</li>
         <li>Montauk Project</li>
+        <li>Gizeh Intelligence</li>
         <li>Authenticated Crop Circles</li>
         <li>Monoliths and Pyramids on Mars and its moons (Phobos), Earths Moon, Venus, Saturn, Jupiter</li>
     </ul>
@@ -86,19 +90,29 @@
     
     <p>List of information to dig into</p>
     <ul>
+        <li>Proofs of a Conspiracy - John Robison, 1798 - Exposes Illuminati Ideals</li>
+        <li>Teslas Original Drawings, classified - Tesla Energetic Array - Time Travel</li>
+        <li>Chronovision</li>
+        <li>The law of consistency</li>
+        <li>NSC MEMO 5410, 5411, 5412-1, 5412-2</li>
         <li>15 crystal systems, rather than 6 crystal systems.</li>
         <li>Period Table of Elements, 140 elements</li>
-        <li>425-435Mhz</li>
+        <li>425-435Mhz, alien communications frequency</li>
+        <li>How the Venus Rover's parachute was able to survive '880' degrees fahrenheit.</li>
+        <li>NSA - Above Top Secret: Black Monks, Blue Moon Unit (controls 3 bases on our moon and Adam & Eve bases on Mars), Ultra 1 & 2</li>
+        <li> 11-26-1977 - Vrillon (Ashtar Galactic Command) overrides news broadcast to reiterate Admiral Byrds message received at the North Pole.</li>
     </ul>
     
-    <p>List of subvertive institutions which are misrepresented by their original intentions and mismanaged through financial influence and power.</p>
+    <p>List of subvertive institutions which are misrepresented by their original intentions and mismanaged through financial influence and various implications.</p>
     <ul>
         <li>Council on Foreign Relations</li>
         <li>Bilderbergers</li>
         <li>Trilateral Commission</li>
         <li>Club of Rome</li>
+        <li>Congress</li>
         <li>Royal Institute for International Affairs</li>
-        <li>CIA, NSA, NRO, etc.. (Entire IOC)</li>
+        <li>OSS, CIA, DIA, NSA, NRO, NGA, DoS, DHS, JSOC, FISA, etc.. (Entire IOC)</li>
+        <li>USPTO: United States Patent & Trade Office</li>
         <li>Mossad (Israel)</li>
         <li>Secret Services</li>
         <li>Internation Monetary Fund</li>
@@ -107,37 +121,46 @@
         <li>Interpol</li>
         <li>Swiss Bank, Switzerland</li>
         <li>United Nations</li>
+        <li>National Security Council</li>
+        <li>NATO</li>
     </ul>
     <!--
-    <p>Okay, lets start naming names of the real crime bosses:</p>
+    <p>Okay, lets start naming names of the real crime bosses: the people who know, but conceal (and finance this concealment) everything:</p>
     <ul>
-        <li>JP Morgan</li>
+        
         <li>Rothschild (Bauer or Bower) - Pindar</li>
-    <li>Bruce</li>
-    <li>Cavendish (Kennedy)</li>
-    <li>Rockefeller</li>
-    <li>Rockefeller</li>
-    <li>Rockefeller</li>
-    <li>Warburg (del Blanco)</li>
-    <li>Rockefeller</li>
+        <li>Bruce</li>
+        <li>JP Morgan</li>
+        <li>Cavendish (Kennedy)</li>
+        <li>Warburg (del Blanco)</li>
+        <li>Rockefeller</li>
         <li>Dick Cheney</li>
         <li>George Soros</li>
         <li>Michael Hayden</li>
         <li>...</li>
+        <li>Secretary General of NATO</li>
+        <li>Sumpreme allied commander</li>
+        <li>SHOC operations commander</li>
     </ul>
+    
     -->
 
     <p>List of FOIA and other cases against the government that were sealed under state secrets priviledge:</p>
     <ul>
-        <li>We the people VS NSA</li>
+        <li>We the people VS NSA (NSA is exempt from ALL laws!)</li>
         <li>...</li>
 
     </ul>
 
-    <p>List of constitutional violations against the government:</p>
+    <p>List of opressive laws:</p>
     <ul><!-- these are the main collections for investigational analysis -->
         <li>Executive Order 1233</li>
         <li>Executive Order 13603</li>
+        <li>Executive Order 11490</li>
+        <li>Executive Order 12127</li>
+        <li>Executive Order 13256</li>
+        <li>Executive Order 12356</li>
+        <li>United Nation's Charter</li>
         <li>Posse Comitatus</li>
         <li>Gross abuse of classifications</li>
         <li>No accountability for budget</li>

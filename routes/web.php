@@ -27,21 +27,6 @@ Route::delete('newsletter/subscribe', 'NewsletterSubscriptionController@destroy'
 /* Homepage */
 Route::get('/', function () {return view('index');})->name('home');
 
-Route::get('chat', function() {
-    return view('chat');
-});
-
-/* working on Instant Messaging with Admin */
-Route::get('fire', function() {
-    event(new \App\Events\ChatMessage("hello!"));
-    return "done";
-}); 
-
-
-
-
-
-
 /* Affiliates */
 Route::get('affiliates', function() {
     $affiliates = \App\Affiliate::all();
@@ -62,14 +47,11 @@ Route::get('donate', function () {
     return view('donate');
 });
 
-Route::get('download', function () {
-    return view('download');
-});
-
 Route::get('ethics-policy', function () {
     return view('ethics');
 })->name("ethics");
 
-Route::get('join', function () {
-    return view('join');
+
+Route::get('debug', function() {
+    
 });

@@ -17,7 +17,7 @@ class CreateTrafficTable extends Migration
             $table->increments('id');
             $table->ipAddress('ip');
             $table->integer('account_id')->default(0);
-            $table->string('action');
+            $table->text('action');
             $table->timestamp('timestamp')->useCurrent();
         });
     }

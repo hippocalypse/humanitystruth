@@ -29,7 +29,8 @@ class ExcerptTableSeeder extends Seeder
             Excerpt::create(['content' => 'The love you withhold is the pain that you carry.', 'author' => 'Alex Collier']),
             
             /* Einstein */
-            Excerpt::create(['content' => 'A human being is part of a whole, called by us the \'Universe\' - a part limited in time and space. He experiences himself, his thoughts, and feelings, as something separated from the rest - a kind of optical delusion of his consciousness. This delusion is a kind of prison for us, restricting us to our personal desires and to affection for a few persons nearest us. Our task must be to free ourselves from this prison by widening our circles of compassion to embrace all living creatures and the whole of nature in its beauty.', 'author' => 'Albert Einstein']),
+            //Excerpt::create(['content' => 'A human being is part of a whole, called by us the \'Universe\' - a part limited in time and space. He experiences himself, his thoughts, and feelings, as something separated from the rest - a kind of optical delusion of his consciousness. This delusion is a kind of prison for us, restricting us to our personal desires and to affection for a few persons nearest us. Our task must be to free ourselves from this prison by widening our circles of compassion to embrace all living creatures and the whole of nature in its beauty.', 'author' => 'Albert Einstein']),
+            Excerpt::create(['content' => 'Reality is merely an illusion, albeit a very persistent one.', 'author' => 'Albert Einstein']),
             
             /* Eisenhower */
             Excerpt::create(['content' => 'Pessimism never won any battle.', 'author' => 'Dwight D. Eisenhower']),
@@ -48,6 +49,9 @@ class ExcerptTableSeeder extends Seeder
             Excerpt::create(['content' => 'Truth is by nature self-evident. As soon as you remove the cobwebs of ignorance that surround it, it shines clear.', 'author' => 'Mahatma Gandhi']),
             Excerpt::create(['content' => 'The pursuit of truth does not permit violence on one\'s opponent.', 'author' => 'Mahatma Gandhi']),
 
+            /* Roscoe H. Hillenkoetter */
+            Excerpt::create(['content' => 'Behind the scenes, high-ranking Air Force officers are soberly concerned about UFOs. But through official secrecy and ridicule, many citizens are led to believe the unknown flying objects are nonsense.', 'author' => 'Vice Admiral Roscoe H. Hillenkoetter']),
+
             /* Inouye */
             Excerpt::create(['content' => 'There exists a shadowy government with its own Air Force, its own Navy, its own fundraising mechanism, and the ability to pursue its own ideas of national interest, free from all checks and balances, and free from the law itself.', 'author' => 'Senator Daniel Inouye']),
 
@@ -64,6 +68,9 @@ class ExcerptTableSeeder extends Seeder
             Excerpt::create(['content' => 'The very word \'secrecy\' is repugnant in a free and open society; and we are as a people inherently and historically opposed to secret societies, to secret oaths, and to secret proceedings.', 'author' => 'John F. Kennedy']),
             Excerpt::create(['content' => 'We decided long ago that the dangers of excessive and unwarranted concealment of pertinent facts far outweighed the dangers which are cited to justify it.', 'author' => 'John F. Kennedy']),
             Excerpt::create(['content' => '.. There is very grave danger that an announced need for increased security will be seized upon by those anxious to expand its meaning to the very limits of official censorship and concealment. That I do not intend to permit to the extent that it is in my control..', 'author' => 'John F. Kennedy']),
+            
+            /* King Jr. */
+            Excerpt::create(['content' => 'One has a moral responsibility to disobey unjust laws.', 'author' => 'Martin Luther King Jr']),
             
             /* Mandela */
             Excerpt::create(['content' => 'Education is the most powerful weapon which you can use to change the world.', 'author' => 'Nelson Mandela']),
@@ -87,6 +94,7 @@ class ExcerptTableSeeder extends Seeder
             /* Tesla */
             Excerpt::create(['content' => 'Let the future tell the truth, and evaluate each one according to his work and accomplishments. The present is theirs; the future, for which I have really worked, is mine.', 'author' => 'Nikola Tesla']),
             Excerpt::create(['content' => 'The scientific man does not aim at an immediate result. He does not expect that his advanced ideas will be readily taken up. His work is like that of the planter - for the future. His duty is to lay the foundation for those who are to come, and point the way.', 'author' => 'Nikola Tesla']),
+            Excerpt::create(['content' => 'If you wish to understand the \'Universe\', think of energy, frequency, and vibration.', 'author' => 'Nikola Tesla']),
             
             /* Washington */
             Excerpt::create(['content' => 'An uninformed populace is a populace in slavery.', 'author' => 'George Washington']),
