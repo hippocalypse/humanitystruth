@@ -15,14 +15,14 @@
 Auth::routes();
 
 /* Email and phone verification routes */
-Route::get('verifyemail/{token}', 'Auth\RegisterController@verify');
-Route::get('two-step', 'Auth\LoginController@show2FAForm');
-Route::post('two-step', 'Auth\LoginController@verify');
+Route::get( 'verifyemail/{token}',  'Auth\RegisterController@verify');
+Route::get( 'two-step',             'Auth\LoginController@show2FAForm');
+Route::post('two-step',             'Auth\LoginController@verify');
 
 /* Newsletter Subscriptions */
-Route::get('newsletter/subscribe/{email}/{token}', 'NewsletterSubscriptionController@verify');
-Route::post('newsletter/subscribe', 'NewsletterSubscriptionController@create');
-Route::delete('newsletter/subscribe', 'NewsletterSubscriptionController@destroy');
+Route::get(   'newsletter/subscribe/{email}/{token}',   'NewsletterSubscriptionController@verify');
+Route::post(  'newsletter/subscribe',                   'NewsletterSubscriptionController@create');
+Route::delete('newsletter/subscribe',                   'NewsletterSubscriptionController@destroy');
 
 /* Homepage */
 Route::get('/', function () {return view('index');})->name('home');
@@ -50,8 +50,3 @@ Route::get('donate', function () {
 Route::get('ethics-policy', function () {
     return view('ethics');
 })->name("ethics");
-
-
-Route::get('debug', function() {
-    
-});

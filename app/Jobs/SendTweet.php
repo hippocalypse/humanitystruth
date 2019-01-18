@@ -13,7 +13,7 @@ class SendTweet implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    private $connection;
+    private $conn;
     private $tweet;
     private $media;
     
@@ -26,18 +26,16 @@ class SendTweet implements ShouldQueue
      */
     public function __construct($tweet, $media = null)
     {
-        $this->connection = new TwitterOAuth(
+        $this->conn = new TwitterOAuth(
             env("TWITTER_API_KEY"),
             env("TWITTER_API_SECRET_KEY"),
             env("TWITTER_ACCESS_TOKEN"),
             env("TWITTER_ACCESS_TOKEN_SECRET")
         );
-        
-        //check that tweet must be less than 280 characters...
+        //ensure that tweet must be less than 280 characters...
         if(strlen($tweet) > 280) {
             $tweet = substr($tweet, 0, 280);
         }
-            
             
         $this->tweet = $tweet;
         $this->media = $media;
@@ -50,17 +48,17 @@ class SendTweet implements ShouldQueue
      */
     public function handle()
     {
-        if($this->media == null) { 
-            $this->connection->post("statuses/update", ["status" => $this->tweet]);
+        if($this->media == null) {
+            $this->conn->post("statuses/update", ["status" => $this->tweet]);
         
         } else {
-            $upload = $this->connection->upload('media/upload', ['media' => $this->media]);
+            $upload = $this->conn->upload('media/upload', ['media' => $this->media]);
             $parameters = [
                 'status' => $this->tweet,
                 'media_ids' => $upload->media_id_string
             ];
             
-            $this->connection->post('statuses/update', $parameters);
+            $this->conn->post('statuses/update', $parameters);
         }
     }
 }
