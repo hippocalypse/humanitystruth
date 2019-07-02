@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>@yelid('subject')</title>
+    <title>@yeild('subject')</title>
 </head>
  
 <body>

@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AffiliatesTableSeeder::class);
         $this->call(ExcerptTableSeeder::class);
         $this->call(CarrierTableSeeder::class);
+        $this->call(Modules\SecureDrop\Database\Seeders\UptimeMonitorTableSeeder::class);
         $this->call(Modules\Investigations\Database\Seeders\InvestigationsDatabaseSeeder::class);
         $this->call(Modules\Developers\Database\Seeders\DevelopersDatabaseSeeder::class);
     }

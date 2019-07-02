@@ -10,7 +10,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Mail;
 use App\Mail\EmailSMSCode;
 
-class SendSMSCodeEmail implements ShouldQueue
+class SendSMSCode implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 

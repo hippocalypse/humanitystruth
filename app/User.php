@@ -42,7 +42,7 @@ class User extends Authenticatable
 
 
     /**
-     * Fetch the email address we need to send text messages (2-factor authentication) to.
+     * Fetch the email address we need to send text messages (2-factor authentication / notifications) to.
      * Example: 0123456789@txt.att.net
      * 
      * @return string <phone-number>@<carrier suffix>
